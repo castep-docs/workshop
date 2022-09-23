@@ -203,8 +203,8 @@ INSTRUCTIONS:
 |&#948;(A)-&#948; (B) (ppm)| 23.5|
 |C<sub>Q</sub> (A) (MHz)| 7.86|
 |&#951;<sub>Q</sub> (A)| 0.28|
-|C<sub>Q</sub>(A) (MHz)| 6.53|
-|&#951;<sub>Q</sub>(A)| 0.70|
+|C<sub>Q</sub>(B) (MHz)| 6.53|
+|&#951;<sub>Q</sub>(B)| 0.70|
 
 
 
