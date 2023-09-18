@@ -83,7 +83,7 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 
 6. Now run CASTEP on Arcus using the 2-atom input files.
 
-	`$ castepsub -n 1 Si2`
+	`$ castep.mpi Si2`
 	
 	This should only take a few seconds and produce a readable output file `Si2.castep`. Examine this file and try to understand the meaning of the various parts. In particular check the section following the header which lists all of the input parameters, both explicit and default. Note what default values of the major parameters CASTEP chose where you did not specify them explicitly. (There will be some whose meaning has not been explained. Don't worry about these.) 
 

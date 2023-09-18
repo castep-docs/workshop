@@ -69,7 +69,7 @@ The .cell file requires a path through the Brillouin Zone along which you want t
 Run CASTEP using:
 
 ```
-$ castepsub -n 16 graphite 
+$ mpirun -np 16 castep.mpi graphite 
 ```
 Once the CASTEP calculation has finished a `graphite.bands` file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.
 
@@ -83,10 +83,8 @@ The program `orbitals2bands` overwrites your `Si.bands` file, so it's best to co
 
 ```
 $ cp graphite.bands graphite.bands.orig 
-$ orbitals2bandssub -n 16 graphite
+$ mpirun -np 16 orbitals2bands graphite
 ```
-
-`orbitals2bandssub` is a wrapper, similar to `castepsub` to run `orbitals2bands` on the compute nodes on `arc`.
 
 
 ## Example 2 - Silicon and Aluminium.
