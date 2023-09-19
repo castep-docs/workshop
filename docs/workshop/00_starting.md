@@ -32,7 +32,74 @@ and run it:
 
 
 ## Connecting to young
-...
+Open a terminal and type
+
+`ssh -X mmmXXXX@young.rc.ucl.ac.uk`
+
+replacing mmmXXXX with your young account. This should present you with a shell on young:
+
+`[mmm0389@login01 ~]$`
+
+If you want to use the castep tools, (c2x, orbitals2bands, etc), you should add these to your path:
+
+`export PATH=$PATH:/home/mmm0389/castep-24`
+
+This will give you access to castep.mpi as well as the full suite of tools that come with castep.
+
+### Copy the submission script
+
+To actually run castep on this machine, you need to use a submission script. This is similar to how most HPC systems work, and is useful if you intend to learn how to run castep on your own cluster.
+
+`cp ~mmm0389/run_castep24.sh ~/`
+
+This will give you a file called run_castep24.sh in your home folder. You *must* edit this file and change the line UKCP_EXT to be your relevant group on young. Please ask if you are not sure, as this will give errors later on. 
+
+### Scratch
+
+All calculations must be performed in the Scratch folder. This is a high speed filesystem for use in HPC environments. The folder is ~/Scratch 
+
+### Running a castep calculation
+
+Create the cell and param files as normal. Copy the script into the folder and edit the final line which contains "Si2". Change this to be the <name> part of your castep calculation.
+
+eg. If your files are Al.cell and Al.param, change the last line to read
+
+`gerun castep.mpi Al`
+
+The number of cores are controlled by the line
+
+`#$ -pe mpi 16`
+
+and the job time limit by
+
+`#$ -l h_rt=0:20:0`
+
+requests a 20 minute (max) run.
+
+Once this file has been edited, submit it to the queue with
+
+`qsub run_castep24.sh`
+
+You can see the status of the job by typing
+
+`qstat`
+
+which will show your active jobs, eg.
+
+```
+[mmm0389@login01 ~]$ qstat
+job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID
+-----------------------------------------------------------------------------------------------------------------
+1141619 2.51381 Castep-exa mmm0389      qw    09/19/2023 12:04:38                                   16
+```
+
+
+It should change from "qw" (queued and waiting) to "r" (running) and then once the calculation is complete, it should disappear.
+
+To cancel a job, use the job-id from qstat and type
+
+`qdel <job number>`
+
 
 
 ## Editing a file
