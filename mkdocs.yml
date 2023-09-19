@@ -76,6 +76,8 @@ nav:
         - '6d Lowloss': 'workshop/optados/6d_lowloss.md'
       - '7 XC':  'workshop/07_xc.md'
       - '8 Cif2cell': 'workshop/08_cif2cell.md'
+      - '9 MD': 'workshop/09_md.md'
+
 theme:
   name: material
 extra_javascript:
