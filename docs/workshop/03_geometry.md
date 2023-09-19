@@ -86,13 +86,13 @@ Remember you can use `castep --help` to assist you with finding the appropriate 
 	write_cell_structure: true
 	```
 
-	You can now use `castepsub` to submit your geometry optimisation!
+	You can now use `mpirun` (or your submission script!) to submit your geometry optimisation!
 
 5. Results Analysis
 
 	* Scroll down through the file. Check to see how the forces and bond-length varies over iterations.
 	* For advanced bash users, try `grep "F|max" H2.castep` to extract this from the file.
-	* You may also want to visualise the `H2.cell` and (if you tolda castep to print it) the `H2-out.cell` files as in previous tutorials
+	* You may also want to visualise the `H2.cell` and (if you told castep to print it) the `H2-out.cell` files as in previous tutorials
 	* Finally, consider watching the optimisation by drag-and-dropping the `H2.geom` file into `Jmol` (VESTA will not animate it)
 	* The experimental H2 bond length is about 0.74 Angstroms. How does your result compare? Extension A may give some insight into this! 
 

@@ -1,0 +1,26 @@
+&RunName
+SeedName = 'mymdrun'
+/
+&Positions
+Start = 1
+Final = 100
+/
+&CalcFlags
+CalcRDF      = .TRUE.
+CalcVAC      = .TRUE.
+CalcMSD      = .TRUE.
+CalcHeatCap  = .TRUE.
+CalcAlphaP   = .TRUE.
+CalcBetaT    = .TRUE.
+CalcTempDist = .TRUE.
+CalcVolDist  = .TRUE.
+XmolFile     = .TRUE.
+/
+&VACParams
+VACLength    = 64
+VACInterval  = 1
+/
+&MSDParams
+MSDLength    = 64
+MSDInterval  = 1
+/

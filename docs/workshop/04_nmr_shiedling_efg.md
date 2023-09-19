@@ -16,6 +16,7 @@ Start by copying the input files into your home directory i.e.
  ```
 
 ###Example 1 - Ethanol CH<sub>3</sub>CH<sub>2</sub>OH
+
 ![Fig1. Proton spectrum of ethanol](../img/nmr_tut1.png){width ="300"}
 <figure fig1>
   <figcaption>Fig1. Proton spectrum of ethanol</figcaption>
