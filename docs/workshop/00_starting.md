@@ -52,7 +52,7 @@ To actually run castep on this machine, you need to use a submission script. Thi
 
 `cp ~mmm0389/run_castep24.sh ~/`
 
-This will give you a file called run_castep24.sh in your home folder. You *must* edit this file and change the line UKCP_EXT to be your relevant group on young. Please ask if you are not sure, as this will give errors later on. 
+This will give you a file called run_castep24.sh in your home folder. You *must* edit this file and change the line UKCP_YORK_P to be your relevant group on young (probably UKCP_EXT).. Please ask if you are not sure, as this will give errors later on. 
 
 ### Scratch
 
