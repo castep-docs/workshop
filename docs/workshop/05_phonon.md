@@ -2,7 +2,7 @@
 
 The aims of this tutorial session is to introduce you to running larger-scale CASTEP jobs on supercomputer clusters, editing of input files for and setup of CASTEP     jobs, and analysis of the results using standalone tools.  To achieve results without waiting too long for jobs to complete the initial runs will be small ones, but    the aim by the end of this afternoon should be to set up larger and more significant runs.   Today's session will entirely comprise insulators or semiconductors.
 You may need to consult the CASTEP phonon users guide, which may be accessed [here](http://www.tcm.phy.cam.ac.uk/castep/Phonons_Guide/Castep_Phonons.html)
-The practical will be conducted using the arc service. Make a directory called (e.g.) `Phonons` and copy the files `/home/jryates/WORKSHOP/h-BN.cell` and `/home/jryates/WORKSHOP/h-BN.param` into the new folder.
+The practical will be conducted using the arc service. Make a directory called (e.g.) `Phonons` and copy the files [h-BN.cell](h-BN.cell) and [h-BN.param](h-BN.param) into the new folder.
 
 ## A. $\Gamma$-Point phonon in h-BN
 
@@ -45,7 +45,7 @@ BN is one of a family of Nitride semiconductors, which occurs in cubic zincblend
 Once you have in place the `<seed>.cell` and `<seed>.param` files you are ready to submit the CASTEP job.  This is done using our general script:
 
 	```
-	castepsub  -n 16 h-BN
+	mpirun -n 4 castep.mpi  h-BN
 	```
 
 	which requests a 16-core parallel run. Use the `squeue -u $USER` command to monitor the progress of your calculation. When it has finished, you can examine the output file `h-BN.castep` and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file `h-BN.phonon` which contains the frequencies and also the eigenvectors which we will analyse.
