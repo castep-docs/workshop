@@ -48,7 +48,7 @@ Once you have in place the `<seed>.cell` and `<seed>.param` files you are ready 
 	mpirun -n 4 castep.mpi  h-BN
 	```
 
-	which requests a 16-core parallel run. Use the `squeue -u $USER` command to monitor the progress of your calculation. When it has finished, you can examine the output file `h-BN.castep` and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file `h-BN.phonon` which contains the frequencies and also the eigenvectors which we will analyse.
+	which requests a 16-core parallel run. Use the `qstat` command to monitor the progress of your calculation. When it has finished, you can examine the output file `h-BN.castep` and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file `h-BN.phonon` which contains the frequencies and also the eigenvectors which we will analyse.
 
 2. Analysis of h-BN phonon output.
 

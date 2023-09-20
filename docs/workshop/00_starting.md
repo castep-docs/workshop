@@ -123,8 +123,7 @@ Compare the runs at 200 and 400eV. Which took longer? Has the total energy gone 
 * `cp fred/* jim/`  - copy all the files in the folder `fred` into the folder `jim`
 * `cp ../myfile ./`  - copy the file `myfile` in the folder below to the current folder
 * `cp ~/myfile ./`   - copy the file `myfile` in your home folder to the current folder
-* `squeue`  - look at the list of jobs running and queued on the cluster
-* `squeue -u teachingXX`  - look at the list of jobs running for the user `teachingXX`
+* `qstat`  - look at the list of jobs running and queued on the cluster
 * `mpirun -np 8 castep.mpi diamond`  - submits a castep job with `diamond.cell` and `diamond.param` as inputs onto 8 cores with a time limit of 1 hour
 
 ### c2x
