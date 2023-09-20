@@ -7,7 +7,7 @@ We start running castep calculations by looking at two small systems, and examin
 Start by copying the input files into your home directory i.e.
 
  ```
- cp  /home/jryates/WORKSHOP/workshop_nmr_intro.tgz ./
+ wget http://www.tcm.phy.cam.ac.uk/castep/oxford/workshop_nmr_intro.tgz
  ```
  unpack it
  
@@ -73,7 +73,7 @@ INSTRUCTIONS:
 
 * Look at the cell and param file. Note that the only special keyword is `task = magres`
 
-* Run castep. `castepsub -n 4  ethanol` Look at the output file. At the end the isotropic chemical shielding, anisotropy, and asymmetry are reported (here we are only interested in the isotropic value.)
+* Run castep. `mpirun -np 16 castep.mpi ethanol` Look at the output file. At the end the isotropic chemical shielding, anisotropy, and asymmetry are reported (here we are only interested in the isotropic value.)
 
 * This information, plus the full tensors is also given in the file ethanol.magres
 
