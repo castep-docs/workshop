@@ -24,7 +24,7 @@ Finally, the gold standard technique (which can be performed in practice but is 
 
 	Good transition state searches are based upon good structural relaxations of the initial and final states. The first step is therefore to perform geometry optimisations for your reactant `H_Initial` and product `H_Final`. 
 	
-	Note that ionic constraints have been used in these to prevent translations of 2 of the ions and accelerate the geometry optimisation. You may wish to investigate what happens when these constraints are relaxed.
+	Note that ionic constraints have been used in these to prevent translations of 2 of the ions and accelerate the geometry optimisation. You may wish to investigate what happens when these constraints are relaxed. For more complex constrained systems, it is often worthwhile changing the default geometry optimiser from `Geom_Method: LBFGS` to `Geom_Method: TPSD`, which is not disrupted by the sharp discontinuities the constraints can induce to the potential energy landscape.
 	
 2. Once you have checked your end points are relaxed (ask if you are unsure how to confirm this!), you will need to create a new block:
 

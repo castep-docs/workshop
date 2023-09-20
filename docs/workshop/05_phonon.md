@@ -98,7 +98,7 @@ You can use the `-raman` flag of `dos.pl` to generate and plot a Raman spectrum.
 
 ## B. Molecular modes in benzene
 
-The next part of this practical is to compute the modes and spectrum of a molecule and compare the result with a calculation of a molecular crystal.  Our example is  [benzene](benzene.pdb)
+The next part of this practical is to compute the modes and spectrum of a molecule and compare the result with a calculation of a molecular crystal.  Our example is  [benzene](benzene-mol.pdb)
 
 First run the isolated molecule calculation.  Using the supplied PDB format file and using the `pdb2cell` utility, generate a `.cell` file for a single molecule calculation.  There are a few other considerations to take into account for an isolated molecule calculation.
 
