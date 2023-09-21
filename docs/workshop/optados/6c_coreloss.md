@@ -1,6 +1,6 @@
 ## Calculation of core-loss spectra for hBN 
 
-We begin by running a CASTEP calculation using the files provided.  Note that we specify a pseudopotential file for one B atom and both N atom, and use an on-the-fly pseudopotential for the other B atom.  This looks a bit weird!  It is simply a way to only compute the EELS for one atomic site (core-loss spectra can only be computed for atoms described by on-the-fly potentials).
+We begin by running a CASTEP calculation using the files provided.  Note that we specify a pseudopotential file for one B atom and both N atom, and use an on-the-fly pseudopotential for the other B atom.  This looks a bit weird!  It is simply a way to only compute the EELS for one atomic site (core-loss spectra can only be computed for atoms described by on-the-fly potentials). An h-BN [cell](h-BN.cell) and [param](h-BN.param) file are provided. 
 
 Execute optados using the optados input file provided and the file `hBN_core_edge.dat` will be created. The file contains two columns, the first is the energy and the second is the spectrum. This file contains the following edges:
 

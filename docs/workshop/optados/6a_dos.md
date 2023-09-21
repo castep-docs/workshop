@@ -13,15 +13,12 @@ This is a simple example of using `optados` for calculating electronic density o
 
 1. Perform a castep calculation on the bulk silicon using the  `Si2.cell`  and `Si2.param` input files. 
 
-	```
-  	$ castepsub -n 16 Si2 
-	```
-
 	This should take a couple of seconds to run. 
 
 1. Examine the optados input file - `Si2.odi`
 
-	Perform an optados calculation.   
+	Perform an optados calculation.
+ 
 	```
 	$ optados Si2
 	```
@@ -145,7 +142,7 @@ This is a simple example of using `optados` for calculating electronic density o
 	Plotting the fixed broadened DOS over the adaptive we see the advantages of the adaptive broadening.
 	
 	```
-	xmgrace Si2.adaptive.agr Si2.fixed.age
+	xmgrace Si2.adaptive.agr Si2.fixed.agr
 	```
 
 
