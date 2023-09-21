@@ -3,6 +3,8 @@
 ### Outline
 This is a simple example of using `optados` for calculating electronic density of states of crystalline silicon in a 2 atom cell. It shows how optados's adaptive broadening can be used to resolve fine spectral features that a fixed broadening scheme will obscure.
 
+The tarball for the tutorial files is here: [optados-examples.tgz](optados-examples.tgz)
+
 ### Input Files:
 * `examples/Si2_DOS/Si2.cell` - The castep cell file containing information about the simulation cell.
 * `examples/Si2_DOS/Si2.param` - The castep param file containing information about the parameters for the SCF and spectral calculations.
