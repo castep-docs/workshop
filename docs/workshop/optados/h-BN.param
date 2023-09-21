@@ -1,4 +1,5 @@
-task: phonon
+task: spectral
+spectral_task: coreloss
 
 xc_functional: LDA
 
