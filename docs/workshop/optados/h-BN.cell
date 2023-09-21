@@ -12,5 +12,9 @@ kpoints_mp_grid 2 2 2
 
 symmetry_generate
 
-phonon_kpoint_mp_grid 1 1 1
+%block species_pot
+B 2|1.2|12|14|16|20:21(qc=8)
+%block species_pot
+
+spectral_kpoint_mp_grid 10 10 10
 
