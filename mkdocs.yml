@@ -63,20 +63,20 @@ nav:
       - 'Dispersion corrections': 'tutorials/dispersion_corrections/castep-ase-dispersion-tutorial.md'
       - 'NMR Shielding': 'tutorials/NMR_shielding.md'
    - 'Workshop':
-      - '0 Logging on': 'workshop/00_starting.md'
-      - '1 Bonding   ': 'workshop/01_bonding.md'
-      - '2 Bandstructure and DOS': 'workshop/02_bands_dos.md'
-      - '3 Geometry Optimisation': 'workshop/03_geometry.md'
-      - '4 MD': 'workshop/09_md.md'
-      - '5 NMR Shielding': 'workshop/04_nmr_shiedling_efg.md'
-      - '6 Phonons': 'workshop/05_phonon.md'
-      - '7 Optados':
+      - ' 0 Logging on': 'workshop/00_starting.md'
+      - ' 1 Bonding   ': 'workshop/01_bonding.md'
+      - ' 2 Bandstructure and DOS': 'workshop/02_bands_dos.md'
+      - ' 3 Geometry Optimisation': 'workshop/03_geometry.md'
+      - ' 4 MD': 'workshop/09_md.md'
+      - ' 5 NMR Shielding': 'workshop/04_nmr_shiedling_efg.md'
+      - ' 6 Phonons': 'workshop/05_phonon.md'
+      - ' 7 Optados':
         - '7a DOS': 'workshop/optados/6a_dos.md'
         - '7b Projected DOS': 'workshop/optados/6b_pdos.md'
         - '7c Coreloss': 'workshop/optados/6c_coreloss.md'
         - '7d Lowloss': 'workshop/optados/6d_lowloss.md'
-      - '8 XC':  'workshop/07_xc.md'
-      - '9 Cif2cell': 'workshop/08_cif2cell.md'
+      - ' 8 XC':  'workshop/07_xc.md'
+      - ' 9 Cif2cell': 'workshop/08_cif2cell.md'
       - '10 Genetic Algorithm': 'workshop/10_GA.md'
 
 theme:
