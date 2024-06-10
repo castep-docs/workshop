@@ -13,7 +13,7 @@
     
     
       
-        <title>Build System - CASTEP Docs</title>
+        <title>CI System - CASTEP Docs</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-castep-build-sytem" class="md-skip">
+        <a href="#ci-testing-system" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Build System
+              CI System
             
           </span>
         </div>
@@ -2004,160 +2004,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Build System
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../build-system/" class="md-nav__link">
         Build System
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gnu-make" class="md-nav__link">
-    GNU Make
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#castep-directory-structure" class="md-nav__link">
-    CASTEP directory structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cmake" class="md-nav__link">
-    CMake
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-new-source-files" class="md-nav__link">
-    Adding New Source Files
-  </a>
-  
-    <nav class="md-nav" aria-label="Adding New Source Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-gnu-make-build-system" class="md-nav__link">
-    Adding to GNU Make build-system
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-the-cmake-build-system" class="md-nav__link">
-    Adding to the CMake build-system
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conditional-inclusion" class="md-nav__link">
-    Conditional inclusion
-  </a>
-  
-    <nav class="md-nav" aria-label="Conditional inclusion">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-gnu-make-build-system_1" class="md-nav__link">
-    Adding to GNU Make build-system
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-cmake-build-system" class="md-nav__link">
-    Adding to CMake build-system
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-compilation-options" class="md-nav__link">
-    Special Compilation Options
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Compilation Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-gnu-make-build-system_2" class="md-nav__link">
-    Adding to GNU Make build-system
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-cmake-build-system_1" class="md-nav__link">
-    Adding to CMake build-system
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2195,11 +2046,248 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../CI/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CI System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         CI System
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personal-pipeline" class="md-nav__link">
+    Personal Pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-jenkins" class="md-nav__link">
+    Navigating Jenkins
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating Jenkins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#waterfall-diagram" class="md-nav__link">
+    Waterfall diagram
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-menu" class="md-nav__link">
+    Pipeline Menu
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline Menu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-bar" class="md-nav__link">
+    Navigation Bar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-status" class="md-nav__link">
+    Pipeline Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reports" class="md-nav__link">
+    Reports
+  </a>
+  
+    <nav class="md-nav" aria-label="Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linting-and-compiler-warnings" class="md-nav__link">
+    Linting and Compiler Warnings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage-report" class="md-nav__link">
+    Test Coverage Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ford-api-documentation" class="md-nav__link">
+    FORD API Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-artefacts" class="md-nav__link">
+    Build Artefacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-pipelines" class="md-nav__link">
+    Jenkins Pipelines
+  </a>
+  
+    <nav class="md-nav" aria-label="Jenkins Pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-builds-run" class="md-nav__link">
+    Default builds run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pr-builds-run" class="md-nav__link">
+    PR Builds run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-parametrised-runs" class="md-nav__link">
+    Manual Parametrised Runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Parametrised Runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-keys" class="md-nav__link">
+    Build keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-tags" class="md-nav__link">
+    Comment Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitbucket-pipelines" class="md-nav__link">
+    BitBucket pipelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-the-jenkinsfile" class="md-nav__link">
+    Modifying the Jenkinsfile
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying the Jenkinsfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-configurations" class="md-nav__link">
+    Adding new configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-new-comment-tags" class="md-nav__link">
+    Adding new comment tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-modifications-to-the-jenkinsfile" class="md-nav__link">
+    Submitting modifications to the Jenkinsfile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2266,30 +2354,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
-    <nav class="md-nav" aria-label="Introduction">
+    <nav class="md-nav" aria-label="Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gnu-make" class="md-nav__link">
-    GNU Make
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#castep-directory-structure" class="md-nav__link">
-    CASTEP directory structure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cmake" class="md-nav__link">
-    CMake
+  <a href="#personal-pipeline" class="md-nav__link">
+    Personal Pipeline
   </a>
   
 </li>
@@ -2300,24 +2374,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-new-source-files" class="md-nav__link">
-    Adding New Source Files
+  <a href="#navigating-jenkins" class="md-nav__link">
+    Navigating Jenkins
   </a>
   
-    <nav class="md-nav" aria-label="Adding New Source Files">
+    <nav class="md-nav" aria-label="Navigating Jenkins">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-to-gnu-make-build-system" class="md-nav__link">
-    Adding to GNU Make build-system
+  <a href="#waterfall-diagram" class="md-nav__link">
+    Waterfall diagram
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-to-the-cmake-build-system" class="md-nav__link">
-    Adding to the CMake build-system
+  <a href="#pipeline-menu" class="md-nav__link">
+    Pipeline Menu
   </a>
+  
+    <nav class="md-nav" aria-label="Pipeline Menu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-bar" class="md-nav__link">
+    Navigation Bar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-status" class="md-nav__link">
+    Pipeline Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reports" class="md-nav__link">
+    Reports
+  </a>
+  
+    <nav class="md-nav" aria-label="Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linting-and-compiler-warnings" class="md-nav__link">
+    Linting and Compiler Warnings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage-report" class="md-nav__link">
+    Test Coverage Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ford-api-documentation" class="md-nav__link">
+    FORD API Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-artefacts" class="md-nav__link">
+    Build Artefacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2327,24 +2462,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conditional-inclusion" class="md-nav__link">
-    Conditional inclusion
+  <a href="#jenkins-pipelines" class="md-nav__link">
+    Jenkins Pipelines
   </a>
   
-    <nav class="md-nav" aria-label="Conditional inclusion">
+    <nav class="md-nav" aria-label="Jenkins Pipelines">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-to-gnu-make-build-system_1" class="md-nav__link">
-    Adding to GNU Make build-system
+  <a href="#default-builds-run" class="md-nav__link">
+    Default builds run
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-to-cmake-build-system" class="md-nav__link">
-    Adding to CMake build-system
+  <a href="#pr-builds-run" class="md-nav__link">
+    PR Builds run
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-parametrised-runs" class="md-nav__link">
+    Manual Parametrised Runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Parametrised Runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-keys" class="md-nav__link">
+    Build keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-tags" class="md-nav__link">
+    Comment Tags
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2354,23 +2516,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#special-compilation-options" class="md-nav__link">
-    Special Compilation Options
+  <a href="#bitbucket-pipelines" class="md-nav__link">
+    BitBucket pipelines
   </a>
   
-    <nav class="md-nav" aria-label="Special Compilation Options">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-the-jenkinsfile" class="md-nav__link">
+    Modifying the Jenkinsfile
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying the Jenkinsfile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-to-gnu-make-build-system_2" class="md-nav__link">
-    Adding to GNU Make build-system
+  <a href="#adding-new-configurations" class="md-nav__link">
+    Adding new configurations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-to-cmake-build-system_1" class="md-nav__link">
-    Adding to CMake build-system
+  <a href="#adding-new-comment-tags" class="md-nav__link">
+    Adding new comment tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-modifications-to-the-jenkinsfile" class="md-nav__link">
+    Submitting modifications to the Jenkinsfile
   </a>
   
 </li>
@@ -2394,153 +2570,582 @@
                 
 
 
-<h1 id="the-castep-build-sytem">The CASTEP Build Sytem</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This documentation is intended for developers who intend to add new features/sources to the CASTEP system. A quick-start
-guide on how to build CASTEP can be found in the <code>CASTEP_ROOT</code> in <code>README.INSTALL</code> for the GNU Make build-system or
-<code>README.cmake</code> for the new CMake build system.</p>
-<p>The CASTEP build system is designed to be efficient, but also intuitive. There are two existing build systems, one
-relying on GNU Make, which is faster to build and intended for rapid development, and one based on CMake which is
-designed to be more intuitive to those who are used to CMake build systems and for automatically detecting the best
-options for the average user.</p>
-<h3 id="gnu-make">GNU Make</h3>
-<p>The GNU make system is broken down into a hierarchical tree which build up the required rules for compiling CASTEP on as
-many varied systems as possible while still being isolated and maintable.</p>
-<p>The hierarchy of these make files is as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├ `&lt;CASTEP_ROOT&gt;/`
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>└─┬─ `Makefile` - Root Makefile
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ `obj/`
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  └──┬─ `include_rules.mk`
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     ├─ `include_utility.mk`
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     ├─ `include_fundamental.mk`
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     ├─ `include_otfg.mk`
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     ├─ `include_dispersion.mk`
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     ├─ `include_functional.mk`
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>     ├─ `include_test.mk`
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>     ├─ `include_tools.mk`
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>     ├─ `platforms/`
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>     └──── Various make rules for different platforms
-</code></pre></div>
-<h3 id="castep-directory-structure">CASTEP directory structure</h3>
-<p>When adding new sources to CASTEP it is important to consider the hierarchical directory/module structure of CASTEP.
-CASTEP sources are currently organised into sub-libraries which each depend on the library above them in the hierarchy.</p>
-<p>These libraries, in order of hierarchy are:</p>
+<h1 id="ci-testing-system">CI Testing System</h1>
+<h2 id="overview">Overview</h2>
+<div class="admonition warning">
+<p class="admonition-title">Notice</p>
+<p>The following document assumes you have access to both the CASTEP source and the
+ANVIL CI system.</p>
+</div>
+<p>The CASTEP CI system is divided into 3 phases:</p>
+<dl>
+<dt><a href="#bitbucket-pipelines">Rapid Response (BitBucket)</a></dt>
+<dd>A short set of tests run whenever a PR is created or pushed to.</dd>
+<dt><a href="#jenkins-pipelines">CASTEP PR Tests (Jenkins)</a></dt>
+<dd>A more substantial set of tests run whenever a PR is created or pushed to.</dd>
+<dt><a href="#default-builds">CASTEP Default Tests (Jenkins)</a></dt>
+<dd>A set of tests run whenever default or a release branch is merged to.</dd>
+</dl>
+<p>The main CASTEP continuous integration (CI) system is a
+<a href="https://www.jenkins.io/">Jenkins</a> instance run on the
+<a href="https://anvil.softeng-support.ac.uk/">ANVIL</a> service.</p>
+<p>The main CASTEP Jenkins instance is available at:</p>
+<p><a href="https://anvil.softeng-support.ac.uk/jenkins/job/CASTEP/view/all/">https://anvil.softeng-support.ac.uk/jenkins/job/CASTEP/view/all/</a></p>
+<p>Going through the Jenkins Dashboard will take you to the <a href="#waterfall-diagram">waterfall
+diagram</a> landing page.</p>
+<!-- In order to request access to the ANVIL service to check the status of
+testing please [contact here]() -->
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ANVIL service is an STFC-cloud managed system and requests to register will
+be considered by them on a case-by-case basis and are out of control of the
+CASTEP team.</p>
+</div>
+<h3 id="personal-pipeline">Personal Pipeline</h3>
+<p>For the purposes of development testing you can request a personal pipeline in
+order to be able to rapidly test in the variety of environments under which the
+main CASTEP testing is performed.</p>
+<p>This is required for e.g. <a href="#contributing-to-the-jenkinsfile">modifying the <code>Jenkinsfile</code></a></p>
+<p>Access to this pipeline will require an ANVIL account and a reasonable cause for
+the request.</p>
+<h2 id="navigating-jenkins">Navigating Jenkins</h2>
+<h3 id="waterfall-diagram">Waterfall diagram</h3>
+<p>The landing page from the Jenkins dashboard is the Waterfall diagram which shows
+a quick display of the most recent results for the <code>default</code>, <code>Release</code> and
+<code>PR_builds</code> pipelines.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable accessibility options including text-scale and colourblind mode,
+select the gear in the top-right.</p>
+</div>
+<p><img alt="Waterfall diagram" src="../../img/CI/Waterfall.jpg" /></p>
+<p>The colours represent the status of the pipeline:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Colour</th>
+<th style="text-align: center;">Colourblind</th>
+<th style="text-align: center;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Green</td>
+<td style="text-align: center;">Plain</td>
+<td style="text-align: center;">Previous run succeeded.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Orange</td>
+<td style="text-align: center;">Diamonds</td>
+<td style="text-align: center;">Previous run failed tests, but built successfully.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Red</td>
+<td style="text-align: center;">Diagonal stripe</td>
+<td style="text-align: center;">Previous run failed to build one or more pipelines successfully.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The text below the pipeline describes how long the pipeline has been failing as
+well as the extent of the failure.</p>
+</div>
+<p>Clicking on any of the pipeline names will take you to the pipeline menu for
+that pipeline.</p>
+<h3 id="pipeline-menu">Pipeline Menu</h3>
+<p>The pipeline menu is the display of the status for any single pipeline. It has a
+number of important displays and buttons.</p>
+<p>The figure below highlights these.</p>
+<p><img alt="Pipeline menu display" src="../../img/CI/PipelineLayoutAnnotated.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The side-bar is dynamic and the options available to you may not match those in
+the figure above for any particular pipeline. For example, this pipeline has not
+generated a coverage report.</p>
+</div>
+<h4 id="navigation-bar">Navigation Bar</h4>
+<p>The navigation bar allows you to look at other pipelines, each name is a link to
+that section/level of the Jenkins.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The "CASTEP" level button will take you to the Waterfall landing page. In order
+to get to the top-level CASTEP dashboard, select "All" instead.</p>
+</div>
+<p>When viewing <a href="#linting-and-compiler-warnings">linter and warning reports</a> the
+navigation bar will also display the currently applied filters in the order they
+were applied and serves as the way to remove those filters.</p>
+<h4 id="pipeline-status">Pipeline Status</h4>
+<p>The pipeline status shows the previous run statuses. It is possible to click on any stage, and then logs to get a step-by-step breakdown of the issue. Any step that failed will be coloured pink rather than the usual grey.</p>
+<p><img alt="Step View" src="../../img/CI/ErrorLogs.jpg" /></p>
+<p>It is then possible to click on the tab to expand the console output for that particular step. Generally in the case of:</p>
 <ul>
-<li><code>Utility</code></li>
-<li><code>Fundamental</code></li>
-<li><code>OTFG</code></li>
-<li><code>Dispersion</code></li>
-<li><code>Functional</code></li>
+<li>
+<dl>
+<dt>builds</dt>
+<dd>this will be the <code>Compile</code> step <strong>above</strong> the failure.</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>tests</dt>
+<dd>this will be the <code>Diff</code> step <strong>below</strong> the failure.</dd>
+</dl>
+</li>
 </ul>
-<p>There are also <code>Tools</code> which are separately built programs which depend on the CASTEP sub-libraries.</p>
-<h3 id="cmake">CMake</h3>
-<p>The CMake system is designed to be intuitive for those who are used to CMake build systems while still being familiar to
-those who are used to the CASTEP GNU Make style syntax. This means that many of the CASTEP CMake variables have names
-which are chosen to match, or are aliased to, the CASTEP GNU Make variables. This is intended to minimise confusion for
-people who transition from GNU Make to CMake.</p>
-<p>The CMake system is also intended to expand the capabilities of CASTEP to be able to compile and run efficiently on
-Windows systems.</p>
-<h2 id="adding-new-source-files">Adding New Source Files</h2>
-<p>In order to add new sources to CASTEP, first it is necessary to work out the relevant dependencies and where they fit
-into the directory structure (i.e. the CASTEP sub-libraries).</p>
-<h3 id="adding-to-gnu-make-build-system">Adding to GNU Make build-system</h3>
-<p>Following this the source should be added to the relevant <code>obj/include_&lt;sub_library&gt;.mk</code> <code>SRCS_$(D)</code>. This will
-automatically include your new source in the CASTEP sub-library.</p>
-<h3 id="adding-to-the-cmake-build-system">Adding to the CMake build-system</h3>
-<p>The next step is to navigate into the sub-library folder which contains your new source and add the source file into the
-<code>CMakeLists.txt</code> therein.</p>
-<h2 id="conditional-inclusion">Conditional inclusion</h2>
-<p>If your source file provides functions which should only conditionally be included in CASTEP (e.g. interfaces to
-external libraries), then it must provide stub functions (generally <code>no-op</code>s returning relevant arguments) in order that
-the conditional inclusions can be compiled. These are generally saved as <code>source_name.stub.f90</code> and these must be
-conditionally included into the compilation.</p>
-<h3 id="adding-to-gnu-make-build-system_1">Adding to GNU Make build-system</h3>
-<p>First off, it is important to add a conditional into the relevant <code>obj/include_&lt;sub_library&gt;.mk</code> to include either your
-stub or your main source into the compilation.</p>
-<p><code>obj/include_&lt;sub_library&gt;.mk</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ifeq (${MY_LIBRARY_VAR},none)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>SRCS_$(d) := $(SRCS_$(d)) source_name.stub.f90
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>else
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>SRCS_$(d) := $(SRCS_$(d)) source_name.f90
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>endif
-</code></pre></div></p>
-<p>If extra libraries are needed to be conditionally linked these should be added as follows:
-<code>obj/include_rules.mk</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ifneq (${MY_LIBRARY_VAR},none)
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  ifneq ($(strip $(MY_LIB_REL_LIB_DIR)), )
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    CASTEP_LIB_SEARCH_PATH += -L&quot;../$(MY_LIB_REL_LIB_DIR)&quot;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  ifdef SUN
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    CASTEP_LIB_SEARCH_PATH += -R &quot;$(abspath ../$(MY_LIB_REL_LIB_DIR))&quot;
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  else ifdef NAG
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    CASTEP_LIB_SEARCH_PATH += -Wl,-Wl,,-rpath=&quot;$(abspath ../$(MY_LIB_REL_LIB_DIR))&quot;
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  else ifdef LINUX
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    CASTEP_LIB_SEARCH_PATH += -Wl,-rpath=&quot;$(abspath ../$(MY_LIB_REL_LIB_DIR))&quot;
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  endif
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  LIBS += -lmy_extra_lib
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>endif
-</code></pre></div></p>
-<h3 id="adding-to-cmake-build-system">Adding to CMake build-system</h3>
-<p>The process with the CMake is similar, create a variable which selects either your source or stub based on an option.</p>
-<p>e.g.
-<code>CASTEP_ROOT/CMakeLists.txt</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>option(WITH_MY_LIB &quot;my lib&#39;s features&quot;)
-</code></pre></div></p>
-<p><code>cmake/extralibs.cmake</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>if(WITH_MY_LIB)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    set(MY_LIB_MOD source_name.f90)
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>else()
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    set(MY_LIB_MOD source_name.stub.f90)
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>endif()
-</code></pre></div></p>
-<p><code>SOURCE_DIR/CMakeLists.txt</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>add_castep_lib(NAME sub_lib
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   SRCS
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   ...
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   ${MY_LIB_MOD}
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>   ...
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>   )
-</code></pre></div></p>
-<p>If extra libraries are needed to be conditionally linked these should be added as follows:
-<code>cmake/extralibs.cmake</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>if(WITH_MY_LIB)
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  find_library(my_extra_lib NAMES my_extra_lib
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>               HINTS ${EXTERNAL_MY_LIB}
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>               DOC &quot;Doc&quot;)
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  if (NOT my_extra_lib)
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    message(FATAL_ERROR &quot;MY_EXTRA_LIB requested, but not found.
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>Set EXTERNAL_MY_LIB to manually specify location of libraries (currently: &#39;${EXTERNAL_MY_LIB}&#39;)&quot;)
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  endif()
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>  set(MY_EXTRA_LIB ${my_extra_lib})
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  set(MY_LIB_MOD source_name.f90)
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>else()
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>  set(MY_EXTRA_LIB &quot;&quot;)
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>  set(MY_LIB_MOD source_name.stub.f90)
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>endif()
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>...
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>mark_as_advanced(... my_extra_lib)
-</code></pre></div></p>
-<p><code>SOURCE_DIR/CMakeLists.txt</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>target_link_libraries(sub-lib ... ${MY_EXTRA_LIB})
-</code></pre></div></p>
-<h2 id="special-compilation-options">Special Compilation Options</h2>
-<p>If you need to add special per-file compilation options, first you should check that your code is properly standards
-conforming. Failing that, it is possible to override options by setting them up in each platform, however, this is
-discouraged unless absolutely necessary.</p>
-<h3 id="adding-to-gnu-make-build-system_2">Adding to GNU Make build-system</h3>
-<p>In the GNU make system it is necessary to add the special compilation flags to each relevant platform under the
-<code>obj/platforms</code> directory. e.g.</p>
-<p><code>obj/platforms/&lt;platform&gt;.mk</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;source_file&gt;.o: private OPT = -O2
-</code></pre></div></p>
-<h3 id="adding-to-cmake-build-system_1">Adding to CMake build-system</h3>
-<p>In the CMake build system, flags are set up in the <code>cmake/buildflags_&lt;platform&gt;.cmake</code> files. To override flags, the
-<code>set_special_flags</code> function has been defined, which override flags for a particular build optimisation.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>set_special_flags(OPT FAST FILES &lt;source_file&gt;.f90 FLAGS -O2)
+<p><img alt="Step View with logs" src="../../img/CI/ErrorLogsExpanded.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Clicking the step name will take you to a different page with a full-page
+display of the output of that step.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tabs collapse when another is selected.</p>
+</div>
+<h4 id="reports">Reports</h4>
+<p>During a Jenkins run, several "reports" may be created and made available in the
+side-bar of a pipeline that generates them.</p>
+<h5 id="linting-and-compiler-warnings">Linting and Compiler Warnings</h5>
+<p>Following a build, Jenkins will collect the compiler warnings issued during a
+build along with, if a linting phase is run, the resulting linter issues into a
+report accessible through the side-bar.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The warning collection will take the set of warnings from the first build using
+any of the following compilers:</p>
+<ul>
+<li>gfortran</li>
+<li>ifort</li>
+<li>nag</li>
+</ul>
+<p>This means that if the first item for each compiler in <code>builds_to_run</code> (see
+<a href="#manual-parametrised-runs">manual parametrised runs</a>) is not an <code>opt=debug</code>
+build, you may miss most warnings.</p>
+</div>
+<p><img alt="Warnings Report" src="../../img/CI/WarningReportAnnotated.jpg" /></p>
+<p>The reports allow the types of issues to be selected and filtered:</p>
+<ul>
+<li>
+<p>They can be grouped and sorted by clicking the appropriate buttons above the
+  main table and table entries.</p>
+</li>
+<li>
+<p>The doughnut of severity is actually a clickable filter to filter to
+  warnings of that level!</p>
+</li>
+<li>
+<p>The <code>+</code> icon to the left of the issue in "Issues" "group by" mode allows you to expand the
+  issue to get more detail.</p>
+</li>
+<li>
+<p>Selecting the file from the "File" column displays annotated source, however,
+  see the issue below.</p>
+</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Known issue</p>
+<p>Due to the relatively large sizes of CASTEP source files, while selecting the
+<code>file:line</code> link will take you to an annotated copy of the source at the point
+of the issue in question, the rendering engine tends to bog down machines
+causing browsers to struggle or fail to load the annotated file.</p>
+</div>
+<h5 id="test-coverage-report">Test Coverage Report</h5>
+<p>Whenever a <code>coverage</code> build is run (i.e. with either the <code>ifort</code> or <code>gfortran</code>
+compiler and <code>opt=coverage</code>), Jenkins will accumulate the coverage reports and
+make them accessible in the side-bar.</p>
+<p><img alt="Interactive report" src="../../img/CI/CoverageReport.jpg" /></p>
+<div class="admonition failure">
+<p class="admonition-title">Known issue</p>
+<p>Due to current security settings on ANVIL the <code>ifort</code> reports are not
+viewable through this view and must be downloaded to be viewed.</p>
+</div>
+<h5 id="ford-api-documentation">FORD API Documentation</h5>
+<p>As part of the full build of the <code>default</code> branch following a merge, Jenkins
+will trigger a <a href="https://forddocs.readthedocs.io/en/latest/">FORD</a> API
+documentation build.</p>
+<p>The results of this build are accessible from the side-bar of the
+<code>CASTEP &gt; All &gt; Default_branch &gt; docs-trigger</code> pipeline.</p>
+<h4 id="build-artefacts">Build Artefacts</h4>
+<p>During a Jenkins run, various files will be preserved, making them available to
+download.</p>
+<p>Currently the artefacts that are preserved are:</p>
+<ul>
+<li>Linting reports</li>
+<li>Failed test data</li>
+<li>Coverage reports</li>
+<li>FORD Documentation</li>
+</ul>
+<p>Some artefacts are available for download at the top of the pipeline menu above
+the previous runs.</p>
+<p>For interactive reports (coverage and FORD), when opened the download button is
+available in the top-right.</p>
+<h2 id="jenkins-pipelines">Jenkins Pipelines</h2>
+<p>The tests run in the course of CI are controlled through the <code>Jenkinsfile</code> in
+the root CASTEP folder.</p>
+<h3 id="default-builds-run">Default builds run</h3>
+<p>In general, the default set of configurations are run on <code>rocky8</code> using:</p>
+<ul>
+<li>Intel 23</li>
+<li>Ifx 24</li>
+<li>GCC 13</li>
+<li>GCC 9</li>
+<li>NAG 7.1</li>
+<li>NVFortran 23.7</li>
+</ul>
+<p>with different combinations of <code>arch</code>, <code>comms</code> and external libraries attempting
+to cover a broad scope of possible use-cases.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All <code>default</code> or manual builds will also run a test of the correctness and
+completeness of the source distribution GNU make and CMake <code>dist</code> targets.</p>
+</div>
+<details class="note">
+<summary>Default build keys</summary>
+<p>At time of writing, the default <a href="#build-keys">build keys</a> are:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rocky8;linux_x86_64_ifort;debug;mpi#intel23
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>rocky8;linux_x86_64_gfortran;debug;mpi#gcc9
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>rocky8;linux_x86_64_nag;debug;serial
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>rocky8;linux_x86_64_gfortran10;coverage;mpi#gcc13-libxc
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rocky8;linux_x86_64_ifort;coverage;serial#intel23-nocmake
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>rocky8;linux_x86_64_ifort;fast;serial#intel23-nocmake
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rocky8;linux_x86_64_gfortran;fast;mpi#gcc9-nocmake
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>rocky8;linux_x86_64_gfortran10;fast;mpi#gcc13-nocmake
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>rocky8;linux_x86_64_gfortran10;fast;serial#gcc13-nocmake
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>rocky8;linux_x86_64_nvfortran;fast;mpi#nogrimmed4
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>rocky8;linux_x86_64_ifx;fast;mpi#ifx24-nocmake
 </code></pre></div>
+However, these are subject to change.</p>
+</details>
+<h3 id="pr-builds-run">PR Builds run</h3>
+<p>When a PR is opened, BitBucket triggers a small subset of the Jenkins
+tests.</p>
+<p>These builds only run the <code>quick</code> subset of the tests.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a PR only affects parts of CASTEP which are not tested, such as documentation
+or separate tools, it should have <code>[skiptest]</code> or <code>[skipanvil]</code> in the PR title.</p>
+<p>If a PR is not yet ready for testing, it should have <code>[wip]</code> or <code>[draft]</code> in the PR title.</p>
+<p>These will prevent the PR from triggering the Jenkins build saving resources.</p>
+</div>
+<details class="note">
+<summary>Default PR builds</summary>
+<p>These builds are (at the time of writing):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rocky8;linux_x86_64_nag;intermediate;serial#nocmake
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>rocky8;linux_x86_64_gfortran10;fast;mpi#gcc13-fftw-nocmake
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>rocky8;linux_x86_64_ifort;intermediate;serial#intel23-nocmake
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>rocky8;linux_x86_64_nvfortran;fast;serial#nogrimmed4-nognumake
+</code></pre></div>
+<p>However, these are subject to change.</p>
+</details>
+<h3 id="manual-parametrised-runs">Manual Parametrised Runs</h3>
+<p>If you wish to start a run with a particular subset of configurations or tests,
+it is possible to start a parametrised run manually.</p>
+<p>From the Jenkins interface select the pipeline to run the build on (see
+<a href="#personal-pipeline">Personal Pipelines</a>) and select <code>Build with
+Parameters</code>. This allows one to manually specify the components to use.</p>
+<details class="note">
+<summary>Parameters</summary>
+<p>The parameters are as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;">Meaning</th>
+<th style="text-align: center;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>repo_method</code></td>
+<td style="text-align: center;">Define method to retrieve repo. <br><strong>Should not need to be changed.</strong></td>
+<td style="text-align: center;"><code>https</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>repo_host</code></td>
+<td style="text-align: center;">URL to repository if externally hosted. <br><strong>Should not need to be changed.</strong></td>
+<td style="text-align: center;"><code>bitbucket.org</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>repo_path</code></td>
+<td style="text-align: center;">URL Path to workspace and repository. <a href="#urlnote"><sup>1</sup></a></td>
+<td style="text-align: center;"><code>castep/castep</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>branch</code></td>
+<td style="text-align: center;">Branch to build and test. <a href="#branchnote"><sup>2</sup></a></td>
+<td style="text-align: center;"><code>default</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>builds_to_run</code>&nbsp;&nbsp;&nbsp;</td>
+<td style="text-align: center;">Builds to run as list of <a href="#build-keys">build keys</a>.</td>
+<td style="text-align: center;">see: <a href="#default-builds-run">Default builds list</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>tests_to_run</code></td>
+<td style="text-align: center;">List of tests to run.</td>
+<td style="text-align: center;">all except <code>quick</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>baseURL</code></td>
+<td style="text-align: center;">Slack URL to post mesasge to. <br><strong>N.B.</strong> Set to empty string to not send message.</td>
+<td style="text-align: center;"><code>https://corecastepdevelopers.slack.com/services/hooks/</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lint</code></td>
+<td style="text-align: center;">Run or skip linting stage.</td>
+<td style="text-align: center;"><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<!-- Could make these notes, sidenotes, full footnotes or fake footnotes like this -->
+<p><sup>1</sup><a name="urlnote"></a>
+The command run as part of the checkout will be roughly equivalent to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span><span class="si">${</span><span class="nv">repo_method</span><span class="si">}</span>://<span class="si">${</span><span class="nv">repo_host</span><span class="si">}</span>/<span class="si">${</span><span class="nv">repo_path</span><span class="si">}</span><span class="w"> </span>--single-branch<span class="w"> </span>--branch<span class="w"> </span><span class="si">${</span><span class="nv">branch</span><span class="si">}</span>
+</code></pre></div>
+<p><sup>2</sup> <a name="branchnote"></a>Jenkins will automatically push the run's status to the <code>HEAD</code> commit of the
+branch being tested at the time of the run.</p>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pushes to the branch while a test is running may result in Jenkins picking up
+the latest changes and running partial tests on the new <code>HEAD</code></p>
+</div>
+<h4 id="build-keys">Build keys</h4>
+<p>The Jenkins tests are able to be run on a variety of different system
+configurations. In order to select a particular configuration, it is necessary
+to specify the key which identifies the configuration.</p>
+<p>The format of these keys is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>agent;arch;opt;comms#comment
+</code></pre></div>
+<p>Where <code>agent</code> is one of:</p>
+<ul>
+<li><code>rocky8</code> -- Rocky Linux 8</li>
+<li><code>rocky8-gpu</code> -- Rocky Linux 8 with GPU support</li>
+<li><code>rocky9</code> -- Rocky Linux 9</li>
+<li><code>icdpacewin</code> -- Windows</li>
+</ul>
+<p>and <code>arch</code>, <code>opt</code> and <code>comms</code> correspond to the CASTEP build system variables
+<code>ARCH</code>, <code>OPT</code> and <code>COMMS</code>. <code>comment</code> is used to distinguish otherwise similar
+variants and uniquely identify a particular configuration as well as apply
+modifications to the build (see <a href="#comment-tags">comment tags</a>).</p>
+<p>It should be noted, however, that only certain combinations of variables are
+available on certain agents. For a full set of available combinations it is
+necessary to look into the <code>Jenkinsfile</code> itself as this list is frequently
+updated and changed.</p>
+<h4 id="comment-tags">Comment Tags</h4>
+<p>The comment section of the build key allows changes to the configuration outside
+of the usual build flags.</p>
+<p>These are added in the following way (adding <code>nocmake</code>):</p>
+<dl>
+<dt>If the base build does not have a comment</dt>
+<dd><code>rocky8;linux_x86_64_nag;debug;serial#nocmake</code></dd>
+<dt>If it does</dt>
+<dd><code>rocky8;linux_x86_64_ifort;debug;mpi#intel23-nocmake</code></dd>
+<dt>Multiple comment tags are joined with <code>-</code></dt>
+<dd><code>rocky8;linux_x86_64_ifort;debug;mpi#intel23-nocmake-nognumake</code></dd>
+</dl>
+<details class="note">
+<summary>Comment tags</summary>
+<p>Currently the available tags are:</p>
+<!-- Weird nbsp is to force Tag to not line-wrap-->
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tag</th>
+<th style="text-align: center;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>targetHost</code></td>
+<td style="text-align: center;">Compiles optimised CASTEP targetting the VM architecture</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>targetPortable</code>&nbsp;&nbsp;</td>
+<td style="text-align: center;">Compiles portable CASTEP</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>libxc</code></td>
+<td style="text-align: center;">Links CASTEP against LibXC</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>nogrimmed3</code></td>
+<td style="text-align: center;">Does not compile (or test) D3 SEDC</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>nogrimmed4</code></td>
+<td style="text-align: center;">Does not compile (or test) D4 SEDC</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>nodlmg</code></td>
+<td style="text-align: center;">Does not compile (or test) DLMG libraries</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>debug</code></td>
+<td style="text-align: center;">Enable verbose build stages</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>nocmake</code></td>
+<td style="text-align: center;">Disable the CMake build phase and test</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>nognumake</code></td>
+<td style="text-align: center;">Disable the GNU Make build phase and test, run specified test suite on CMake build (if not disabled)</td>
+</tr>
+</tbody>
+</table>
+<p><!-- | Make added           | Cmake added                    -->
+<!-- |:--------------------:|:-----------------------------: -->
+<!-- | <code>TARGETCPU=host</code>     | <code>-DPORTABLE=OFF</code>               -->
+<!-- | <code>TARGETCPU=portable</code> | <code>-DPORTABLE=ON</code>                -->
+<!-- | <code>LIBXC=compile</code>      | <code>-DWITH_LIBXC=ON</code>              -->
+<!-- | <code>GRIMMED3=none</code>      | <code>-DWITH_GRIMMED3=OFF</code>          -->
+<!-- | <code>GRIMMED4=none</code>      | <code>-DWITH_GRIMMED4=OFF</code>          -->
+<!-- | <code>DL_MG=none</code>         | <code>-DWITH_DLMG=OFF</code>              -->
+<!-- | <code>VERBOSE=1</code>          | <code>-DCMAKE_VERBOSE_MAKEFILE=ON</code>  -->
+<!-- | -                    | <code>NO_CMAKE</code>                     -->
+<!-- | <code>NO_GNUMAKE</code>         | -                              --></p>
+</details>
+<h2 id="bitbucket-pipelines">BitBucket pipelines</h2>
+<p>In addition to the main Jenkins tests, there is also a subset of short, fast
+tests which are run on BitBucket every commit to ascertain functionality
+quickly.</p>
+<p>The BitBucket pipelines are managed through the <code>bitbucket-pipelines.yml</code> in the
+root CASTEP folder.</p>
+<p>They currently run:</p>
+<ul>
+<li><code>lint</code> -- Run the <a href="https://pypi.org/project/castep-linter/">castep-linter</a> on
+  the source.</li>
+<li><code>build-castep</code> -- A <code>debug</code> build of CASTEP with included LibXC</li>
+<li><code>build-castep-python</code> -- <code>debug</code> build of CASTEP's Python bindings</li>
+<li><code>test-castep</code> -- Run of CASTEP's <code>quick</code> test suite.</li>
+<li><code>test-python</code> -- Run of CASTEP's <code>python</code> test suite.</li>
+</ul>
+<p>All of these are performed on a single image of a Linux system compiled with
+<code>gfortran</code> and static <code>LAPACK</code> and <code>BLAS</code> libraries. They are not to be
+considered comprehensive.</p>
+<h2 id="modifying-the-jenkinsfile">Modifying the Jenkinsfile</h2>
+<h3 id="adding-new-configurations">Adding new configurations</h3>
+<p>To add a new combination
+(c.f. <a href="#modifications-to-the-jenkinsfile">Modifications</a>), it is necessary to
+define it in the <code>matrix</code> variable in the <code>Jenkinsfile</code>. This <code>matrix</code> is a
+Groovy <code>Map</code> object which translates a particular configuration to a <code>Map</code> of
+extra parameters needed to perform the build.</p>
+<p>i.e.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="s2">&quot;agent;arch#comment&quot;</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;modules&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="s2">&quot;fft&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="o">,</span><span class="w"> </span><span class="o">...],</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="o">...</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">]</span>
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All parameters are optional. To specify an empty <code>Map</code> (no parameters) use:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">[:]</span>
+</code></pre></div></p>
+</div>
+<p>The list build parameters is outlined in the <code>get_buildconfig_from_map</code> function.</p>
+<details class="note">
+<summary>Build Parameters</summary>
+<p>Currently the build parameters are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>modules</code></td>
+<td style="text-align: center;">Modules to load on Linux agents<a href="#modulenote"><sup>1</sup></a></td>
+<td style="text-align: center;"><code>""</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>fft</code></td>
+<td style="text-align: center;">Passed as the CASTEP build system variable <code>FFT</code></td>
+<td style="text-align: center;"><code>"generic"</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>math_libs</code></td>
+<td style="text-align: center;">Passed as the CASTEP build system variable <code>MATHLIBS</code></td>
+<td style="text-align: center;"><code>"generic"</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>fft_lib_dir</code></td>
+<td style="text-align: center;">Passed as the CASTEP build system variable <code>FFTLIBDIR</code></td>
+<td style="text-align: center;"><code>""</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>math_lib_dir</code></td>
+<td style="text-align: center;">Passed as the CASTEP build system variable <code>MATHLIBDIR</code></td>
+<td style="text-align: center;"><code>""</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>extra_args</code></td>
+<td style="text-align: center;">Extra command-line arguments passed literally to the GNU make build system.</td>
+<td style="text-align: center;"><code>""</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>cmake_extra_args</code>&nbsp;&nbsp;&nbsp;</td>
+<td style="text-align: center;">Extra command-line arguments passed literally to the CMake build system.</td>
+<td style="text-align: center;"><code>""</code></td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup><a name="modulenote"></a>
+The list of available modules can be found on the ANVIL system under <code>Examples</code>
+-&gt; <code>List of available software</code>.</p>
+</details>
+<h3 id="adding-new-comment-tags">Adding new comment tags</h3>
+<p>Comment tags are managed in the <code>get_buildconfig_from_map</code> routine. They are
+processed out of the matrix key, so they can be applied to any particular build
+configuration.</p>
+<p>A closure within the routine (<code>process_buildconfig_arg</code>) handles this process,
+its signature is:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">process_buildconfig_arg</span><span class="o">(</span><span class="n">String</span><span class="w"> </span><span class="n">comment_key</span><span class="o">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">make_arg</span><span class="o">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">cmake_arg</span><span class="o">)</span>
+</code></pre></div>
+Where:</p>
+<dl>
+<dt><code>comment_key</code></dt>
+<dd>Comment tag to process</dd>
+<dt><code>make_arg</code></dt>
+<dd>Extra CLI args to pass to GNU Make build</dd>
+<dt><code>cmake_arg</code></dt>
+<dd>Extra CLI args to pass to CMake build</dd>
+</dl>
+<p>This routine checks for the presence of the comment tag, removes it from the
+build lookup key and adds <code>make_arg</code> and <code>cmake_arg</code> to their respective
+argument lists.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In cases where you do not need to add or modify the compilation arguments, it is
+reasonable to put them as empty strings (<code>""</code>).  The comment tags are still
+passed through to <code>config[0]</code> which can be checked for the presence of the key.</p>
+</div>
+<h3 id="submitting-modifications-to-the-jenkinsfile">Submitting modifications to the Jenkinsfile</h3>
+<p>For any PR with a modification to the Jenkinsfile to be accepted it must be
+provided with the following:</p>
+<ul>
+<li>Detailed description of the reasons for the change as well as the changes themselves</li>
+<li>A <a href="#personal-pipeline">custom pipeline</a> run demonstrating the use of the
+  modified pipeline with all expected use-cases, which may include:<ul>
+<li>Each agent in common usage (Currently <code>rocky8</code>, <code>icdpacewin</code>, <code>rocky8-gpu</code>)</li>
+<li>A significant selection of the build configurations in common usage</li>
+<li>Including at least one WITH a comment, and one without</li>
+<li>Combinations of common tags</li>
+<li>All tests (including <code>quick</code> which is not default)</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to develop and test a custom <code>Jenkinsfile</code>, it is necessary to make a request to one
+of the Jenkins admins to reconfigure <a href="#personal-pipeline">your pipeline</a> to point to the relevant
+repository prior to being able to run the custom <code>Jenkinsfile</code>.</p>
+</div>
 
               
             </article>
@@ -2554,7 +3159,7 @@ discouraged unless absolutely necessary.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../adding_pair_pots/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adding empirical potentials" rel="prev">
+        <a href="../adding_testing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Testing" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2563,20 +3168,20 @@ discouraged unless absolutely necessary.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Adding empirical potentials
+              Testing
             </div>
           </div>
         </a>
       
       
         
-        <a href="../style_guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Style Guide" rel="next">
+        <a href="../git_workflow/" class="md-footer__link md-footer__link--next" aria-label="Next: Git workflow" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Style Guide
+              Git workflow
             </div>
           </div>
           <div class="md-footer__button md-icon">
