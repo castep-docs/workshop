@@ -1294,14 +1294,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_15" type="checkbox" id="__nav_2_15" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_15" type="checkbox" id="__nav_2_15" >
       
       
       
@@ -1324,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cell_file/" class="md-nav__link">
+      <a href="../../Input_Files/cell_file/" class="md-nav__link">
         cell file
       </a>
     </li>
@@ -1338,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../param_file/" class="md-nav__link">
+      <a href="../../Input_Files/param_file/" class="md-nav__link">
         param file
       </a>
     </li>
@@ -1352,13 +1350,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../cell_keywords/" class="md-nav__link">
+      <a href="../../Input_Files/cell_keywords/" class="md-nav__link">
         cell keywords
       </a>
     </li>
   
 
             
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" type="checkbox" id="__nav_2_16" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_16">
+          Output Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Output Files" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          Output Files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -1424,8 +1457,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phonon" class="md-nav__link">
-    Phonon
+  <a href="#phonon-and-efield" class="md-nav__link">
+    Phonon and Efield
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electron-phonon-coupling" class="md-nav__link">
+    Electron-Phonon coupling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elastic-constants" class="md-nav__link">
+    Elastic Constants
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tddft" class="md-nav__link">
+    TDDFT
   </a>
   
 </li>
@@ -1469,18 +1523,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_16" type="checkbox" id="__nav_2_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" type="checkbox" id="__nav_2_17" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_16">
+        <label class="md-nav__link" for="__nav_2_17">
           Other Codes and Tools
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Other Codes and Tools" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_16">
+        <label class="md-nav__title" for="__nav_2_17">
           <span class="md-nav__icon md-icon"></span>
           Other Codes and Tools
         </label>
@@ -1516,18 +1570,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_17" type="checkbox" id="__nav_2_17" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_18" type="checkbox" id="__nav_2_18" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_17">
+        <label class="md-nav__link" for="__nav_2_18">
           Troubleshooting
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_17">
+        <label class="md-nav__title" for="__nav_2_18">
           <span class="md-nav__icon md-icon"></span>
           Troubleshooting
         </label>
@@ -2224,8 +2278,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phonon" class="md-nav__link">
-    Phonon
+  <a href="#phonon-and-efield" class="md-nav__link">
+    Phonon and Efield
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electron-phonon-coupling" class="md-nav__link">
+    Electron-Phonon coupling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elastic-constants" class="md-nav__link">
+    Elastic Constants
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tddft" class="md-nav__link">
+    TDDFT
   </a>
   
 </li>
@@ -2261,7 +2336,7 @@
   <h1>output files</h1>
 
 <p>CASTEP writes output data in a variety of files. Some of these will be in human readable ASCII format (i.e. plaintext) and 
-can be read with commands such as <code>less</code> or <code>more</code> on linux, or with a simple text editor (textedit, notepad etc). Other files will be in binary format and are designed to be read or processed with an external program.</p>
+can be read with commands such as <code>less</code> or <code>more</code> on linux, or with a simple text editor (textedit, notepad etc). Other files will be in binary format and are designed to be read or processed with an external program.  See  <a href="/documentation/Tools/tools">Tools</a> for software and libraries to read and analyse them.</p>
 <h2 id="groundstate">Groundstate</h2>
 <ul>
 <li>
@@ -2274,15 +2349,19 @@ ASCII. Bibtex file containing citations to the methods CASTEP has used in the ca
 </li>
 <li>
 <p><code>.check</code>
-Binary. This checkpoint file contains the results of the calculation including the groundstate charge density and wavefunctions. It is typically a very large file. Will be read by CASTEP when performing a continuation calculation. Also read by postprocessing software such as c2x.</p>
+Binary. This checkpoint file contains the results of the calculation including the groundstate charge density and wavefunctions. It is typically a very large file. Will be read by CASTEP when performing a continuation calculation. Also read by postprocessing software such as c2x or euphonic.</p>
 </li>
 <li>
 <p><code>.check_bak</code>
 Binary. backup of the checkpoint file.</p>
 </li>
 <li>
+<p><code>.castep_bin</code>
+Binary. This file is identical to <code>.check</code> except that does not contain the wavefunctions. Therefore it is usually much smaller than the <code>.check</code> file, making it suitable for archiving a calculation. It may also be processed by euphonic, c2x or other software which can read checkpoint file.</p>
+</li>
+<li>
 <p><code>.cst_esp</code>
-Binary. Electrostatic potential.</p>
+Binary. The local part of the Kohn-Sham potential (Vloc + Hartree + XC)</p>
 </li>
 <li>
 <p><code>.usp</code>
@@ -2291,6 +2370,18 @@ ASCII. Pseudoptential data, written for each species. See the page on <a href="/
 <li>
 <p><code>.uspso</code>
 ASCII. Pseudoptential data, written for each species. This is the J-dependant version of the <code>.usp</code>. See the page on <a href="/documentation/Pseudopotentials/reading_headers">reading usp headers</a></p>
+</li>
+<li>
+<p><code>.beta</code>
+Xmgrace (.agr) format. Beta projectors for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string</p>
+</li>
+<li>
+<p><code>.pwave</code>
+Xmgrace (.agr) format. Pseudo-wavefunctions for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string</p>
+</li>
+<li>
+<p><code>.econv</code>
+Xmgrace (.agr) format. Isolated atom energy cutoff convergence for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string</p>
 </li>
 <li>
 <p><code>.bands</code>
@@ -2302,7 +2393,7 @@ ASCII. Charge density. Only written if <code>write_formatted_density : T</code>.
 </li>
 <li>
 <p><code>.pot_fmt</code>
-ASCII. Groundstate potential. Only written if <code>write_formatted_potential : T</code>.</p>
+ASCII. Groundstate local potential  (Vloc + Hartree + XC) (See <code>.cst_esp</code>). Only written if <code>write_formatted_potential : T</code>.</p>
 </li>
 <li>
 <p><code>.chdiff</code>
@@ -2314,18 +2405,32 @@ ASCII. same data as <code>.chdiff</code> in human readable format. Only written 
 </li>
 <li>
 <p><code>.xrd_sf</code>
-ASCII. X-ray structure factors. See the <a href="documentation/XRD/overview">documentation page</a></p>
+ASCII. X-ray structure factors. See the <a href="/documentation/XRD/overview">documentation page</a></p>
+</li>
+<li>
+<p><code>.elf</code>
+Binary. Result of ELF calculation.</p>
+</li>
+<li>
+<p><code>.elf_fmt</code>
+ASCII.  Result of ELF calculation.Only written if <code>write_formatted_elf : T</code>.</p>
 </li>
 </ul>
 <h2 id="geometry-optimisation">Geometry Optimisation</h2>
 <ul>
 <li><code>*.geom</code>
-ASCII. State of the system (coordinates, unit cell etc) at each step of the geometry optimisation. See for specification. Can be used to animate the geometry optimisation - can be read with Jmol.</li>
+ASCII. State of the system (coordinates, unit cell etc) at each step of the geometry optimisation. See for specification. Can be used to animate the geometry optimisation and can be read directly by Jmol.</li>
 </ul>
 <h2 id="molecular-dynamics">Molecular Dynamics</h2>
 <ul>
-<li><code>*.md</code>
-ASCII. State of the system (coordinates, unit cell etc) at each step of the molecular dynamics simulation. Same format as the <code>.geom</code> file.  See for specification. Can be used to animate the geometry optimisation - can be</li>
+<li>
+<p><code>*.md</code>
+ASCII. State of the system (coordinates, unit cell etc) at each step of the molecular dynamics simulation. Same format as the <code>.geom</code> file.  See for specification. Can be used to animate the trajectory, and can be read directly by Jmol.</p>
+</li>
+<li>
+<p><code>*.hug</code>
+ASCII. Hugoniot data for hugoniostat MD.</p>
+</li>
 </ul>
 <h2 id="spectral">Spectral</h2>
 <ul>
@@ -2350,10 +2455,41 @@ Binary. Matrix elements used for plotting the core-loss spectrum. Used by Optado
 Binary. Kohn-Sham states at each kpoints. Used by <code>orbital2bands</code> to make a reorganised <code>.bands</code> file for a cleaner looking bandstructure.</p>
 </li>
 </ul>
-<h2 id="phonon">Phonon</h2>
+<h2 id="phonon-and-efield">Phonon and Efield</h2>
 <ul>
-<li><code>.phonon</code>
-ASCII. Phonon eigenvalues and eigenvectors.</li>
+<li>
+<p><code>.phonon</code>
+ASCII. Phonon eigenvalues and eigenvectors.</p>
+</li>
+<li>
+<p><code>.phonon_dos</code>
+ASCII. Phonon branch gradients and density-of-states when param keyword <code>phonon_calculate_dos</code> is true.</p>
+</li>
+<li>
+<p><code>.efield</code>
+ASCII. Mode oscillator strengths and frequency-dependent permittivity tensor in the ir band.</p>
+</li>
+</ul>
+<h2 id="electron-phonon-coupling">Electron-Phonon coupling</h2>
+<ul>
+<li>
+<p><code>.epme</code>
+ASCII. Electron-phonon matrix elements</p>
+</li>
+<li>
+<p><code>.epme_bin</code>
+Binary. Electron-phonon matrix elements</p>
+</li>
+</ul>
+<h2 id="elastic-constants">Elastic Constants</h2>
+<ul>
+<li><code>.elastic</code>
+ASCII. Elastic constants, compliance matrix, Frozen ion constants, Internal Strain and Piezoelectric tensors</li>
+</ul>
+<h2 id="tddft">TDDFT</h2>
+<ul>
+<li><code>.tddft</code>
+ASCII. TDDFT state band projection analysis and TDDFT excitation energies.</li>
 </ul>
 <h2 id="magres">Magres</h2>
 <ul>
@@ -2384,7 +2520,7 @@ ASCII. See the specification in the <a href="/documentation/Transition_State_Sea
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../cell_keywords/" class="md-footer__link md-footer__link--prev" aria-label="Previous: cell keywords" rel="prev">
+        <a href="../../Input_Files/cell_keywords/" class="md-footer__link md-footer__link--prev" aria-label="Previous: cell keywords" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
