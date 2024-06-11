@@ -730,7 +730,7 @@
   
     <li class="md-nav__item">
       <a href="../../documentation/Transition_State_Search/neb/" class="md-nav__link">
-        Nudged elastic band
+        Nudged Elastic Band
       </a>
     </li>
   
@@ -1321,7 +1321,7 @@
   
     <li class="md-nav__item">
       <a href="../../documentation/Input_Files/cell_file/" class="md-nav__link">
-        cell file
+        cell File
       </a>
     </li>
   
@@ -1335,7 +1335,7 @@
   
     <li class="md-nav__item">
       <a href="../../documentation/Input_Files/param_file/" class="md-nav__link">
-        param file
+        param File
       </a>
     </li>
   
@@ -1349,7 +1349,7 @@
   
     <li class="md-nav__item">
       <a href="../../documentation/Input_Files/cell_keywords/" class="md-nav__link">
-        cell keywords
+        Cell Keywords
       </a>
     </li>
   
@@ -1396,7 +1396,7 @@
   
     <li class="md-nav__item">
       <a href="../../documentation/Output_Files/output_files/" class="md-nav__link">
-        output files
+        Output Files
       </a>
     </li>
   
@@ -2674,8 +2674,8 @@ those without are just divisions used here</p>
 <dl>
 <dt><code>CMakeLists.txt</code></dt>
 <dd>
-<p>CMake source file to build test suite in CMake (see: build_system
-and <a href="#adding-tests-to-be-run">Adding tests to be run</a>)</p>
+<p>CMake source file to build test suite in the <a href="../build-system/#cmake">CMake build system</a>
+(see: <a href="#adding-tests-to-be-run">Adding tests to be run</a>)</p>
 </dd>
 <dt><code>jobconfig</code></dt>
 <dd>
@@ -2777,16 +2777,14 @@ case that is the <code>&lt;root&gt;/Test</code></p>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="na">...</span>
 </code></pre></div>
 <h4 id="adding-to-cmake">Adding to CMake</h4>
-<p>To add the tests to be compatible with the CMake build system (see: <a href="developer/build-system.md">build
-system</a>) you need to modify the <code>CMakeLists.txt</code> at
+<p>To add the tests to be compatible with the <a href="../build-system/#cmake">CMake build system</a> you need to modify the <code>CMakeLists.txt</code> at
 <code>Test/CMakeLists.txt</code> and add the category to the list on line 157, which looks like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">foreach</span><span class="w"> </span><span class="p">(</span><span class="s">CASTEP_TEST_CATEGORY</span><span class="w"> </span><span class="s2">&quot;spe&quot;</span><span class="w"> </span><span class="s2">&quot;bs&quot;</span><span class="w"> </span><span class="s2">&quot;phonon&quot;</span><span class="w"> </span><span class="s">...</span><span class="p">)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nb">ADD_CATEGORY_TARGETS</span><span class="p">(</span><span class="o">${</span><span class="nv">CASTEP_TEST_CATEGORY</span><span class="o">}</span><span class="w"> </span><span class="s">TRUE</span><span class="p">)</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">endforeach</span><span class="p">()</span>
 </code></pre></div>
 <h4 id="adding-to-make">Adding to Make</h4>
-<p>To add the tests properly to the Make build system (see: <a href="developer/build-system.md">build
-system</a>) you need to modify the <code>Makefile</code> at
+<p>To add the tests properly to the <a href="../build-system/#gnu-make">GNU make build system</a>) you need to modify the <code>Makefile</code> at
 <code>Test/Makefile</code> and add the category in several places.</p>
 <p>Add it to the list of <code>.PHONY</code> :
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">check</span> <span class="n">check</span>-<span class="n">simple</span> <span class="n">check</span>-<span class="n">spe</span>-<span class="n">simple</span> ...

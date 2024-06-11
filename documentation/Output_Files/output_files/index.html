@@ -13,7 +13,7 @@
     
     
       
-        <title>output files - CASTEP Docs</title>
+        <title>Output Files - CASTEP Docs</title>
       
     
     
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              output files
+              Output Files
             
           </span>
         </div>
@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../../Transition_State_Search/neb/" class="md-nav__link">
-        Nudged elastic band
+        Nudged Elastic Band
       </a>
     </li>
   
@@ -1323,7 +1323,7 @@
   
     <li class="md-nav__item">
       <a href="../../Input_Files/cell_file/" class="md-nav__link">
-        cell file
+        cell File
       </a>
     </li>
   
@@ -1337,7 +1337,7 @@
   
     <li class="md-nav__item">
       <a href="../../Input_Files/param_file/" class="md-nav__link">
-        param file
+        param File
       </a>
     </li>
   
@@ -1351,7 +1351,7 @@
   
     <li class="md-nav__item">
       <a href="../../Input_Files/cell_keywords/" class="md-nav__link">
-        cell keywords
+        Cell Keywords
       </a>
     </li>
   
@@ -1407,12 +1407,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          output files
+          Output Files
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        output files
+        Output Files
       </a>
       
         
@@ -2333,10 +2333,10 @@
                 
 
 
-  <h1>output files</h1>
+  <h1>Output Files</h1>
 
-<p>CASTEP writes output data in a variety of files. Some of these will be in human readable ASCII format (i.e. plaintext) and 
-can be read with commands such as <code>less</code> or <code>more</code> on linux, or with a simple text editor (textedit, notepad etc). Other files will be in binary format and are designed to be read or processed with an external program.  See  <a href="/documentation/Tools/tools">Tools</a> for software and libraries to read and analyse them.</p>
+<p>CASTEP writes output data in a variety of files. Some of these will be in human readable ASCII format (i.e. plaintext) and
+can be read with commands such as <code>less</code> or <code>more</code> on linux, or with a simple text editor (textedit, notepad etc). Other files will be in binary format and are designed to be read or processed with an external program.  See  <a href="../../Tools/tools/">Tools</a> for software and libraries to read and analyse them.</p>
 <h2 id="groundstate">Groundstate</h2>
 <ul>
 <li>
@@ -2361,27 +2361,27 @@ Binary. This file is identical to <code>.check</code> except that does not conta
 </li>
 <li>
 <p><code>.cst_esp</code>
-Binary. The local part of the Kohn-Sham potential (Vloc + Hartree + XC)</p>
+Binary. The local part of the Kohn-Sham potential (Vloc + Hartree + XC).</p>
 </li>
 <li>
 <p><code>.usp</code>
-ASCII. Pseudoptential data, written for each species. See the page on <a href="/documentation/Pseudopotentials/reading_headers">reading usp headers</a></p>
+ASCII. Pseudoptential data, written for each species. See the page on <a href="../../Pseudopotentials/reading_headers/">reading usp headers</a>.</p>
 </li>
 <li>
 <p><code>.uspso</code>
-ASCII. Pseudoptential data, written for each species. This is the J-dependant version of the <code>.usp</code>. See the page on <a href="/documentation/Pseudopotentials/reading_headers">reading usp headers</a></p>
+ASCII. Pseudoptential data, written for each species. This is the J-dependant version of the <code>.usp</code>. See the page on <a href="../../Pseudopotentials/reading_headers/">reading usp headers</a>.</p>
 </li>
 <li>
 <p><code>.beta</code>
-Xmgrace (.agr) format. Beta projectors for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string</p>
+Xmgrace (.agr) format. Beta projectors for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string.</p>
 </li>
 <li>
 <p><code>.pwave</code>
-Xmgrace (.agr) format. Pseudo-wavefunctions for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string</p>
+Xmgrace (.agr) format. Pseudo-wavefunctions for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string.</p>
 </li>
 <li>
 <p><code>.econv</code>
-Xmgrace (.agr) format. Isolated atom energy cutoff convergence for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string</p>
+Xmgrace (.agr) format. Isolated atom energy cutoff convergence for each generated pseudopotential. Only written if a test configuration <code>[]</code> is present in the OTF string.</p>
 </li>
 <li>
 <p><code>.bands</code>
@@ -2405,7 +2405,7 @@ ASCII. same data as <code>.chdiff</code> in human readable format. Only written 
 </li>
 <li>
 <p><code>.xrd_sf</code>
-ASCII. X-ray structure factors. See the <a href="/documentation/XRD/overview">documentation page</a></p>
+ASCII. X-ray structure factors. See the <a href="../../XRD/overview/">documentation page</a>.</p>
 </li>
 <li>
 <p><code>.elf</code>
@@ -2474,11 +2474,11 @@ ASCII. Mode oscillator strengths and frequency-dependent permittivity tensor in 
 <ul>
 <li>
 <p><code>.epme</code>
-ASCII. Electron-phonon matrix elements</p>
+ASCII. Electron-phonon matrix elements.</p>
 </li>
 <li>
 <p><code>.epme_bin</code>
-Binary. Electron-phonon matrix elements</p>
+Binary. Electron-phonon matrix elements.</p>
 </li>
 </ul>
 <h2 id="elastic-constants">Elastic Constants</h2>
@@ -2499,13 +2499,13 @@ ASCII. Contain the NMR tensors (depending on <code>magres_task</code> shielding,
 </li>
 <li>
 <p><code>_current.dat</code>
-ASCII. Written if <code>MAGRES_WRITE_RESPONSE=True</code>. Used to compute NICS (nucleus independent chemical shifts) see <a href="https://www.ccpnc.ac.uk/docs/nics">https://www.ccpnc.ac.uk/docs/nics</a></p>
+ASCII. Written if <code>MAGRES_WRITE_RESPONSE=True</code>. Used to compute NICS (nucleus independent chemical shifts) see <a href="https://www.ccpnc.ac.uk/docs/nics">https://www.ccpnc.ac.uk/docs/nics</a> .</p>
 </li>
 </ul>
 <h2 id="transition-state-search">Transition state search</h2>
 <ul>
 <li><code>.ts</code>
-ASCII. See the specification in the <a href="/documentation/Transition_State_Search/neb">documentation pages</a></li>
+ASCII. See the specification in the <a href="../../Transition_State_Search/neb/">documentation pages</a>.</li>
 </ul>
 
               
@@ -2520,7 +2520,7 @@ ASCII. See the specification in the <a href="/documentation/Transition_State_Sea
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../Input_Files/cell_keywords/" class="md-footer__link md-footer__link--prev" aria-label="Previous: cell keywords" rel="prev">
+        <a href="../../Input_Files/cell_keywords/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cell Keywords" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2529,7 +2529,7 @@ ASCII. See the specification in the <a href="/documentation/Transition_State_Sea
               <span class="md-footer__direction">
                 Previous
               </span>
-              cell keywords
+              Cell Keywords
             </div>
           </div>
         </a>

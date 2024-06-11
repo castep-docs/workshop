@@ -860,7 +860,7 @@
   
     <li class="md-nav__item">
       <a href="../../Transition_State_Search/neb/" class="md-nav__link">
-        Nudged elastic band
+        Nudged Elastic Band
       </a>
     </li>
   
@@ -1451,7 +1451,7 @@
   
     <li class="md-nav__item">
       <a href="../../Input_Files/cell_file/" class="md-nav__link">
-        cell file
+        cell File
       </a>
     </li>
   
@@ -1465,7 +1465,7 @@
   
     <li class="md-nav__item">
       <a href="../../Input_Files/param_file/" class="md-nav__link">
-        param file
+        param File
       </a>
     </li>
   
@@ -1479,7 +1479,7 @@
   
     <li class="md-nav__item">
       <a href="../../Input_Files/cell_keywords/" class="md-nav__link">
-        cell keywords
+        Cell Keywords
       </a>
     </li>
   
@@ -1526,7 +1526,7 @@
   
     <li class="md-nav__item">
       <a href="../../Output_Files/output_files/" class="md-nav__link">
-        output files
+        Output Files
       </a>
     </li>
   
@@ -2475,7 +2475,7 @@ plus ions obtained from the DFT calculation. Kinetic energy
 is the classical kinetic energy of the ions. Total
 energy refers to the sum of these two energies.</p>
 <p>The enthalpy and the relevant Hamiltonian energy for the ensemble
-as quoted in section <a href="/documents/Molecular_Dynamics/basics.md">ensembles</a> is then printed.</p>
+as quoted in section <a href="../basics/#ensembles">ensembles</a> is then printed.</p>
 <p>The temperature is also output at this point. Note that this
 is the ionic temperature only. If performing a calculation
 with finite temperature electrons (i.e. EDFT) the electron
@@ -2519,8 +2519,8 @@ data produced by a CASTEP calculation. In all cases, data is printed
 in Hartree atomic units. Fortran formating data will be given here for
 all entries in this file for those who wish to import it into their
 own analysis codes.</p>
-<p>The CASTEP default behaviour is to record every single configuration in the .md file. This can therefore grow to quite a 
-large size if doing a long MD run! The only exception to this, is if doing a non-DFT calculation, whereupon a sample of the 
+<p>The CASTEP default behaviour is to record every single configuration in the .md file. This can therefore grow to quite a
+large size if doing a long MD run! The only exception to this, is if doing a non-DFT calculation, whereupon a sample of the
 configurations are written if <code>md_sample_iter</code>&gt;0, otherwise no configurations are written.</p>
 <p>Note that unlike the .castep file, the .md file from a previous
 calculation with the same seedname will be overwritten, unless
@@ -2531,7 +2531,7 @@ length is four lines including blanks. The comments written are
 taken from the cell/parameter files.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a> BEGIN header
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a> This is 8 atom cubic Si cell  
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a> This is 8 atom cubic Si cell
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a> END header
 </code></pre></div>
 <p>This is followed by a blank line. There is a single space at the start
@@ -2641,7 +2641,7 @@ label <code>&lt;-- R</code>.</p>
 <p>A blank line is then printed, and the process repeats with the data from the next
 time-step.</p>
 <h2 id="the-hug-file">The .hug file</h2>
-<p>If you are using the Hugoniostat predictor-corrector method to generate a Hugoniot curve, each different state point 
+<p>If you are using the Hugoniostat predictor-corrector method to generate a Hugoniot curve, each different state point
 generated has a different compression etc. This is summarized in the <code>.hug</code> file as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>  0.990000000000       36.31531287        0.41888602        0.15771481  &lt;-- cTPE
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>  0.943272613764       40.07750465        0.63662992        1.62298398  &lt;-- cTPE
@@ -2649,7 +2649,7 @@ generated has a different compression etc. This is summarized in the <code>.hug<
 </code></pre></div>
 <p>The 4 data fields are:</p>
 <p>c - the ratio of the compressed to original cell vectors</p>
-<p>T - the temperature (in user units) - calculated as a time average of the instantaneous temperature of the configurations 
+<p>T - the temperature (in user units) - calculated as a time average of the instantaneous temperature of the configurations
 at this compression</p>
 <p>P - the pressure (in user units) - calculated as a time average</p>
 <p>E - the energy (in user units) - calculated as a time average</p>

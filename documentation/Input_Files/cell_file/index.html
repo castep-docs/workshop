@@ -13,7 +13,7 @@
     
     
       
-        <title>cell file - CASTEP Docs</title>
+        <title>cell File - CASTEP Docs</title>
       
     
     
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              cell file
+              cell File
             
           </span>
         </div>
@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../../Transition_State_Search/neb/" class="md-nav__link">
-        Nudged elastic band
+        Nudged Elastic Band
       </a>
     </li>
   
@@ -1332,12 +1332,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          cell file
+          cell File
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        cell file
+        cell File
       </a>
       
         
@@ -1425,7 +1425,7 @@
   
     <li class="md-nav__item">
       <a href="../param_file/" class="md-nav__link">
-        param file
+        param File
       </a>
     </li>
   
@@ -1439,7 +1439,7 @@
   
     <li class="md-nav__item">
       <a href="../cell_keywords/" class="md-nav__link">
-        cell keywords
+        Cell Keywords
       </a>
     </li>
   
@@ -1486,7 +1486,7 @@
   
     <li class="md-nav__item">
       <a href="../../Output_Files/output_files/" class="md-nav__link">
-        output files
+        Output Files
       </a>
     </li>
   
@@ -2305,9 +2305,9 @@
                 
 
 
-  <h1>cell file</h1>
+  <h1>cell File</h1>
 
-<p>This is a detailed description of options for CASTEP's cell file. See the <a href="/documentation/Getting_Started/basic_cell_file">basic cell file page</a> for an overview. This page has the most frequently-used cell file options, but for a full set use <a href="/documentation/Getting_Started/built_in_help">CASTEP's built-in help</a>. There is also a <a href="../cell_keywords/">concise table of cell keywords</a>.</p>
+<p>This is a detailed description of options for CASTEP's cell file. See the <a href="../../Getting_Started/basic_cell_file/">basic cell file page</a> for an overview. This page has the most frequently-used cell file options, but for a full set use <a href="../../Getting_Started/built_in_help/">CASTEP's built-in help</a>. There is also a <a href="../cell_keywords/">concise table of cell keywords</a>.</p>
 <p>The cell file is one of CASTEP's two main input files. It contains all of the information about the crystal lattice and the atomic positions, as well as additional information such as Brillouin zone sampling ('k-points'), pseudopotentials, cell symmetry, external pressure, constraints on motion of the atoms or cell, and atomic properties such as the mass of each species.</p>
 <p>The file itself is a free-format keyword-driven text file, consisting of keywords and blocks of information. These may be given in any order, with blocks indicated by the special <code>%block</code> and <code>%endblock</code> markers. Most of the keywords and blocks are optional, but CASTEP <em>requires</em> two block entries: a block to specify the lattice, and another to specify the atomic elements and positions within the cell.</p>
 <p>At the very least, the cell lattice vectors and ionic positions must
@@ -2325,7 +2325,7 @@ and <code>LATTICE_ABC</code> may occur in a cell definition file.</p>
 <p>The definitions of these keywords are as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%BLOCK LATTICE_CART
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[units]
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>a_x  a_y  a_z  
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>a_x  a_y  a_z
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>b_x  b_y  b_z
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>c_x  c_y  c_z
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>%ENDBLOCK LATTICE_CART
@@ -2353,7 +2353,7 @@ to the lattice vectors of the unit cell, or in absolute coordinates.
 Only one of <code>POSITIONS_FRAC</code> and <code>POSITIONS_ABS</code> may occur in a cell definition
 file.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>%BLOCK POSITIONS_FRAC
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>CCC_1  R_{1i}  R_{1j}  R_{1k}  [SPIN=s_1]  
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>CCC_1  R_{1i}  R_{1j}  R_{1k}  [SPIN=s_1]
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>CCC_2  R_{2i}  R_{2j}  R_{2k}  [SPIN=s_2]
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>...
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>%ENDBLOCK END POSITIONS_FRAC
@@ -2370,7 +2370,7 @@ atom for initialisation of the spin density; for non-collinear spin calculations
 present a non-spin polarised state will be assumed.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%BLOCK POSITIONS_ABS
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[units]
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>CCC_1  R_{1i}  R_{1j}  R_{1k}  [SPIN=s_1]  
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>CCC_1  R_{1i}  R_{1j}  R_{1k}  [SPIN=s_1]
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>CCC_2  R_{2i}  R_{2j}  R_{2k}  [SPIN=s_2]
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>...
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>%ENDBLOCK POSITIONS_ABS
@@ -2695,13 +2695,13 @@ appropriate temperature.</p>
       
       
         
-        <a href="../param_file/" class="md-footer__link md-footer__link--next" aria-label="Next: param file" rel="next">
+        <a href="../param_file/" class="md-footer__link md-footer__link--next" aria-label="Next: param File" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              param file
+              param File
             </div>
           </div>
           <div class="md-footer__button md-icon">
