@@ -2308,10 +2308,16 @@
 
 
 <h1 id="population-analysis">Population analysis</h1>
-<p>At the end of a single point calculation, the ground state electron density is obtained. The electrons are distributed such that the total energy functional is minimised, meaning that they do not
-belong to individual atoms anymore. However, it is often useful as well as insightful to partition the total electron density to atomic or bond contributions. While such population analyses have no
-direct connection to experimental observables, they provide a chemical interpretation of possible charge transfer within the system. There are many flavours of charge partitioning, of which CASTEP can
-perform the <a href="https://doi.org/10.1063/1.1740588">Mulliken population analysis</a> (see also <a href="https://doi.org/10.1063/1.1740589">here</a>, <a href="https://doi.org/10.1063/1.1741876">here</a> and <a href="https://doi.org/10.1063/1.1741877">here</a>) and the <a href="https://doi.org/10.1007/BF00549096">Hirshfeld definition</a>.</p>
+<p>At the end of a single point calculation, the ground state electron density is obtained. The
+electrons are distributed such that the total energy functional is minimised, meaning that they do
+not belong to individual atoms anymore. However, it is often useful as well as insightful to
+partition the total electron density to atomic or bond contributions. While such population analyses
+have no direct connection to experimental observables, they provide a chemical interpretation of
+possible charge transfer within the system. There are many flavours of charge partitioning, of which
+CASTEP can perform the Mulliken population analysis<sup id="fnref:ref1"><a class="footnote-ref" href="#fn:ref1">1</a></sup> (see also
+part II<sup id="fnref:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup>, part III<sup id="fnref:ref3"><a class="footnote-ref" href="#fn:ref3">3</a></sup> and
+part IV<sup id="fnref:ref4"><a class="footnote-ref" href="#fn:ref4">4</a></sup>) and the Hirshfeld
+definition<sup id="fnref:ref5"><a class="footnote-ref" href="#fn:ref5">5</a></sup>.</p>
 <h2 id="mulliken-population-analysis">Mulliken population analysis</h2>
 <p>The total number of electrons <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> of a quantum mechanical system can be found by evaluating the sum
 \begin{equation}
@@ -2326,7 +2332,7 @@ The density matrix results from evaluating the density operator using the basis 
 \begin{equation}
 P _ {\mu\nu} = \langle \chi _ \mu | \hat{P} | \chi _ \nu \rangle
 \end{equation}
-where the single-particle density operator is expressed in terms of the single-particle wavefunctions <span class="arithmatex"><span class="MathJax_Preview">\psi _ i</span><script type="math/tex">\psi _ i</script></span> and the corresponding occupancies <span class="arithmatex"><span class="MathJax_Preview">f _ i</span><script type="math/tex">f _ i</script></span> as 
+where the single-particle density operator is expressed in terms of the single-particle wavefunctions <span class="arithmatex"><span class="MathJax_Preview">\psi _ i</span><script type="math/tex">\psi _ i</script></span> and the corresponding occupancies <span class="arithmatex"><span class="MathJax_Preview">f _ i</span><script type="math/tex">f _ i</script></span> as
 \begin{equation}
 \hat{P} = \sum _ i f _ i \; |\psi _ i \rangle \langle \psi _ i |
 \textrm{,}
@@ -2394,7 +2400,7 @@ w _ A(\mathbf{r}) = \frac{\rho^\textrm{isolated} _ A (\mathbf{r})}{\sum _ A \rho
 \textrm{,}
 \end{equation}
 where each <span class="arithmatex"><span class="MathJax_Preview">\rho^\textrm{isolated} _ A</span><script type="math/tex">\rho^\textrm{isolated} _ A</script></span> is centred at the position <span class="arithmatex"><span class="MathJax_Preview">\mathbf{R} _ A</span><script type="math/tex">\mathbf{R} _ A</script></span> of the nucleus of <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>.</p>
-<p>The electronic charge attributed to atom <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is the integral 
+<p>The electronic charge attributed to atom <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is the integral
 \begin{equation}
 N _ A = \int \mathrm{d} \mathbf{r} \rho _ A(\mathbf{r})
 \textrm{,}
@@ -2421,6 +2427,26 @@ to the <code>.param</code> file. This provides a basic analysis of the Hirshfeld
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>IPRINT : 2
 </code></pre></div>
 or higher.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:ref1">
+<p>R. S. Mulliken. Electronic Population Analysis on LCAO–MO Molecular Wave Functions. I. <em>The Journal of Chemical Physics</em>, 23(10):1833&ndash;1840, 10 1955. <a href="https://doi.org/10.1063/1.1740588">doi:10.1063/1.1740588</a>.&#160;<a class="footnote-backref" href="#fnref:ref1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref2">
+<p>R. S. Mulliken. Electronic Population Analysis on LCAO–MO Molecular Wave Functions. II. Overlap Populations, Bond Orders, and Covalent Bond Energies. <em>The Journal of Chemical Physics</em>, 23(10):1841&ndash;1846, 10 1955. <a href="https://doi.org/10.1063/1.1740589">doi:10.1063/1.1740589</a>.&#160;<a class="footnote-backref" href="#fnref:ref2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref3">
+<p>R. S. Mulliken. Electronic Population Analysis on LCAO‐MO Molecular Wave Functions. III. Effects of Hybridization on Overlap and Gross AO Populations. <em>The Journal of Chemical Physics</em>, 23(12):2338&ndash;2342, 12 1955. <a href="https://doi.org/10.1063/1.1741876">doi:10.1063/1.1741876</a>.&#160;<a class="footnote-backref" href="#fnref:ref3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref4">
+<p>R. S. Mulliken. Electronic Population Analysis on LCAO‐MO Molecular Wave Functions. IV. Bonding and Antibonding in LCAO and Valence‐Bond Theories. <em>The Journal of Chemical Physics</em>, 23(12):2343&ndash;2346, 12 1955. <a href="https://doi.org/10.1063/1.1741877">doi:10.1063/1.1741877</a>.&#160;<a class="footnote-backref" href="#fnref:ref4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref5">
+<p>F. L. Hirshfeld. Bonded-atom fragments for describing molecular charge densities. <em>Theoretica chimica acta</em>, 44(2):129&ndash;138, Jun 1977. <a href="https://doi.org/10.1007/BF00549096">doi:10.1007/BF00549096</a>.&#160;<a class="footnote-backref" href="#fnref:ref5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
