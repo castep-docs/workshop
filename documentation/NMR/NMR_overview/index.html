@@ -2267,8 +2267,8 @@
 <p>By a diamagnetic insulator we mean a system with an electronic gap between its highest occupied state and lowest unoccupied state, and all of the electronic spins are paired, simple examples are diamond, quartz, glycine… This class of materials is the most suitable for calculations as the main NMR interactions, magnetic sielding, J-coupling and electric field gradients can all be computed.</p>
 <h3 id="magnetic-shielding">Magnetic Shielding</h3>
 <p>In a diamagnetic insulator this arises from orbital currents induced by an external magnetic field. This current <span class="arithmatex"><span class="MathJax_Preview">{\bf j}({\bf r})</span><script type="math/tex">{\bf j}({\bf r})</script></span>,
- produces a non-uniform induced magnetic field in the material, 
-which is given by the Biot-Savart law as </p>
+ produces a non-uniform induced magnetic field in the material,
+which is given by the Biot-Savart law as</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">{\bf B}_{\rm in}({\bf r})
 =\frac{1}{c}\int d^3r' {\bf j}({\bf r}')\times \frac{{\bf
@@ -2278,18 +2278,18 @@ which is given by the Biot-Savart law as </p>
     r}-{\bf r}'}{|{\bf r}-{\bf r}'|^3}. </script>
 </div>
 <p>The shielding tensor is defined as the ratio between this
-induced field, and the external applied field </p>
+induced field, and the external applied field</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">{\bf B}_{\rm in}({\bf r})=-{\vec{\sigma}}({\bf r}){\bf B}_{\rm
   ext}.</div>
 <script type="math/tex; mode=display">{\bf B}_{\rm in}({\bf r})=-{\vec{\sigma}}({\bf r}){\bf B}_{\rm
   ext}.</script>
 </div>
-<p>It can thus be seen that the question of computing the shielding tensor is that of computing the induced electronic current. </p>
+<p>It can thus be seen that the question of computing the shielding tensor is that of computing the induced electronic current.</p>
 <h3 id="j-coupling">J-coupling</h3>
 <p>The J-coupling is a small
 perturbation to the electronic ground-state of the system and we can
-identify it as a derivative of the total energy E, of the system </p>
+identify it as a derivative of the total energy E, of the system</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">{\bf J}_{\rm KL}= \frac{\hbar\gamma_{\rm K}\gamma_{\rm
     L}}{2\pi}\frac{\partial^2 E}{\partial {\bf m}_{\rm K} \partial
@@ -2314,18 +2314,18 @@ current <span class="arithmatex"><span class="MathJax_Preview">{\bf j}({\bf r})<
 the system. This mechanism is similar to the case of magnetic shielding
 in insulators. The second mechanism arises from the
 interaction of the magnetic moment with the electronic spin, causing an
-electronic  spin polarisation. 
-By working to first order in these quantities we can write the magnetic field 
+electronic  spin polarisation.
+By working to first order in these quantities we can write the magnetic field
 at atom <span class="arithmatex"><span class="MathJax_Preview">{\rm K}</span><script type="math/tex">{\rm K}</script></span> induced by the magnetic moment of atom <span class="arithmatex"><span class="MathJax_Preview">{\rm L}</span><script type="math/tex">{\rm L}</script></span> as</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-{\bf B}^{(1)}_{\rm in}({\bf R}_{{\rm K}})  =  \frac{\mu_{0}}{4\pi}\int 
-{\bf m}^{(1)}({\bf r})\cdot \left[\frac{3{\bf r}_{{\rm K}}{\bf r}_{{\rm K}} - 
+{\bf B}^{(1)}_{\rm in}({\bf R}_{{\rm K}})  =  \frac{\mu_{0}}{4\pi}\int
+{\bf m}^{(1)}({\bf r})\cdot \left[\frac{3{\bf r}_{{\rm K}}{\bf r}_{{\rm K}} -
 |{\bf r}_{{\rm K}}|^{2}}{|{\bf r}_{{\rm K}}|^{5}}\right]\,{\rm
 d}^{3}{\bf r} </div>
 <script type="math/tex; mode=display">
-{\bf B}^{(1)}_{\rm in}({\bf R}_{{\rm K}})  =  \frac{\mu_{0}}{4\pi}\int 
-{\bf m}^{(1)}({\bf r})\cdot \left[\frac{3{\bf r}_{{\rm K}}{\bf r}_{{\rm K}} - 
+{\bf B}^{(1)}_{\rm in}({\bf R}_{{\rm K}})  =  \frac{\mu_{0}}{4\pi}\int
+{\bf m}^{(1)}({\bf r})\cdot \left[\frac{3{\bf r}_{{\rm K}}{\bf r}_{{\rm K}} -
 |{\bf r}_{{\rm K}}|^{2}}{|{\bf r}_{{\rm K}}|^{5}}\right]\,{\rm
 d}^{3}{\bf r} </script>
 </div>
@@ -2342,14 +2342,14 @@ d}^{3}{\bf r} </script>
 \frac{{\bf r}_{{\rm K}}}{|{\bf r}_{{\rm K}}|^{3}}\,{\rm d}^{3}{\bf r}.</script>
 </div>
 <p>Several quantum chemistry packages provide the ability to compute J
-coupling tensors in molecular systems (see Ref <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>} for
-a review of methods). An approach to compute J tensors within the planewave-pseudopotential approach has recently been developed.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></p>
+coupling tensors in molecular systems (see Helgaker <em>et al</em>.<sup id="fnref:ref1"><a class="footnote-ref" href="#fn:ref1">1</a></sup>} for
+a review of methods). An approach to compute J tensors within the planewave-pseudopotential approach has recently been developed<sup id="fnref:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup>.</p>
 <h3 id="efg">EFG</h3>
 <p>For a nucleus with spin <span class="arithmatex"><span class="MathJax_Preview">&gt;</span><script type="math/tex">></script></span>&frac12; the NMR response will
  include an interaction between the quadrupole moment of the nucleus, Q,
  and the electric field gradient (EFG) generated by the surrounding
  electronic structure. The EFG is a second rank, symmetric, traceless tensor <span class="arithmatex"><span class="MathJax_Preview">G({\bf r})</span><script type="math/tex">G({\bf r})</script></span>
- given by </p>
+ given by</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">G_{\alpha\beta}({\bf r}) = \frac{\partial E_{\alpha}({\bf r})}{\partial  r_{\beta}} -
 \frac{1}{3}\delta_{\alpha\beta}\sum_{\gamma}\frac{\partial
@@ -2370,21 +2370,21 @@ The EFG tensor is then equal to
 G_{\alpha\beta}({\bf r}) = \int d^3r \frac{n({\bf r})}{|{\bf r}-{\bf
     r}'|^3}\left[ \delta_{\alpha\beta} -3
   \frac{(r_{\alpha}-r_{\alpha}')(r_{\beta}-r_{\beta}')}{|{\bf r}-{\bf
-      r}'|^2}\right]. 
+      r}'|^2}\right].
 \end{equation}
 The computation of electric field gradient tensors is less demanding than
 either shielding or J-coupling tensors as it
 requires only knowledge of the electronic ground state.
 The LAPW approach in its implementation within the Wien
-series of codes\cite{blaha90} has been widely used and shown to reliably predict
-Electric Field Gradient (EFG) tensors<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">3</a></sup>. The equivalent
-formalism for the planewave/PAW approach is reported in Ref.~\cite{profeta03}.</p>
+series of codes<sup id="fnref:ref3"><a class="footnote-ref" href="#fn:ref3">3</a></sup> has been widely used and shown to reliably predict
+Electric Field Gradient (EFG) tensors<sup id="fnref:ref4"><a class="footnote-ref" href="#fn:ref4">4</a></sup>. The equivalent
+formalism for the planewave/PAW approach is reported in Profeta <em>et al</em>.<sup id="fnref:ref5"><a class="footnote-ref" href="#fn:ref5">5</a></sup>.</p>
 <p>The quadrupolar coupling constant, C<span class="arithmatex"><span class="MathJax_Preview">_Q</span><script type="math/tex">_Q</script></span> and the asymmetry
  parameter, <span class="arithmatex"><span class="MathJax_Preview">\eta_Q</span><script type="math/tex">\eta_Q</script></span> can be obtained from the  the diagonalized electric
- field gradient tensor whose eigenvalues are 
+ field gradient tensor whose eigenvalues are
  labelled V<span class="arithmatex"><span class="MathJax_Preview">_{xx}</span><script type="math/tex">_{xx}</script></span>, V<span class="arithmatex"><span class="MathJax_Preview">_{yy}</span><script type="math/tex">_{yy}</script></span>, V<span class="arithmatex"><span class="MathJax_Preview">_{zz}</span><script type="math/tex">_{zz}</script></span>, such that <span class="arithmatex"><span class="MathJax_Preview">|V_{zz}|&gt;|V_{yy}|&gt;|V_{xx}|</span><script type="math/tex">|V_{zz}|>|V_{yy}|>|V_{xx}|</script></span>:
 \begin{equation}
-C_{Q}=\frac{eV_{zz}Q}{h}, 
+C_{Q}=\frac{eV_{zz}Q}{h},
 \end{equation}
 where h is Planck's constant and
 \begin{equation}
@@ -2393,14 +2393,20 @@ where h is Planck's constant and
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:2">
-<p>Helgaker, T.; Jaszunski, M.; Pecul, M.Progress in Nuclear Magnetic Resonance Spectroscopy2008,53, 249 – 268&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:ref1">
+<p>Trygve Helgaker, Michał Jaszuński, and Magdalena Pecul. The quantum-chemical calculation of nmr indirect spin–spin coupling constants. <em>Progress in Nuclear Magnetic Resonance Spectroscopy</em>, 53(4):249&ndash;268, 2008. <a href="https://doi.org/10.1016/j.pnmrs.2008.02.002">doi:10.1016/j.pnmrs.2008.02.002</a>.&#160;<a class="footnote-backref" href="#fnref:ref1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:3">
-<p>Joyce, S. A.; Yates, J. R.; Pickard, C. J.; Mauri, F.J. Chem. Phys.2007,127, 204107&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:ref2">
+<p>Siân A. Joyce, Jonathan R. Yates, Chris J. Pickard, and Francesco Mauri. A first principles theory of nuclear magnetic resonance J-coupling in solid-state systems. <em>The Journal of Chemical Physics</em>, 127(20):204107, 11 2007. <a href="https://doi.org/10.1063/1.2801984">doi:10.1063/1.2801984</a>.&#160;<a class="footnote-backref" href="#fnref:ref2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:1">
-<p>Blaha, P.; Sorantin, P.; Ambrosch, C.; Schwarz, K.Hyperfine Interact.1989,51, 917&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:ref3">
+<p>P. Blaha, K. Schwarz, P. Sorantin, and S.B. Trickey. Full-potential, linearized augmented plane wave programs for crystalline systems. <em>Computer Physics Communications</em>, 59(2):399&ndash;415, 1990. <a href="https://doi.org/10.1016/0010-4655(90)90187-6">doi:10.1016/0010-4655(90)90187-6</a>.&#160;<a class="footnote-backref" href="#fnref:ref3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref4">
+<p>P. Blaha, P. Sorantin, C. Ambrosch, and K. Schwarz. Calculation of the electric field gradient tensor from energy band structures. <em>Hyperfine Interactions</em>, 51(1):917&ndash;923, Jun 1989. <a href="https://doi.org/10.1007/BF02407802">doi:10.1007/BF02407802</a>.&#160;<a class="footnote-backref" href="#fnref:ref4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref5">
+<p>Mickael Profeta, Francesco Mauri, and Chris J. Pickard. Accurate first principles prediction of 17o nmr parameters in sio2: assignment of the zeolite ferrierite spectrum. <em>Journal of the American Chemical Society</em>, 125(2):541&ndash;548, 2003. PMID: 12517169. <a href="https://doi.org/10.1021/ja027124r">doi:10.1021/ja027124r</a>.&#160;<a class="footnote-backref" href="#fnref:ref5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

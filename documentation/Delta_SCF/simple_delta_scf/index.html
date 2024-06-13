@@ -2226,9 +2226,9 @@ ground state KS-DFT calculation and the <span class="arithmatex"><span class="Ma
 </div>
 <p>We therefore need to perform two calculations, the ground state DFT
 calculation and the DeltaSCF calculation. For a more detailed
-explanation, see J. Chem. Phys. 135, 224303 (2011)</p>
-<p>For this simple <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF calculation, we have to set <code>deltascf_method = simple</code> in the 
-<code>&lt;seed&gt;.param</code> file. The constraint must also be specifed, as discussed in the 
+explanation, see Maurer and Reuter (2011)<sup id="fnref:ref1"><a class="footnote-ref" href="#fn:ref1">1</a></sup>.</p>
+<p>For this simple <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF calculation, we have to set <code>deltascf_method = simple</code> in the
+<code>&lt;seed&gt;.param</code> file. The constraint must also be specifed, as discussed in the
 <a href="../overview/">overview</a> section.</p>
 <p>The only additional relevant <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF keywords is <code>deltascf_smearing</code></p>
 <p>Example <code>.param</code> file:</p>
@@ -2249,10 +2249,18 @@ electronic state 34, spin channel 1 and an occupation of 1.00 electrons
 in the electronic state 35, spin channel 1. The last two numbers in each
 line specify a window of states in which the corresponding state is
 searched if it changes its position between SCF cycles. In that way we
-can ensure that we constrain the correct state. </p>
+can ensure that we constrain the correct state.</p>
 <p><code>deltascf_smearing</code> is a mechanism which relaxes the constraints minimally to facilitate
-convergence. Sometimes, especially in the case of degenerate states, <code>deltascf_smearing</code> is 
+convergence. Sometimes, especially in the case of degenerate states, <code>deltascf_smearing</code> is
 necessary.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:ref1">
+<p>Reinhard J. Maurer and Karsten Reuter. Assessing computationally efficient isomerization dynamics: ΔSCF density-functional theory study of azobenzene molecular switching. <em>The Journal of Chemical Physics</em>, 135(22):224303, 12 2011. <a href="https://doi.org/10.1063/1.3664305">doi:10.1063/1.3664305</a>.&#160;<a class="footnote-backref" href="#fnref:ref1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>

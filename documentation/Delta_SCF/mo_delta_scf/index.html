@@ -2215,15 +2215,15 @@
 
 <h1 id="dftumo-applying-potentials-to-arbitrary-orbitals">DFT+U(MO) - Applying potentials to arbitrary orbitals</h1>
 <h2 id="basics">Basics</h2>
-<p>We can employ the molecular orbital projections we have introduced 
-in the <a href="../lin_ex_delta_scf/">le <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF</a> section to also 
-introduce penalty potentials that shift specific orbitals up or down. This can be used to specify the 
-HOMO-LUMO of an adsorbed molecule or to modify the level alignment with the 
+<p>We can employ the molecular orbital projections we have introduced
+in the <a href="../lin_ex_delta_scf/">le <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF</a> section to also
+introduce penalty potentials that shift specific orbitals up or down. This can be used to specify the
+HOMO-LUMO of an adsorbed molecule or to modify the level alignment with the
 metal substrate. This constraint potential can be combined with population constraints.</p>
-<p>For more details and an example application on Porphine molecules adsorbed at coinage 
-metal surfaces, see J. Chem. Phys. 144, 024701 (2016).</p>
-<p>For a le <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF calculation, we have to set <code>deltascf_method = linear expansion</code> in the 
-<code>&lt;seed&gt;.param</code> file. The constraint must also be specifed, as discussed in the 
+<p>For more details and an example application on Porphine molecules adsorbed at coinage
+metal surfaces, see Müller <em>et al</em>. (2016)<sup id="fnref:ref1"><a class="footnote-ref" href="#fn:ref1">1</a></sup>.</p>
+<p>For a le <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF calculation, we have to set <code>deltascf_method = linear expansion</code> in the
+<code>&lt;seed&gt;.param</code> file. The constraint must also be specifed, as discussed in the
 <a href="../overview/">overview</a> section.</p>
 <p>The only additional relevant <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF keywords is <code>deltascf_dftu_checkpoint</code></p>
 <p>Example <code>.param</code> file:</p>
@@ -2239,20 +2239,31 @@ metal surfaces, see J. Chem. Phys. 144, 024701 (2016).</p>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>35    1.0000  2    0.70         Y
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>%endblock deltascf_constraints
 </code></pre></div>
-In this mode we add a potential to the Hamiltonian for each defined constraint, 
+In this mode we add a potential to the Hamiltonian for each defined constraint,
 which has the following form:</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">V_c = \frac{U}{2} \cdot|\phi_c\rangle\langle\phi_c| </div>
 <script type="math/tex; mode=display">V_c = \frac{U}{2} \cdot|\phi_c\rangle\langle\phi_c| </script>
 </div>
-<p>You can find a detailed description of these potentials in Appendix D of 
-<a href="http://mediatum.ub.tum.de/?id=1190934">First-Principles Description of the Isomerization Dynamics of Surface-Adsorbed Molecular Switches</a>, Doctoral Thesis, Technische Universität München, 2014</p>
-<p>In this example, two +U constraint potentials act on orbital no. 34 of the majority spin channel 
-and orbital no. 35 of the minority spin channel, taken from the 
-<code>deltascf_dftu_checkpoint=&lt;base2&gt;.check</code> file. In addition, the occupation of orbital no. 35 taken 
-from file <code>deltascf_checkpoint=&lt;base&gt;.check</code> file is constrained 
-to the occupation 1.000. Excitation constraints on each state can be activated (or not) by adding 
+<p>You can find a detailed description of these potentials in Appendix D of
+<em>First-Principles Description of the Isomerization Dynamics of Surface-Adsorbed Molecular Switches</em> <sup id="fnref:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup></p>
+<p>In this example, two +U constraint potentials act on orbital no. 34 of the majority spin channel
+and orbital no. 35 of the minority spin channel, taken from the
+<code>deltascf_dftu_checkpoint=&lt;base2&gt;.check</code> file. In addition, the occupation of orbital no. 35 taken
+from file <code>deltascf_checkpoint=&lt;base&gt;.check</code> file is constrained
+to the occupation 1.000. Excitation constraints on each state can be activated (or not) by adding
 the final 'Y' or 'N' to the relevant line.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:ref1">
+<p>Moritz Müller, Katharina Diller, Reinhard J. Maurer, and Karsten Reuter. Interfacial charge rearrangement and intermolecular interactions: Density-functional theory study of free-base porphine adsorbed on Ag(111) and Cu(111). <em>The Journal of Chemical Physics</em>, 144(2):024701, 01 2016. <a href="https://doi.org/10.1063/1.4938259">doi:10.1063/1.4938259</a>.&#160;<a class="footnote-backref" href="#fnref:ref1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref2">
+<p>Reinhard Johann Maurer. <em>First-Principles Description of the Isomerization Dynamics of Surface-Adsorbed Molecular Switches</em>. PhD thesis, Technische Universität München, 2014. URL: <a href="https://mediatum.ub.tum.de/1190934">https://mediatum.ub.tum.de/1190934</a>.&#160;<a class="footnote-backref" href="#fnref:ref2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>

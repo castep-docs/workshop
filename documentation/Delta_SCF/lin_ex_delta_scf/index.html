@@ -2222,9 +2222,9 @@ adsorbate molecular orbitals across a large number of substrate bands. A
 more realistic excitation constraint would be to project on a gasphase
 molecular orbital and subsequently enforce occupation of this state.</p>
 <p>This idea is referred to as linear expansion <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF and has first
-been proposed by Gavnholt <em>et al</em>. Phys. Rev. B 78, 075441 (2008).</p>
-<p>The CASTEP implementation is described in J. Chem. Phys. 139,
-014708 (2013). Herein, we constrain the occupation of a so-called
+been proposed by Gavnholt <em>et al</em><sup id="fnref:ref1"><a class="footnote-ref" href="#fn:ref1">1</a></sup>.</p>
+<p>The CASTEP implementation is described in Maurer and Reuer (2013)<sup id="fnref:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup>.
+Herein, we constrain the occupation of a so-called
 resonance state built from a linear combination of Kohn-Sham states
 instead of a single KS state. We expand an abitrary reference state
 <span class="arithmatex"><span class="MathJax_Preview">|\phi_c\rangle</span><script type="math/tex">|\phi_c\rangle</script></span> in the space of Kohn-Sham states as follows:</p>
@@ -2243,8 +2243,8 @@ contributions from all other states. We can now constrain the occupation
 of this state with the effect of describing an excitation of a specific
 molecular orbital. This is done in every SCF step until the calculation
 is converged.</p>
-<p>For a le <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF calculation, we have to set <code>deltascf_method = linear expansion</code> in the 
-<code>&lt;seed&gt;.param</code> file. The constraint must also be specifed, as discussed in the 
+<p>For a le <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF calculation, we have to set <code>deltascf_method = linear expansion</code> in the
+<code>&lt;seed&gt;.param</code> file. The constraint must also be specifed, as discussed in the
 <a href="../overview/">overview</a> section.</p>
 <p>The only additional relevant <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>SCF keywords is <code>deltascf_overlap_cutoff</code></p>
 <p>Example <code>.param</code> file:</p>
@@ -2264,6 +2264,17 @@ enforce an occupation of 1.00 electrons. In this runmode we do not have
 to pick constraints that yield a net change in charge equal to 0. Charge
 neutrality will be satisfied by modifying the Fermi level accordingly.
 However, this is only strictly sensible for metallic systems.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:ref1">
+<p>Jeppe Gavnholt, Thomas Olsen, Mads Engelund, and Jakob Schiøtz. $\ensuremath \Delta $ self-consistent field method to obtain potential energy surfaces of excited molecules on surfaces. <em>Phys. Rev. B</em>, 78:075441, Aug 2008. <a href="https://doi.org/10.1103/PhysRevB.78.075441">doi:10.1103/PhysRevB.78.075441</a>.&#160;<a class="footnote-backref" href="#fnref:ref1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ref2">
+<p>Reinhard J. Maurer and Karsten Reuter. Excited-state potential-energy surfaces of metal-adsorbed organic molecules from linear expansion Δ-self-consistent field density-functional theory (ΔSCF-DFT). <em>The Journal of Chemical Physics</em>, 139(1):014708, 07 2013. <a href="https://doi.org/10.1063/1.4812398">doi:10.1063/1.4812398</a>.&#160;<a class="footnote-backref" href="#fnref:ref2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>

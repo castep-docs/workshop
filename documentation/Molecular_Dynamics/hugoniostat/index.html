@@ -2752,13 +2752,13 @@
 <h1 id="hugoniostat">Hugoniostat</h1>
 <p>The Hugoniostat is an approach to simulate shock-waves in DFT through a pseudo-ensemble which drives the temperature and
 pressure to the point on the Hugoniot line. Two Hugoniotstat methods are implemented. The constant volume
-Hugoniostat (NVHug) of Maillet <em>et al.</em><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and the constant pressure/stress Hugoniostat of Ravelo
-<em>et al.</em><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+Hugoniostat (NVHug) of Maillet <em>et al.</em><sup id="fnref:ref1"><a class="footnote-ref" href="#fn:ref1">1</a></sup> and the constant pressure/stress Hugoniostat of Ravelo
+<em>et al.</em><sup id="fnref:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup>.</p>
 <p>The NVHug and NPHug algorithms are a form of pseudo-ensemble which means that the do not strictly conserve a formal
 quantity, but drive the system into a desired state.</p>
 <p>The algorithms are implemented as other CASTEP ensembles and use many of the common <a href="../keywords/">MD keywords</a> and can
 function with with any of the standard CASTEP thermostat methods (see <a href="../basics/">basics</a>).</p>
-<p>Details of extended Hugoniostat methods can be found in the PhD thesis<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> where the methods were
+<p>Details of extended Hugoniostat methods can be found in the PhD thesis<sup id="fnref:ref3"><a class="footnote-ref" href="#fn:ref3">3</a></sup> where the methods were
 initially implemented in CASTEP.</p>
 <h2 id="hugoniot-equation-of-state">Hugoniot Equation of State</h2>
 <p>The Hugoniot describes the shocked state of the system</p>
@@ -2940,7 +2940,7 @@ E(t) - E_{H}(t) = E(t) - E(t_{0}) - \tfrac{1}{2}(P(t) + P(t_{0}))(V(t_{0}) - V(t
 <p>where <span class="arithmatex"><span class="MathJax_Preview">\alpha{}</span><script type="math/tex">\alpha{}</script></span> refers to an element in the direction of a cell-vector <span class="arithmatex"><span class="MathJax_Preview">\vec{h}</span><script type="math/tex">\vec{h}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\nu{}_{H}</span><script type="math/tex">\nu{}_{H}</script></span> is the coupling of the
 thermostat to the system, <span class="arithmatex"><span class="MathJax_Preview">\nu{}_{P}{}</span><script type="math/tex">\nu{}_{P}{}</script></span> is the coupling of the barostat piston to the system, <span class="arithmatex"><span class="MathJax_Preview">\sigma{}</span><script type="math/tex">\sigma{}</script></span> is the
 target pressure tensor and <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> is the instantaneous total pressure tensor, <span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> is a scaling constant in units of
-pressure to conserve system size independence, Ravelo <em>et al</em>.<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> suggest the equilibrium bulk modulus (<span class="arithmatex"><span class="MathJax_Preview">B_{0}</span><script type="math/tex">B_{0}</script></span>) .</p>
+pressure to conserve system size independence, Ravelo <em>et al</em>.<sup id="fnref2:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup> suggest the equilibrium bulk modulus (<span class="arithmatex"><span class="MathJax_Preview">B_{0}</span><script type="math/tex">B_{0}</script></span>) .</p>
 <h4 id="example_1">Example</h4>
 <h5 id="param_1"><code>.param</code></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>task             : molecular dynamics
@@ -2975,7 +2975,7 @@ becomes invalid in DFT.</p>
 possible is essential. The accelerated equilibration methods exist to make the process of computing shockwaves faster
 and more robust.</p>
 <h3 id="damping">Damping</h3>
-<p>Ravelo <em>et al</em>.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup> suggested applying damping to the "velocity" of the thermo-/barostats preventing the over-shoot of
+<p>Ravelo <em>et al</em>.<sup id="fnref3:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup> suggested applying damping to the "velocity" of the thermo-/barostats preventing the over-shoot of
 the ideal Hugeoniot values. This makes the thermostat NVHug formulation:</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
@@ -3047,7 +3047,7 @@ equilibration. It should be noted that all three converge to the same temperatur
 <h3 id="steady-compression">Steady compression</h3>
 <p>Steady compression spreads the system compression in NVHug compression over a period of time rather than compressing
 instantaneously to allow the system to equilibrate more steadily and avoid transient temperature and pressure
-spikes. This was also proposed in Ravelo <em>et al</em>.<sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup> as a means of smoothing equilibration.</p>
+spikes. This was also proposed in Ravelo <em>et al</em>.<sup id="fnref4:ref2"><a class="footnote-ref" href="#fn:ref2">2</a></sup> as a means of smoothing equilibration.</p>
 <p>k-points and wavefunction samples are determined from the compressed cell so that the NVHug can be more efficient for
 the majority of the run.</p>
 <p><code>compression_t</code> and <code>compression_rate</code> are two different ways of specifying the same thing either as <code>%/fs</code> or
@@ -3300,14 +3300,14 @@ fundamental assumptions of DFT may break down and cause the system to fail.</p>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:1">
-<p>J.-B. Maillet, M. Mareschal, L. Soulard, R. Ravelo, P. S. Lomdahl, T. C. Germann, and B. L. Holian. Uniaxial hugoniostat: A method for atomistic simulations of shocked materials. <em>Phys. Rev. E</em>, 63:016121, Dec 2000.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:ref1">
+<p>J.-B. Maillet, M. Mareschal, L. Soulard, R. Ravelo, P. S. Lomdahl, T. C. Germann, and B. L. Holian. Uniaxial hugoniostat: a method for atomistic simulations of shocked materials. <em>Phys. Rev. E</em>, 63:016121, Dec 2000. <a href="https://doi.org/10.1103/PhysRevE.63.016121">doi:10.1103/PhysRevE.63.016121</a>.&#160;<a class="footnote-backref" href="#fnref:ref1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
-<p>R. Ravelo, B. L. Holian, T. C. Germann, and P. S. Lomdahl. Constant-stress hugoniostat method for following the dynamical evolution of shocked matter. <em>Phys. Rev. B</em>, 70:014103, 2004.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:ref2">
+<p>R. Ravelo, B. L. Holian, T. C. Germann, and P. S. Lomdahl. Constant-stress hugoniostat method for following the dynamical evolution of shocked matter. <em>Phys. Rev. B</em>, 70:014103, Jul 2004. <a href="https://doi.org/10.1103/PhysRevB.70.014103">doi:10.1103/PhysRevB.70.014103</a>.&#160;<a class="footnote-backref" href="#fnref:ref2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ref2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:ref2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:ref2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:3">
-<p>J.S. Wilkins. Exploration of approaches to shock-wave simulations. PhD thesis, University of York, York, 2019.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:ref3">
+<p>Jacob Wilkins. <em>Exploration of approaches to shock-wave simulations</em>. PhD thesis, University of York, July 2019. URL: <a href="https://etheses.whiterose.ac.uk/24444/">https://etheses.whiterose.ac.uk/24444/</a>.&#160;<a class="footnote-backref" href="#fnref:ref3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
