@@ -2244,7 +2244,7 @@
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>fix_occupancy   = true
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>opt_strategy    = speed
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>task            = magres
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>cut_off_energy  = 300 eV
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>cutoff_energy   = 300 eV
 </code></pre></div></p>
 <p>Look at the <a href="../../../documentation/Input_Files/cell_file/">cell</a> and <a href="../../../documentation/Input_Files/param_file/">param</a> files. Note that the only special part of the <code>ethanol.param</code> file is</p>
 <p><code>task = magres</code></p>
@@ -2300,9 +2300,9 @@ This can be done by uploading the cell file to VESTA or MagresView and clicking 
 <p>It is important to check if the results are converged. Running a convergence test plot ranging the
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cut_off_energy = 200 eV
 </code></pre></div>
-from 20 to 50 gives the plot</p>
+from 200 to 1600eV gives the plot</p>
 <p><img alt="Ethanol convergence plot" src="../../img/ethanol_convergence.png" width="75%" /></p>
-<p>Hence a cut off energy of 600 Ry should indeed be appropriate - it's still relatively fast and should be fairly well-converged.</p>
+<p>Here a cut off energy of 600 eV is reasonable - it's still relatively fast and should be fairly well-converged. 800eV is better converged. The cut off is quite high due to the presence of oxygen.</p>
 <p>Next we will look at the converged isotropic hydrogen shieldings. We will compare them to experiment. The three methyl (CH<sub>3</sub>) protons undergo fast exchange; they "rotate" faster than the nuclear magnetic moment processes. The magnetic moment will therefore "see" an average chemical shielding. The same is true of the CH<sub>2</sub> protons.</p>
 <p>Then we can average the CH<sub>3</sub> and CH<sub>2</sub> chemical shieldings. For example, the shieldings of the CH<sub>2</sub> hydrogens (atoms 4 and 5) are found in the <code>ethanol.castep</code> file (shown above) to be 26.83ppm and 27.24ppm: the average CH<sub>2</sub> shielding is 27.04ppm. CH<sub>3</sub>, meanwhile, has an average of 29.83ppm. Lastly, the single OH hydrogen has a value of 31.93ppm. We now have 3 unique chemical shieldings (though in your case the values will likely slightly differ)</p>
 <p><a name="equation"></a>
