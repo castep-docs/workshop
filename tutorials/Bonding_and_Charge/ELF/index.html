@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hf" class="md-skip">
+        <a href="#nacl" class="md-skip">
           Skip to content
         </a>
       
@@ -1758,6 +1758,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#nacl" class="md-nav__link">
+    NaCl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#covalent-bonding-si" class="md-nav__link">
+    Covalent bonding - Si
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hf" class="md-nav__link">
     HF
   </a>
@@ -2503,6 +2517,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#nacl" class="md-nav__link">
+    NaCl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#covalent-bonding-si" class="md-nav__link">
+    Covalent bonding - Si
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hf" class="md-nav__link">
     HF
   </a>
@@ -2532,106 +2560,154 @@
 
   <h1>ELF</h1>
 
-<p><a href="../../../documentation/Groundstate/ELF/">ELF</a> (Electron Localization Function) is another way to measure electron density. In this tutorial, we will use it to roughly demonstrate lone pairs/hydrogen bonding in HF, H<sub>2</sub>O and NH<sub>3</sub>.</p>
-<h2 id="hf">HF</h2>
-<p>For HF we will use the <code>cell</code> file:</p>
-<p><em>HF.cell</em>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%block lattice_abc
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>6 6 6
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>90 90 90
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>%endblock lattice_abc
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>%block positions_abs
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>H 3 3 3
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>F 3.92 3 3
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>%endblock positions_abs
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>kpoints_mp_grid 4 4 4
+<p><a href="../../../documentation/Groundstate/ELF/">ELF</a> (Electron Localization Function) measures how "local" electrons are - the higher the value, the more likely electrons are to make opposite-spin pairs and generally be more "fixed" in place. We will use it to examine ionic and covalent bonding, and then use it to examine lone pairs (and hydrogen bonding) in HF, H<sub>2</sub>O and NH<sub>3</sub> molecules.</p>
+<p>A lot of the steps on examining the data are the same as in <a href="../charge_density/">Plotting Charge Density</a> - if you prefer, you may use that (and its accompanying <a href="https://www.youtube.com/watch?v=_c2Hk4jxmm4&amp;feature=youtu.be">video tutorial</a>), though the cells and planes used are slightly different. For visualising the results, this tutorial will use <a href="https://jp-minerals.org/vesta/en/">Vesta</a>, but feel free to use another software if you prefer. </p>
+<h2 id="nacl">NaCl</h2>
+<p>We will start by looking at how electrons in an NaCl crystal behave - to illustrate what ELF exactly does and doesn't do, we will compare it to the results of a standard population analysis.</p>
+<p>For both calculations we will use the <code>cell</code> file</p>
+<p><em>NaCl.cell</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%block lattice_cart
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>5.693 0.000 0.000
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>0.000 5.693 0.000
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>0.000 0.000 5.693
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>%endblock lattice_cart
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>%block positions_frac
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Na 0.0 0.0 0.0
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Na 0.0 0.5 0.5
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Na 0.5 0.0 0.5
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Na 0.5 0.5 0.0
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Cl 0.5 0.5 0.5
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Cl 0.5 0.0 0.0
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Cl 0.0 0.5 0.0
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Cl 0.0 0.0 0.5
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>%endblock positions_frac
 </code></pre></div>
-and <code>param</code> file:</p>
-<p><em>HF.param</em>
+and the <code>param</code> file</p>
+<p><em>NaCl.param</em>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>xc_functional : LDA
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cutoff_energy : 500 eV
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>spin_polarised : false
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>CALCULATE_ELF : TRUE
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>WRITE_FORMATTED_ELF : TRUE
-</code></pre></div></p>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>WRITE_FORMATTED_DENSITY : TRUE
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>CALCULATE_ELF : TRUE
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>WRITE_FORMATTED_ELF : TRUE
+</code></pre></div>
+Running castep will yield 2 files of interest: <code>NaCl.elf_fmt</code> and <code>NaCl.den_fmt</code>.</p>
+<p>We will want to compare the 2 outputs, so:</p>
+<ol>
+<li>Make 2 copies of the <code>cell</code> file by copying <code>NaCl.cell</code> to <code>NaCl_elf.cell</code> and <code>NaCl_den.cell</code>. 2. Copy <code>NaCl.elf_fmt</code> to <code>NaCl_elf.charg_frm</code></li>
+<li>Copy <code>NaCl.den_fmt</code> to <code>NaCl_den.charg_frm</code>.</li>
+<li>In both <code>.charg_frm</code> files remove the header.
+Following this, they should look like:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1     1     1            0.000000
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2     1     1            0.000000
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>3     1     1            0.000000
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>4     1     1            0.000000
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>5     1     1            0.000000
+</code></pre></div>
+<p>Now we will be able to visualise the results.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For this tutorial we will simply assume that everything here is converged and stick to the LDA functional</p>
+<p>If you wish to move the files around, make sure that the <code>.charg_frm</code> file is located in the same directory as its respective <code>cell</code> file - for example, <code>NaCl_elf.charg_frm</code> should be with <code>NaCl_elf.cell</code>.</p>
 </div>
-<p>When you run castep on HF you will get an output file <code>HF.elf_fmt</code>. The top should look a little like</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>BEGIN header
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>          Real Lattice(A)               Lattice parameters(A)    Cell Angles
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  6.0000000   0.0000000   0.0000000     a =    6.000000  alpha =   90.000000
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  0.0000000   6.0000000   0.0000000     b =    6.000000  beta  =   90.000000
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  0.0000000   0.0000000   6.0000000     c =    6.000000  gamma =   90.000000
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  1                            ! nspins
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a> 32    32    32                ! fine FFT grid along &lt;a,b,c&gt;
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>END header: data is &quot;&lt;a b c&gt; chi&quot;
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    1     1     1            0.000000
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    2     1     1            0.000000
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    3     1     1            0.000000
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    4     1     1            0.000000
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    5     1     1            0.000000
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>...
+<p>We will first look at the density output. Open it in Vesta, and, at the top-bar, go to <code>Utilities -&gt; 2D Data Display</code>.</p>
+<p>It should open a window which looks like:</p>
+<p><img _=")" alt="Data display window" src="../data_display_window.png" width="50%" /></p>
+<p>There, click <code>Slice</code> - this will open another window</p>
+<p><img alt="Slice window" src="../slice_window.png" width="40%" /></p>
+<p>You should keep the <code>hkl</code> (lattice Miller indices) as <code>001</code>, but make a 2x2 supercell and change <code>x(min)</code>, <code>y(min)</code> and <code>z(min)</code> to <code>-1</code>.</p>
+<p>Click <code>Ok</code> and you should get an output which looks like:</p>
+<p><img alt="Supercell of NaCl density" src="../NaCl_den_2x2.png" width="50%" /></p>
+<p>This is what we'd expect of a the charge density in an ionic crystal: a regular pattern where a region with a low relative electron density (the cation) is adjacent to one with a high electron density (the anion).</p>
+<p>Now let's follow the exact same procedure, except this time with <code>NaCl_elf</code> for the ELF result. This is the outcome:</p>
+<p><img alt="Supercell of NaCl ELF" src="../NaCl_elf_2x2.png" width="50%" /></p>
+<p>This is rather interesting: though the electron density around the Na<sup>+</sup> cation is very low, the electrons are much more localised around it - the opposite is true for Cl<sup>-</sup> : the ELF is high where density is low and vice versa. While both, in the simplest model, have full outer shells and thus should both be highly localised (in fact they are both localised, Na<sup>+</sup> just moreso), Cl<sup>-</sup> simply has larger orbitals and has a full valence shell (rather than core), leading to lower localisation. This helps illustrate the key difference between ELF and population analysis: ELF is purely a measure of how localised the electrons are in space, and doesn't always correspond to a higher density.</p>
+<h2 id="covalent-bonding-si">Covalent bonding - Si</h2>
+<p>We will now use ELF to demonstrate covalent bonding in diamond-silicon. We will use the <code>cell</code> file</p>
+<p><em>Si.cell</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%block lattice_abc
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>3.8 3.8 3.8
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>60 60 60
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>%endblock lattice_abc
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>%block positions_frac
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Si 0.00 0.00 0.00
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Si 0.25 0.25 0.25
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>%endblock positions_frac
 </code></pre></div>
-<p>First, we rename (or copy + rename) it to <code>HF.charg_frm</code>, changing the file type. Then we delete the top lines (the header) so that the file starts with</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1     1     1            0.000000
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2     1     1            0.000000
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>3     1     1            0.000000
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>4     1     1            0.000000
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>5     1     1            0.000000
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>...
-</code></pre></div>
-<p>Next we will visualise this data using Vesta. There is more detail on how that is done in an <a href="../charge_density/">earlier tutorial</a>, including a <a href="https://www.youtube.com/watch?v=_c2Hk4jxmm4">YouTube walkthrough</a>. We simply download both the original <code>cell</code> file and newly created <code>charg_frm</code> file (if you wish to move the files around, make sure they're in the same directory), and open the <code>charg_frm</code> file on vesta.</p>
-<p>What you should immediately see is something like this :</p>
-<p><img alt="HF initial vesta output" src="../HF_init.png" /></p>
-<p>You'll be able to see it more properly by rotating it around yourself, but the yellow represents the electron cloud, and there are 2 atoms in the middle (naturally the small one is hydrogen and large one is fluorine) which are surrounded by said cloud.</p>
-<p>We can already see evidence of lone pairs/hydrogen bonding : the 'circles' of yellow outside the big cloud even visually resemble lone pairs, while chunks going even further away could potentially hint at them trying to form hydrogen bonds with adjacent cells.</p>
-<p>We can visualise this better by clicking <code>Utilities -&gt; 2D Data Display</code> in Vesta. That'll open up a new window - in it, click <code>Slice...</code> and select the miller indices to be 001. Apply that and you should get an image like this :</p>
-<p><img alt="ELF electron distribution" src="../HF_slice.png" width="30%" /></p>
-<p>This gives us an interesting picture: the small regions of high electron density look even more like what we'd expect of lone pairs. The nitrogen has 3 around it (as expected), yet the hydrogen also has 1 - this is not what we'd expect. However, considering that this will be interacting with adjacent cells, this is a good indication that it has formed a hydrogen bond.</p>
-<h2 id="water-and-ammonia">Water and ammonia</h2>
-<p>The procedure for H<sub>2</sub>O and NH<sub>3</sub> is almost identical. We use exactly the same <code>param</code> file as above, and perform the same procedures following the <code>elf_fmt</code> output. The <code>cell</code> files we use are:</p>
-<p><em>H2O.cell</em>
+<p>Run castep with an identical <code>param</code> file (you may remove <code>WRITE_FORMATTED_DENSITY : TRUE</code> if not you're not interested in the charge density). Follow the exact same procedure as above (though again you can ignore anything to do with the charge density). After opening it in Vesta, rather than taking a slice, click <code>Edit -&gt; Lattice planes</code>, which will open the window below:</p>
+<p><img alt="Lattice planes window" src="../lattice_planes_window.png" width="30%" /></p>
+<ol>
+<li>Click <code>New</code> and use the <code>100</code> plane as before.</li>
+<li>Then click <code>Ok</code>.</li>
+<li>Create a supercell.</li>
+<li>This time click <code>Boundary...</code> on the left side of the main window.</li>
+<li>Make a 2x2 supercell as before.</li>
+<li>Rotate the cell around until you see what's happening.</li>
+</ol>
+<p>You should see something like:</p>
+<p><img alt="100 lattice ELF Si" src="../Si_ELF.png" width="40%" /></p>
+<p>You can uncheck <code>Show models</code> to see it better without the atoms</p>
+<p><img alt="100 lattice ELF Si no atoms" src="../Si_ELF2.png" width="40%" /></p>
+<p>This tells us a rather interesting story - the atoms are highly localised along the covalent Si-Si bonds, but relatively delocalised near the atoms themselves. They are especially delocalised in regions where is no bonding or atoms.</p>
+<p>If you wish to also examine and compare the charge density, this is covered in <a href="../charge_density/">another tutorial</a></p>
+<h2 id="hf">HF</h2>
+<p>Now that we have a good understand of what ELF actually does, let's use it for a more interesting purpose: to demonstrate lone pairs and hydrogen bonding. Lone pairs are by their nature highly localised, pairing up with each other and being held largely in place by strong repulsions to any negative charges (including other lone pairs) and strong attractions to positive ones (such as adjacent dipoles - this leads to hydrogen bonding)</p>
+<p>For HF we will use the <code>cell</code> file:</p>
+<p><em>HF.cell</em>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>%block lattice_abc
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>5 5 5
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>6 6 6
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>90 90 90
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>%endblock lattice_abc
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>%block positions_abs
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>O 2.5 2.5 2.5
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>H 2.5 1.95 3.29
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>H 2.5 1.95 1.72
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>%endblock positions_abs
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>H 3 3 3
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>F 3.92 3 3
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>%endblock positions_abs
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>kpoints_mp_grid 4 4 4
+</code></pre></div>
+and again the same <code>param</code> file. Following the exact same steps as with NaCl, slicing the (010) plane (with the distance from the origin, set in the same slice window, set as 0.5d - 0.5 * the size of the side lengths) we get an output looking like:</p>
+<p><img alt="ELF electron distribution" src="../HF_slice.png" width="30%" /></p>
+<p>This gives us an interesting picture: the small regions of high electron locality look like what we'd expect of lone pairs. The fluorine has 3 around it (as expected), yet the hydrogen also has 1. Considering that this will be interacting with adjacent cells, which is inevitable given that this is calculated with periodic boundaries, this is a good indication that it has formed a hydrogen bond.</p>
+<h2 id="water-and-ammonia">Water and ammonia</h2>
+<p>The procedure for H<sub>2</sub>O and NH<sub>3</sub> is almost identical. We use exactly the same <code>param</code> file as above, and perform the same procedures following the <code>elf_fmt</code> output. The <code>cell</code> files we use are:</p>
+<p><em>H2O.cell</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>%block lattice_abc
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>5 5 5
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>90 90 90
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>%endblock lattice_abc
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>%block positions_abs
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>O 2.5 2.5 2.5
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>H 2.5 1.95 3.29
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>H 2.5 1.95 1.72
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>%endblock positions_abs
 </code></pre></div></p>
 <p>for water and</p>
 <p><em>NH3.cell</em>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>%BLOCK LATTICE_ABC
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>8 8 8
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>90 90 90
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>%ENDBLOCK LATTICE_ABC
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>%BLOCK POSITIONS_ABS
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>N 4 4 4
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>H 4 4 5
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>H 4.95 4 3.67
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>H 3.53 3.18 3.67
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>%ENDBLOCK POSITIONS_ABS
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>%BLOCK LATTICE_ABC
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>8 8 8
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>90 90 90
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>%ENDBLOCK LATTICE_ABC
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>%BLOCK POSITIONS_ABS
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>N 4 4 4
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>H 4 4 5
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>H 4.95 4 3.67
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>H 3.53 3.18 3.67
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>%ENDBLOCK POSITIONS_ABS
 </code></pre></div></p>
 <p>For ammonia.</p>
-<p>From then, we again go to <code>2D display data</code> and <code>Slice...</code>. This is where the procedure might be a bit different: by shift clicking on all the atoms in H<sub>2</sub>O (and the atoms within the plane you wish to look at in NH<sub>3</sub>) and clicking <code>Calculate the best plane for the selected atoms</code> it'll give us the plane that we may be most interested in. In the case of water it is a simple (100), but for NH<sub>3</sub> you may wish to play around with it by selecting different combinations - alternatively manually choose a plane in which you are interested</p>
+<p>From then, we again go to <code>2D display data</code> and <code>Slice...</code>. This is where the procedure might be a bit different: by shift clicking on all the atoms in H<sub>2</sub>O (and the atoms within the plane you wish to look at in NH<sub>3</sub>) and clicking <code>Calculate the best plane for the selected atoms</code> it'll give us the plane that we may be most interested in. In the case of water it is a simple (100), but for NH<sub>3</sub> you may wish to play around with it by selecting different combinations - alternatively manually choose a plane in which you are interested.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In VESTA, plane selection may work a bit differently from how you'd expect. In this example, since you're cutting through the middle you'd normally call it a (200) plane. However, here it is considered a (100) plane 2.5<span class="arithmatex"><span class="MathJax_Preview">\mathring{\text{A}}</span><script type="math/tex">\mathring{\text{A}}</script></span> (or 0.5d - since the unit cell lengths are 5<span class="arithmatex"><span class="MathJax_Preview">\mathring{\text{A}}</span><script type="math/tex">\mathring{\text{A}}</script></span>) from the origin</p>
 </div>
 <p>The result for water in the (100) plane should look like:</p>
 <p><img alt="Water ELF" src="../H2O_100.png" width="30%" /></p>
-<p>An alternative way of getting a similar result is by clicking <code>Edit -&gt; Lattice Planes</code>, after which you can click <code>New</code> to either manually add whatever lattice planes you wish to examine, or again <code>Calculate the best plane for the selected atoms</code> after selecting the atoms by shift-clicking 3 of them. This provides the advantage of seeing precisely which plane you're looking at, as well as having the option of seeing where the atoms are in the electrical distribution. By following this procedure for H<sub>2</sub>O we get this:</p>
+<p>Alternatively, to better see which bonds/atoms are corresponding to the regions of high/low electron locality, use the <code>Lattice planes</code> method so you can see the cell along with the ELF map. You can again <code>Calculate the best plane for the selected atoms</code> like we did for ammonia with slicing. Feel free to also select different planes and look at how it looks in them.</p>
 <p><img alt="Water lattice image" src="../H2O_lattice_img.png" width="30%" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2639,7 +2715,11 @@ and <code>param</code> file:</p>
 </div>
 <p>Lastly, let's take a quick look at the NH<sub>3</sub> result. Selecting the best plane containing 2 hydrogens and a nitrogen should give a result looking like:</p>
 <p><img alt="NH3 result" src="../NH3_slice.png" width="30%" /></p>
-<p>Like in the previous examples, you should be able to see evidence of lone pairs/hydrogen bonding - it is important to note, however, this may not be the case for all planes. Even when selecting 2 hydrogens and a nitrogen, even picking 2 different hydrogens may yield different results.</p>
+<p>Here we see evidence of lone pairs on both of the hydrogens in the plane (as both can form hydrogen bonds - and so can the third if you look at that one). This is rather unexpected - in the classical view, NH<sub>3</sub> has a nitrogen with 1 lone pair that simply forms a single hydrogen bond with a hydrogen in an adjacent NH<sub>3</sub>. However, because every hydrogen is capable of forming a hydrogen bond, ELF registers them as having regions of high locality near them. The same applies to nitrogen - though it should classically only have 1 pair near it, it is seen as having 2 as it is capable of making 2 hydrogen bonds in that plane.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The results will likely look different depending on which 2 hydrogens you pick along with the nitrogen. This can be mostly explained due to how adjacent ammonia molecules are aligned relative to it, which is defined by the cell.</p>
+</div>
 
               
             </article>
