@@ -2663,7 +2663,7 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>xc_functional: LDA
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>opt_strategy: speed
 </code></pre></div></p>
-<p>Note that there should be a larger number of spectral k-points than the standard ones, and, to test if it is converged, you'd have to look at the whole spectrum (rather than examining a single value/result as in some other convergence tests). It is also important that you do not have <code>SYMMETRY_GENERATE</code> on for coreloss calculations.</p>
+<p>Note that a larger number of spectral k-point than standard one is usually required, and, to test if it is converged, you'd have to look at the whole spectrum (rather than examining a single value/result as in some other convergence tests). It is also important that you do not have <code>SYMMETRY_GENERATE</code> on for coreloss calculations.</p>
 <p>After running Castep, run Optados with the Optados input file</p>
 <p><em>cbn.odi</em>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>TASK               : core
@@ -2676,7 +2676,7 @@
 </code></pre></div></p>
 <p>The line <code>TASK : core</code> is what determines that a core-loss calculation will be performed. <code>CORE_GEOM : polycrystalline</code> could also be replaced by <code>core_geom : polarized</code>, in which case you'd also have to add a line specifying the direction - for example,</p>
 <p><code>CORE_QDIR : 1 1 1</code></p>
-<p>would simulate the results of an electron (or X-ray) beam going through a single crystal in the (1 1 1) direction. In this tutorial, we will be looking at the polycrystalline case, where it effectively uses the average of all directions.</p>
+<p>would simulate the results of an electron (or X-ray) beam going through a single crystal in the [1 1 1] direction. In this tutorial, we will be looking at the polycrystalline case, where it effectively uses the average of all directions.</p>
 <p>Running Optados should generate 2 files of interest: <code>cbn_B1K1_core_edge.dat</code> and <code>cbn_N1K1_core_edge.dat</code> - these are the results of the core-loss calculations. We will focus on the first <code>dat</code> file - let's look at the boron part specifically. The file starts off like</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>-15.720790912312673        0.0000000000000000     
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-15.710790160394351        0.0000000000000000     
@@ -2690,7 +2690,7 @@
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>LAI_LORENTZIAN_SCALE : 0.1
 </code></pre></div>
 <p>added to the <code>odi</code> file. Gaussian broadening is to simulate the instrument used, and is the same for the whole spectrum, while Lorentzian is to simulate the lifetime effects of the experiment, and is energy-dependent.</p>
-<p>A Gaussian width of 1.8 is used because we are going to compare it to the spectrum in the <a href="https://eelsdb.eu/spectra/cubic-boron-nitride/">EELS Database</a>, and that experiment had a resolution of 1.8eV - the Gaussian width should match the resolution. The Lorentzian width used depends on the element you are examining, and the value used depends on which element's edge you are examining, and the value used is recommended <a href="https://doi.org/10.1006/adnd.2000.0848">here</a> (boron is not there, but 0.1 is recommended for carbon, which is close). A Lorentzian scale of 0.1 is a general and commonly-used value.</p>
+<p>A Gaussian width of 1.8 is used because we are going to compare it to the spectrum in the <a href="https://eelsdb.eu/spectra/cubic-boron-nitride/">EELS Database</a>, and that experiment had a resolution of 1.8eV. A Lorentzian can be used to account for the energy broadening due to the lifetime of the initial and final states.  The width depends on the element and edge you are examining, and the value used is recommended <a href="https://doi.org/10.1006/adnd.2000.0848">here</a> (boron is not there, but 0.1 is recommended for carbon, which is close). A Lorentzian scale of 0.1 is a general and commonly-used value.</p>
 <p>Re-running it now yields 3 columns in the <code>dat</code> file - it now starts like</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>-15.720790912312673        0.0000000000000000        4.6792920824784473E-005
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-15.710790160394351        0.0000000000000000        4.7285842629847867E-005
@@ -2835,7 +2835,7 @@
 </code></pre></div>
 <p>The output should look like this:</p>
 <p><img alt="Experimental and Castep plotted together" src="../together.png" /></p>
-<p>They are reasonably similar, but the Optados calculation retains the problem of dropping off faster towards higher energies. </p>
+<p>They are reasonably similar, but the Optados calculation retains the problem of dropping off faster towards higher energies.</p>
 
               
             </article>
