@@ -3,14 +3,6 @@
 * Investigate how band structures differ for metallic and semiconductor systems differ.
 * Running spin polarised calculations in CASTEP.
 
-## Note
-This tutorial we will be running on Arcus, you should be able to complete this tutorial without copying files backwards and forwards; however if you wish to visualise your system (e.g. using VESTA) then you will need to copy files to your local machine to do so.
-
-If you don't remember how to do this, remind yourself by referring to [Tutorial 0](../00_starting.md) and [Tutorial 1](../01_bonding.md)
-
-## Xterminals, Plotting and other computational hassle
-To save some effort transferring files backwards and forwards to and from Arcus we are going to use Arcus to plot the band structure and DOS and send the image to your monitor. 
-
 
 ## Introduction
 The aim of this tutorial is to enable you to compute band structures using CASTEP and introduce you to a few of the tools which allow you to visualise the band structure and density of electronic states computed using CASTEP.  The band structure of metals and semiconductors will be plotted so that you can look at the differences between different types of systems.
@@ -32,10 +24,10 @@ In addition to CASTEP and the suite of tools it comes with you will need:
 These are available on the Arcus cluster.
 
 ## Example files:
-Download the input files
+Copy the input files to your home directory
 
 ```
-wget http://www.castep.org/files/bandstructure.tgz
+cp /course_materials/bandstructure.tgz ~/
 ```
 
 Then untar and unzip it using:
@@ -69,12 +61,12 @@ The .cell file requires a path through the Brillouin Zone along which you want t
 Run CASTEP using:
 
 ```
-$ mpirun -np 16 castep.mpi graphite 
+$ castep-mpi mpirun -np 16 castep.mpi graphite 
 ```
 Once the CASTEP calculation has finished a `graphite.bands` file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.
 
 ```
-$ dispersion.pl -xg -bs -symmetry hexagonal graphite.bands
+$ castep-serial dispersion.pl -xg -bs -symmetry hexagonal graphite.bands
 ```
 The `-xg` option tells dispersion.pl that you are using grace to plot the band structure, the `-bs` option tells the script that you want to plot using CASTEP output files, the `-symmetry hexagonal` option labels the high symmetry points on the bands structure plot.
 
@@ -83,7 +75,7 @@ The program `orbitals2bands` overwrites your `Si.bands` file, so it's best to co
 
 ```
 $ cp graphite.bands graphite.bands.orig 
-$ mpirun -np 16 orbitals2bands graphite
+$ castep-serial orbitals2bands graphite
 ```
 
 
@@ -122,7 +114,7 @@ BS_KPOINT_MP_GRID 12 12 12
 Run CASTEP using these new input files then use the dos.pl plotting script
 
 ```
-dos.pl -xg -bs -w 0.2 Fe.bands
+castep-mpi dos.pl -xg -bs -w 0.2 Fe.bands
 ```
 
 Can you relate the features in the DOS to those in the Bandstructure?
