@@ -3027,7 +3027,7 @@ The path through the Brillouin Zone is found in the <code>Fe.cell</code> file.</
 <p>Run the iron computation using CASTEP and plot the band structure for iron using <code>dispersion.pl</code>.  You might find the <code>-mono</code> option to <code>dispersion.pl</code> to be useful - it colours the bands by spin channel.</p>
 <h2 id="irons-density-of-states">Iron's Density of States</h2>
 <p>To plot the density of states of iron, we need to run CASTEP again, instead of computing the band structure along a high symmetry line, we compute it on a grid.  To your Fe.cell file, remove the spectral_kpoint_path block and replace it with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BS_KPOINT_MP_GRID 12 12 12
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>SPECTRAL_KPOINT_MP_GRID 12 12 12
 </code></pre></div>
 <p>Run CASTEP using these new input files then use the dos.pl plotting script</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>castep-mpi dos.pl -xg -bs -w 0.2 Fe.bands
