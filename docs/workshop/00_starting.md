@@ -5,9 +5,7 @@
 
 ### Signing up to the STFC Training Workspace
 
-Open a browser and navigate to
-
-<https://training.analysis.stfc.ac.uk/add_user/?token=yTf0m4zkzRD1P7i0fuRtjyb6>
+Open a browser and navigate to the link you have been emailed  - the one that contains training.analysis.stfc.ac.uk.
 
 This should prompt you for some information and it will then send your account for authorisation. 
 
@@ -45,6 +43,12 @@ To run castep in serial with Si2 as the seedname, type
 
 `castep-serial castep.serial Si2`
 
+To run castep in parallel using 16 core (the maximum for these virutal machines) with same Si2 seedname, type
+
+`castep-mpi mpirun -n 16 castep.mpi Si2`
+
+Note that the `castep-serial` and `castep-mpi` parts that the start of the above lines are particular to these virtual machines for the tutorial. Running castep on your own machines would typically involve either `castep.serial Si2` for the serial version or `mpirun -n 4 castep.mpi Si2` for the parallel version.
+
 ## Summary of useful commands
 
 * `mv`   - rename (or move) a file eg. `mv oldfile newfile`
@@ -66,8 +70,8 @@ To run castep in serial with Si2 as the seedname, type
 This is a handy free program written by Michael Rutter (TCM group Cambridge). It can convert
 `castep.cell` and `castep.check` files into various formats eg `.cell`, `.pdb`. (and many other things!)
 
-* `castep.serial c2x -h`  - list all the options
-* `castep.serial c2x --pdbn castep.cell castep.pdb`
-* `castep.serial c2x --pdbn castep.check castep.pdb`
-* `castep.serial c2x --cell castep.check new.cell`
+* `castep-serial c2x -h`  - list all the options
+* `castep-serial c2x --pdbn castep.cell castep.pdb`
+* `castep-serial c2x --pdbn castep.check castep.pdb`
+* `castep-serial c2x --cell castep.check new.cell`
  (useful at the end of geometry optimisation)
