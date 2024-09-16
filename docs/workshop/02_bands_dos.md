@@ -108,7 +108,7 @@ Run the iron computation using CASTEP and plot the band structure for iron using
 To plot the density of states of iron, we need to run CASTEP again, instead of computing the band structure along a high symmetry line, we compute it on a grid.  To your Fe.cell file, remove the spectral_kpoint_path block and replace it with:
 
 ```
-BS_KPOINT_MP_GRID 12 12 12
+SPECTRAL_KPOINT_MP_GRID 12 12 12
 ```
 
 Run CASTEP using these new input files then use the dos.pl plotting script
