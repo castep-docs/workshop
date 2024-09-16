@@ -5,11 +5,11 @@ name: docs
 
 on:
   push:
-    branches: [ "workshop" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "workshop" ]
+    branches: [ "develop" ]
   workflow_dispatch:
-    branches: [ "workshop" ]
+    branches: [ "develop" ]
 
 jobs:
   doc:
@@ -34,7 +34,7 @@ jobs:
           mkdocs build -d ./docs_build
 
       - name: Deploy
-        if: github.event_name == 'push' && github.ref == 'refs/heads/workshop'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
