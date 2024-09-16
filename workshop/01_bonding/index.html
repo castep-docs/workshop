@@ -2981,34 +2981,33 @@
 <h2 id="learning-objectives">Learning Objectives</h2>
 <ul>
 <li>Introduction to CASTEP input and output files.</li>
-<li>Running on the Arcus machine at Oxford University.</li>
+<li>Running CASTEP on the STFC Workspace.</li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>The aim of this exercise is to familiarise you with CASTEP input and output files and running the code, some associated utilities and conversion programs. You will run some simple and small CASTEP calculations on canonical examples of covalently and ionically bonded materials - silicon and sodium chloride - and use the results to study the bonding from an electronic structure perspective.</p>
 <p>While performing the exercises try to think about the reasons for each step, and about how to interpret the results. The point of the exercise is not merely to reach the end but to learn the path. The exercise below contains a number of questions. Please take note when a question is asked of you, and think about the answer. Feel free to discuss the answer with one of the demonstrators after you have thought about it for a while.</p>
-<p>The secondary aim of this exercise is to learn to run programs on Oxford University's Arcus cluster. This is a powerful parallel computer. (Although the runs in this first exercise should take only seconds on a desktop.)  For information about how to login to and use this cluster please refer to the instructions provided.
-`</p>
+<p>The secondary aim of this exercise is to learn to run programs on the STFC Workspace. This is a powerful cloud-based machine and each participant has access to an individual CPU with 16 cores. (Although the runs in this first exercise should take only seconds on a desktop.) </p>
 <h2 id="where-to-find-help">Where To Find Help</h2>
 <p>If you want more information about a particular CASTEP keyword, or you want to find if CASTEP has particular functionality, there are a few places you can look.</p>
 <ul>
 <li>There is information on this website: <a href="http://www.castep.org">www.castep.org</a>.</li>
 <li>
 <p>CASTEP has an in built help option to assist with using particular keywords.  Information on using CASTEP can be seen by using:</p>
-<p><code>$ castep --help</code></p>
+<p><code>$ castep-serial castep.serial --help</code></p>
 <p>To get more information on a particular input file keyword (e.g. <code>kpoint_mp_grid</code>) use:</p>
-<p><code>$ castep --help kpoints_mp_grid</code></p>
+<p><code>$ castep-serial castep.serial --help kpoints_mp_grid</code></p>
 <p>If you don't know the keyword you need to use, then you can search on a particular keyword. This returns a list of keywords that you might be interested in, e.g. to look at all keywords which contain a reference to symmetry.</p>
-<p><code>$ castep --search symmetry</code></p>
+<p><code>$ castep-serial castep.serial --search symmetry</code></p>
 <p>Finally, to list all keywords, use:</p>
-<p><code>$ castep --search all</code></p>
+<p><code>$ castep-serial castep.serial --search all</code></p>
 <p>Note that the long-form arguments <code>--help</code> and <code>--search</code> can optionally be replaced with <code>-h</code> and <code>-s</code>, respectively.</p>
 </li>
 </ul>
 <h2 id="example-1-silicon">Example 1 - Silicon</h2>
 <ol>
 <li>
-<p>Download the files to arcus</p>
-<p><code>$ wget http://www.castep.org/files/Si2.tgz</code></p>
+<p>Copy the files to your user directory</p>
+<p><code>$ cp /course_materials/Si2.tar.gz .</code></p>
 </li>
 <li>
 <p>Unzip and untar them, then move into the new directory</p>
@@ -3033,7 +3032,7 @@ The <code>Si_00.usp</code> file is a pseudopotential file, you do not need to un
 <li>
 <h3 id="jmol">Jmol</h3>
 To open the <code>Si2.cell</code> file using <a href="http://www.jmol.org">Jmol</a>:
-Open Jmol (You will need to copy it from the h: drive to your desktop. Then double click <code>jmol.jar</code>) 
+Open Jmol from the applications menu. 
 then use <code>File =&gt; Open</code> and navigate to your <code>Si2.cell</code> file.
 Alternatively, you can drag and drop the <code>Si2.cell</code> file into the Jmol window, and Jmol will open it. 
 It can be helpful to view multiple repeat units of your unit cell.  The easiest way to do this in Jmol is to open a console window,
@@ -3043,19 +3042,18 @@ click File =&gt; Console and type:<p><code>$ load "" { 2 2 2 }</code></p>
 <li>
 <h3 id="vesta">Vesta</h3>
 <p>To open the <code>Si2.cell</code> file using <a href="http://www.jp-minerals.org/vesta/en/">VESTA</a>:
-Open VESTA (You will need to copy it from the h: drive to your desktop. 
-Then double click <code>VESTA.exe</code>) then use File =&gt; Open and navigate to your <code>Si2.cell</code> file.
+Open VESTA then use File =&gt; Open and navigate to your <code>Si2.cell</code> file.
 You cannot drag and drop into VESTA.</p>
-<p>If you wish to create a supercell as above, use <code>Objects =&gt; Boundary</code>. 
-    Then edit the maximum and/or minimum values of x, y, and z in order to change your boundaries.
-    Setting <code>x(max)</code>, <code>y(max)</code>, and <code>z(max)</code> to 2 will create the 2 by 2 by 2 supercell as above. </p>
-<p>Check the geometry of the input file is as expected before moving on to the next step.</p>
 </li>
 </ul>
+<p>If you wish to create a supercell as above, use <code>Objects =&gt; Boundary</code>. 
+Then edit the maximum and/or minimum values of x, y, and z in order to change your boundaries.
+Setting <code>x(max)</code>, <code>y(max)</code>, and <code>z(max)</code> to 2 will create the 2 by 2 by 2 supercell as above. </p>
+<p>Check the geometry of the input file is as expected before moving on to the next step.</p>
 </li>
 <li>
-<p>Now run CASTEP on Arcus using the 2-atom input files.</p>
-<p><code>$ castep.mpi Si2</code></p>
+<p>Now run CASTEP using the 2-atom input files.</p>
+<p><code>$ castep-serial castep.serial Si2</code></p>
 <p>This should only take a few seconds and produce a readable output file <code>Si2.castep</code>. Examine this file and try to understand the meaning of the various parts. In particular check the section following the header which lists all of the input parameters, both explicit and default. Note what default values of the major parameters CASTEP chose where you did not specify them explicitly. (There will be some whose meaning has not been explained. Don't worry about these.) </p>
 <ul>
 <li>Find the section of the file which monitors the SCF loop and the approach to convergence. How many SCF iterations did it need?</li>
@@ -3099,8 +3097,8 @@ An alternative way to plot charge densities (and much more besides) is <a href="
 <p>Repeat steps 1-8 using input files for sodium chloride and aluminium.</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ wget http://www.castep.org/files/Al.tgz
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$ wget http://www.castep.org/files/NaCl.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/course_materials/Al.tgz
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/course_materials/NaCl.tgz
 </code></pre></div>
 <h3 id="think-about-the-following-questions">Think about the following questions:</h3>
 <ul>
