@@ -1,0 +1,5 @@
+task: phonon
+
+xc_functional: LDA
+
+opt_strategy: speed
