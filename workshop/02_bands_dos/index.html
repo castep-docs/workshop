@@ -2982,9 +2982,10 @@
 <h2 id="example-1-graphite">Example 1 - Graphite.</h2>
 <p>Move into the graphite directory, look at the CASTEP .cell and .param files and notice the differences from the previous single point energy runs.</p>
 <p>To the .param file the task (which lets CASTEP know what you want it to do) needs to be changed to:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>task : bandstructure
-</code></pre></div>
-The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>task            spectral
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>spectral_task   bandstructure
+</code></pre></div></p>
+<p>The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%BLOCK spectral_kpoint_path
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    0.0000  0.00000 0.00000  ! G
