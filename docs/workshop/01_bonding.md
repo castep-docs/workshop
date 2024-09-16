@@ -114,7 +114,7 @@ This `Si2.den_fmt` file is a formatted file produced by CASTEP that contains the
   
 	Now edit the file `Si2.charg_frm` with a text editor to remove the first 11 lines. The file should now begin with `1 1 1` and a number. You can now open `Si2.charg_frm` with Vesta. Note that Vesta needs both the `.cell` and `.charge_frm` files to make a plot. If you are working on a remote machine you will need to copy both of these back to your local machine to view with Vesta. You can find a walkthrough video of this process [here](https://youtu.be/_c2Hk4jxmm4).
 
-		![Silicon Charge Density](../img/silicon_charge_density.png)
+	![Silicon Charge Density](../img/silicon_charge_density.png)
   
 	An alternative way to plot charge densities (and much more besides) is [c2x](https://www.c2x.org.uk).
 
