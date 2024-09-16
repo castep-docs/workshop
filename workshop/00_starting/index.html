@@ -2588,9 +2588,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-to-the-virual-desktop" class="md-nav__link">
-    Connecting to the virual desktop
+  <a href="#connecting-to-and-using-the-virual-desktop" class="md-nav__link">
+    Connecting to and using the virual desktop
   </a>
+  
+    <nav class="md-nav" aria-label="Connecting to and using the virual desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploading-and-downloading-files-from-your-laptop" class="md-nav__link">
+    Uploading and downloading files from your laptop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-and-pasting-from-your-laptop" class="md-nav__link">
+    Copying and pasting from your laptop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2622,8 +2642,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tuorial-files" class="md-nav__link">
-    Tuorial files
+  <a href="#tutorial-files" class="md-nav__link">
+    Tutorial files
   </a>
   
 </li>
@@ -2932,9 +2952,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-to-the-virual-desktop" class="md-nav__link">
-    Connecting to the virual desktop
+  <a href="#connecting-to-and-using-the-virual-desktop" class="md-nav__link">
+    Connecting to and using the virual desktop
   </a>
+  
+    <nav class="md-nav" aria-label="Connecting to and using the virual desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uploading-and-downloading-files-from-your-laptop" class="md-nav__link">
+    Uploading and downloading files from your laptop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-and-pasting-from-your-laptop" class="md-nav__link">
+    Copying and pasting from your laptop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2966,8 +3006,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tuorial-files" class="md-nav__link">
-    Tuorial files
+  <a href="#tutorial-files" class="md-nav__link">
+    Tutorial files
   </a>
   
 </li>
@@ -3015,9 +3055,13 @@
 <h3 id="creating-the-castep-workspace">Creating the CASTEP Workspace</h3>
 <p>You should recieve an email with a link that you can use to connect to the STFC system. Save this email as you will use it to login during the training. </p>
 <p>Select New Workspace and then select CASTEP TRAINING WORKSHOP 2024 and click create workspace. This will generate you a virtual desktop on the STFC cloud service with access to CASTEP.</p>
-<h2 id="connecting-to-the-virual-desktop">Connecting to the virual desktop</h2>
+<h2 id="connecting-to-and-using-the-virual-desktop">Connecting to and using the virual desktop</h2>
 <p>Mouse over the workspace and you should be presented with buttons to launch the workspace in either a new tab or new window.  </p>
-<p>This should open a new window and load a virtual desktop within the browser. This is a linux desktop with CASTEP and several visualisations available. </p>
+<p>This should open a new window and load a virtual desktop within the browser. This is a linux desktop with CASTEP and several other useful tools available. </p>
+<h3 id="uploading-and-downloading-files-from-your-laptop">Uploading and downloading files from your laptop</h3>
+<p>To upload or download any files from your laptop to the VM, navigate to <a href="https://training.analysis.stfc.ac.uk/data/">https://training.analysis.stfc.ac.uk/data/</a>, click on Data (left hand menu) and then select Home - that's your home directory where you can upload files to.   </p>
+<h3 id="copying-and-pasting-from-your-laptop">Copying and pasting from your laptop</h3>
+<p>To enable copying and pasting between your laptop and the VM, hover your mouse at the top of the virtual desktop and click on Copy &amp; Paste to enable this.  </p>
 <h2 id="loading-castep">Loading CASTEP</h2>
 <p>Click the applications button in the bottom left and select software -&gt; CASTEP. This will launch a terminal with shortcuts for running CASTEP. </p>
 <h3 id="accessing-the-castep-help-system">Accessing the CASTEP help system</h3>
@@ -3031,7 +3075,7 @@
 <p>To run castep in parallel using 16 core (the maximum for these virutal machines) with same Si2 seedname, type</p>
 <p><code>castep-mpi mpirun -n 16 castep.mpi Si2</code></p>
 <p>Note that the <code>castep-serial</code> and <code>castep-mpi</code> parts that the start of the above lines are particular to these virtual machines for the tutorial. Running castep on your own machines would typically involve either <code>castep.serial Si2</code> for the serial version or <code>mpirun -n 4 castep.mpi Si2</code> for the parallel version.</p>
-<h2 id="tuorial-files">Tuorial files</h2>
+<h2 id="tutorial-files">Tutorial files</h2>
 <p>The files needed for these tutorials can be found by navigating from Applications -&gt; Data -&gt; Course Materials (that will open up a file browser in the right place). They can also be accessed via the command line from this location: <code>/course_materials/</code>. Copy the files to somewhere in your home directory before trying to run CASTEP (you can't run CASTEP in the <code>/course_materials</code> directory. You can do that either using the graphical file browser or using the command line. For example:</p>
 <p>Make a folder called Si2 in your home directory:</p>
 <p><code>mkdir ~/Si2</code></p>
@@ -3048,9 +3092,9 @@
 <li><code>ls -l</code>  - list files - but give more details than plain <code>ls</code></li>
 <li><code>exit</code>  - to close the terminal when you are finished</li>
 <li><code>cp fred/* jim/</code>  - copy all the files in the folder <code>fred</code> into the folder <code>jim</code></li>
+<li><code>cp -r alice bob</code> - copy recursively <code>alice</code> to <code>bob</code>. You need this if you want to copy whole folders.</li>
 <li><code>cp ../myfile ./</code>  - copy the file <code>myfile</code> in the folder below to the current folder</li>
 <li><code>cp ~/myfile ./</code>   - copy the file <code>myfile</code> in your home folder to the current folder</li>
-<li><code>qstat</code>  - look at the list of jobs running and queued on the cluster</li>
 <li><code>castep-mpi mpirun -np 8 castep.mpi diamond</code>  - submits a castep job with <code>diamond.cell</code> and <code>diamond.param</code> as inputs onto 8 cores with a time limit of 1 hour</li>
 </ul>
 <h3 id="c2x">c2x</h3>
