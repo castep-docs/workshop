@@ -41,8 +41,10 @@ Move into the graphite directory, look at the CASTEP .cell and .param files and 
 
 To the .param file the task (which lets CASTEP know what you want it to do) needs to be changed to:
 ```
-task : bandstructure
+task            spectral
+spectral_task   bandstructure
 ```
+
 The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:
 
 ```
