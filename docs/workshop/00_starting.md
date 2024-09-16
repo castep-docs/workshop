@@ -1,117 +1,52 @@
 
-## Connecting to teaching0
+# Getting Started
 
-Open a terminal and type:
+## Settting up the Virtual Workspace
 
-`ssh -X teaching0`
+### Signing up to the STFC Training Workspace
 
-This should present you with a prompt:
+Open a browser and navigate to
 
-`<username>@teaching0:~$`
+<https://training.analysis.stfc.ac.uk/add_user/?token=yTf0m4zkzRD1P7i0fuRtjyb6>
 
-### Loading CASTEP
-The command
+This should prompt you for some information and it will then send your account for authorisation. 
 
-`module load phys/CASTEP`
+Once the account is authorised, you will recieve and email with a link to login. 
 
-should load castep into the environment as `castep.mpi`. You can test this with
+### Creating the CASTEP Workspace
 
-`castep.mpi -v`
+You should recieve an email with a link that you can use to connect to the STFC system. Save this email as you will use it to login during the training. 
 
+Select New Workspace and then select CASTEP TRAINING WORKSHOP 2024 and click create workspace. This will generate you a virtual desktop on the STFC cloud service with access to CASTEP.
 
-### Loading Vesta
-There is an incompatability with the VESTA and CASTEP modules on teaching0.
+## Connecting to the virual desktop
 
-Instead, open a new terminal and connect again to teaching0 (`ssh -X teaching0`). You can then load the VESTA module with:
+Mouse over the workspace and you should be presented with buttons to launch the workspace in either a new tab or new window.  
 
-`module load vis/VESTA`
+This should open a new window and load a virtual desktop within the browser. This is a linux desktop with CASTEP and several visualisations available. 
 
-and run it:
+## Loading CASTEP
 
-`VESTA`
+Click the applications button in the bottom left and select software -> CASTEP. This will launch a terminal with shortcuts for running CASTEP. 
 
+### Accessing the CASTEP help system
 
-## Connecting to young
-Open a terminal and type
+To search the castep help system for keywords containing castep:
 
-`ssh -X mmmXXXX@young.rc.ucl.ac.uk`
+`castep-serial castep.serial -s lattice`
 
-replacing mmmXXXX with your young account. This should present you with a shell on young:
+To view detailed information on a particular keyword:
 
-`[mmm0389@login01 ~]$`
+`castep-serial castep.serial -h lattice_abc`
 
-If you want to use the castep tools, (c2x, orbitals2bands, etc), you should add these to your path:
+### Running CASTEP
 
-`export PATH=$PATH:/home/mmm0389/castep-24`
+To run castep in serial with Si2 as the seedname, type
 
-This will give you access to castep.mpi as well as the full suite of tools that come with castep.
-
-### Copy the submission script
-
-To actually run castep on this machine, you need to use a submission script. This is similar to how most HPC systems work, and is useful if you intend to learn how to run castep on your own cluster.
-
-`cp ~mmm0389/run_castep24.sh ~/`
-
-This will give you a file called run_castep24.sh in your home folder. You *must* edit this file and change the line UKCP_YORK_P to be your relevant group on young (probably UKCP_EXT).. Please ask if you are not sure, as this will give errors later on. 
-
-### Scratch
-
-All calculations must be performed in the Scratch folder. This is a high speed filesystem for use in HPC environments. The folder is ~/Scratch 
-
-### Running a castep calculation
-
-Create the cell and param files as normal. Copy the script into the folder and edit the final line which contains "Si2". Change this to be the <name> part of your castep calculation.
-
-eg. If your files are Al.cell and Al.param, change the last line to read
-
-`gerun castep.mpi Al`
-
-The number of cores are controlled by the line
-
-`#$ -pe mpi 16`
-
-and the job time limit by
-
-`#$ -l h_rt=0:20:0`
-
-requests a 20 minute (max) run.
-
-Once this file has been edited, submit it to the queue with
-
-`qsub run_castep24.sh`
-
-You can see the status of the job by typing
-
-`qstat`
-
-which will show your active jobs, eg.
-
-```
-[mmm0389@login01 ~]$ qstat
-job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID
------------------------------------------------------------------------------------------------------------------
-1141619 2.51381 Castep-exa mmm0389      qw    09/19/2023 12:04:38                                   16
-```
-
-
-It should change from "qw" (queued and waiting) to "r" (running) and then once the calculation is complete, it should disappear.
-
-To cancel a job, use the job-id from qstat and type
-
-`qdel <job number>`
-
-
-
-## Editing a file
-Edit the diamond.param file (increase the cutoff energy to 400 eV). To do this you will need to use an editor. (for experts `vi` and `emacs` are available). Otherwise I suggest using an editor called `nano`. This has helpful list of instructions are the bottom of the screen (but ask if you are confused!)
-
-`[teaching01@arc-login01 ~]$ nano diamond.param`
-
-Now submit the job again.
-
-Compare the runs at 200 and 400eV. Which took longer? Has the total energy gone up or down. Look at the Atomic Populations section - is it what you expect?
+`castep-serial castep.serial Si2`
 
 ## Summary of useful commands
+
 * `mv`   - rename (or move) a file eg. `mv oldfile newfile`
 * `cp`   - copy a file eg. `cp original copy`
 * `pwd`   - print current (working) directory
@@ -124,14 +59,15 @@ Compare the runs at 200 and 400eV. Which took longer? Has the total energy gone 
 * `cp ../myfile ./`  - copy the file `myfile` in the folder below to the current folder
 * `cp ~/myfile ./`   - copy the file `myfile` in your home folder to the current folder
 * `qstat`  - look at the list of jobs running and queued on the cluster
-* `mpirun -np 8 castep.mpi diamond`  - submits a castep job with `diamond.cell` and `diamond.param` as inputs onto 8 cores with a time limit of 1 hour
+* `castep-mpi mpirun -np 8 castep.mpi diamond`  - submits a castep job with `diamond.cell` and `diamond.param` as inputs onto 8 cores with a time limit of 1 hour
 
 ### c2x
+
 This is a handy free program written by Michael Rutter (TCM group Cambridge). It can convert
 `castep.cell` and `castep.check` files into various formats eg `.cell`, `.pdb`. (and many other things!)
 
-* `c2x -h`  - list all the options
-* `c2x --pdbn castep.cell castep.pdb`
-* `c2x --pdbn castep.check castep.pdb`
-* `c2x --cell castep.check new.cell`
+* `castep.serial c2x -h`  - list all the options
+* `castep.serial c2x --pdbn castep.cell castep.pdb`
+* `castep.serial c2x --pdbn castep.check castep.pdb`
+* `castep.serial c2x --cell castep.check new.cell`
  (useful at the end of geometry optimisation)
