@@ -1,6 +1,6 @@
 ## Learning Objectives
 * Introduction to CASTEP input and output files.
-* Running on the Arcus machine at Oxford University.
+* Running CASTEP on the STFC Workspace.
 
 ## Introduction
 
@@ -8,35 +8,36 @@ The aim of this exercise is to familiarise you with CASTEP input and output file
 
 While performing the exercises try to think about the reasons for each step, and about how to interpret the results. The point of the exercise is not merely to reach the end but to learn the path. The exercise below contains a number of questions. Please take note when a question is asked of you, and think about the answer. Feel free to discuss the answer with one of the demonstrators after you have thought about it for a while.
 
-The secondary aim of this exercise is to learn to run programs on Oxford University's Arcus cluster. This is a powerful parallel computer. (Although the runs in this first exercise should take only seconds on a desktop.)  For information about how to login to and use this cluster please refer to the instructions provided.
-`
+The secondary aim of this exercise is to learn to run programs on the STFC Workspace. This is a powerful cloud-based machine and each participant has access to an individual CPU with 16 cores. (Although the runs in this first exercise should take only seconds on a desktop.) 
+
 ## Where To Find Help
+
 If you want more information about a particular CASTEP keyword, or you want to find if CASTEP has particular functionality, there are a few places you can look.
 
 * There is information on this website: [www.castep.org](http://www.castep.org).
 * CASTEP has an in built help option to assist with using particular keywords.  Information on using CASTEP can be seen by using:
 
-	`$ castep --help`
+	`$ castep-serial castep.serial --help`
 
 	To get more information on a particular input file keyword (e.g. `kpoint_mp_grid`) use:
 	
-	`$ castep --help kpoints_mp_grid`
+	`$ castep-serial castep.serial --help kpoints_mp_grid`
 
 	If you don't know the keyword you need to use, then you can search on a particular keyword. This returns a list of keywords that you might be interested in, e.g. to look at all keywords which contain a reference to symmetry.
 
-	`$ castep --search symmetry`
+	`$ castep-serial castep.serial --search symmetry`
 
 	Finally, to list all keywords, use:
 
-	`$ castep --search all`
+	`$ castep-serial castep.serial --search all`
 	
 	Note that the long-form arguments `--help` and `--search` can optionally be replaced with `-h` and `-s`, respectively.
 
 
 ## Example 1 - Silicon
-1. Download the files to arcus
+1. Copy the files to your user directory
 
-	`$ wget http://www.castep.org/files/Si2.tgz`
+	`$ cp /course_materials/Si2.tar.gz .`
 
 2. Unzip and untar them, then move into the new directory
 
@@ -59,7 +60,7 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 5. Cell Structure Visualisation
 	* ### Jmol
 	To open the `Si2.cell` file using [Jmol](http://www.jmol.org):
-	Open Jmol (You will need to copy it from the h: drive to your desktop. Then double click `jmol.jar`) 
+	Open Jmol from the applications menu. 
 	then use `File => Open` and navigate to your `Si2.cell` file.
 	Alternatively, you can drag and drop the `Si2.cell` file into the Jmol window, and Jmol will open it. 
 	It can be helpful to view multiple repeat units of your unit cell.  The easiest way to do this in Jmol is to open a console window,
@@ -71,19 +72,18 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 
 	* ### Vesta
 	To open the `Si2.cell` file using [VESTA](http://www.jp-minerals.org/vesta/en/):
-	Open VESTA (You will need to copy it from the h: drive to your desktop. 
-	Then double click `VESTA.exe`) then use File => Open and navigate to your `Si2.cell` file.
+	Open VESTA then use File => Open and navigate to your `Si2.cell` file.
 	You cannot drag and drop into VESTA.
 
-		If you wish to create a supercell as above, use `Objects => Boundary`. 
+    If you wish to create a supercell as above, use `Objects => Boundary`. 
 	Then edit the maximum and/or minimum values of x, y, and z in order to change your boundaries.
 	Setting `x(max)`, `y(max)`, and `z(max)` to 2 will create the 2 by 2 by 2 supercell as above. 
 
-		Check the geometry of the input file is as expected before moving on to the next step.
+	Check the geometry of the input file is as expected before moving on to the next step.
 
-6. Now run CASTEP on Arcus using the 2-atom input files.
+6. Now run CASTEP using the 2-atom input files.
 
-	`$ castep.mpi Si2`
+	`$ castep-serial castep.serial Si2`
 	
 	This should only take a few seconds and produce a readable output file `Si2.castep`. Examine this file and try to understand the meaning of the various parts. In particular check the section following the header which lists all of the input parameters, both explicit and default. Note what default values of the major parameters CASTEP chose where you did not specify them explicitly. (There will be some whose meaning has not been explained. Don't worry about these.) 
 
@@ -126,11 +126,12 @@ This `Si2.den_fmt` file is a formatted file produced by CASTEP that contains the
 9. Repeat steps 1-8 using input files for sodium chloride and aluminium.
 
 ```
-$ wget http://www.castep.org/files/Al.tgz
-$ wget http://www.castep.org/files/NaCl.tgz
+/course_materials/Al.tgz
+/course_materials/NaCl.tgz
 ```
 
 ### Think about the following questions:
+
 * Note what similarities and differences you find compared to silicon? 
 * Does this help explain the difference in bond chemistry between silicon, sodium chloride and aluminium?
 * Does this help explain why there are many reasonable classical potential functions for NaCl to be found
