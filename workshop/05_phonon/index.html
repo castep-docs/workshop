@@ -2927,9 +2927,20 @@
 
 
 <h1 id="phonons-and-spectroscopy-tutorial">Phonons and Spectroscopy Tutorial</h1>
-<p>The aims of this tutorial session is to introduce you to running larger-scale CASTEP jobs on supercomputer clusters, editing of input files for and setup of CASTEP     jobs, and analysis of the results using standalone tools.  To achieve results without waiting too long for jobs to complete the initial runs will be small ones, but    the aim by the end of this afternoon should be to set up larger and more significant runs.   Today's session will entirely comprise insulators or semiconductors.
-You may need to consult the CASTEP phonon users guide, which may be accessed <a href="http://www.tcm.phy.cam.ac.uk/castep/Phonons_Guide/Castep_Phonons.html">here</a>
-The practical will be conducted using the arc service. Make a directory called (e.g.) <code>Phonons</code> and copy the files <a href="../h-BN.cell">h-BN.cell</a> and <a href="../h-BN.param">h-BN.param</a> into the new folder.</p>
+<p>The aims of this tutorial session is to introduce you to running
+CASTEP phonon jobs on, editing of input files for and setup of CASTEP
+jobs, and analysis of the results using standalone tools.  To achieve
+results without waiting too long for jobs to complete the initial runs
+will be small ones, but the aim by the end of this afternoon should be
+to set up larger and more significant runs.  Today's session will
+entirely comprise insulators or semiconductors.  You should read the
+introduction of the Phonons section in the CASTEP documentation site
+(<a href="https://castep-docs.github.io/castep-docs/documentation/Phonons/Castep_Phonons/Introduction/">direct
+link</a>).
+The practical will be conducted using the STFC IDAAS service. Make a
+directory called (e.g.) <code>Phonons</code> and copy the files
+<a href="../h-BN.cell">h-BN.cell</a> and <a href="../h-BN.param">h-BN.param</a> from the shared
+courseware directory into the new folder.</p>
 <h2 id="a-gammagamma-point-phonon-in-h-bn">A. <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span>-Point phonon in h-BN</h2>
 <p>The first exercise will take you through the construction of a <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span> point phonon calculation and the generation of a simple model infrared spectrum of a semiconductor. It will also introduce you to the use of some additional analysis and visualisation tools.</p>
 <p>BN is one of a family of Nitride semiconductors, which occurs in cubic zincblende (c-BN), hexagonal wurtzite (h-BN) and graphite-like hexagonal (h-BN) polymorphs.  We will calculate the phonons, infrared spectrum and Raman spectrum of h-BN.</p>
@@ -2950,37 +2961,37 @@ and one to specify a gamma-point phonon wavevector</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>phonon_kpoint_mp_grid 1 1 1
 </code></pre></div>
 <p>Have a look in the <code>.param</code> file, look up the meaning of any keywords you don’t know (you can use <code>castep.serial -h &lt;keyword&gt;</code>). Test your configuration using</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>castep.serial –dryrun h-BN
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>castepp-serial castep.serial –dryrun h-BN
 </code></pre></div>
 <p>This tells CASTEP to read the intput files and summaries the calculation in the <code>.castep</code> file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).</p>
 <p>Check to see if any <code>.err</code> files are produced and fix issues, if any. If / when no errors are returned, congratulations.  You have set up the input files, and you can delete the dryrun .castep file.
 Once you have in place the <code>&lt;seed&gt;.cell</code> and <code>&lt;seed&gt;.param</code> files you are ready to submit the CASTEP job.  This is done using our general script:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mpirun -n 4 castep.mpi  h-BN
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>castep-mpi mpirun -n 16 castep.mpi  h-BN
 </code></pre></div>
-<p>which requests a 16-core parallel run. Use the <code>qstat</code> command to monitor the progress of your calculation. When it has finished, you can examine the output file <code>h-BN.castep</code> and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file <code>h-BN.phonon</code> which contains the frequencies and also the eigenvectors which we will analyse.</p>
+<p>which requests a 16-core parallel run. When it has finished, you can examine the output file <code>h-BN.castep</code> and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file <code>h-BN.phonon</code> which contains the frequencies and also the eigenvectors which we will analyse.</p>
 </li>
 <li>
 <p>Analysis of h-BN phonon output.</p>
-<p>We will use Castep’s tools to visualise the modes using the free Jmol visualiser. Use secure file transfer to copy the <code>.phonon</code> file back to the PC where Jmol is installed.  Start Jmol and bring up a console window from the right-mouse menu. To use   the full power of the command-line and find the files it is most convenient to set Jmol's current directory to the location of your working directory containing your   output files. (It is possible and simpler to drag and drop the <code>.phonon</code> file onto Jmol window, but you need the power of the command line to display additional periodic repeats.)</p>
+<p>We will use Castep’s tools to visualise the modes using the free Jmol visualiser. Use secure file transfer to copy the <code>.phonon</code> file back to the PC where Jmol is installed.  Start Jmol (from the Applications-&gt;Software menu) and bring up a console window from the right-mouse menu. To use   the full power of the command-line and find the files it is most convenient to set Jmol's current directory to the location of your working directory containing your   output files. (It is possible and simpler to drag and drop the <code>.phonon</code> file onto Jmol window, but you need the power of the command line to display additional periodic repeats.)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cd
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>--- report the current directory
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>cd .. or cd &lt;subdir&gt; -- navigate up/down the directory tree.
 </code></pre></div>
 <p>Then type the Jmol command to load your <code>.castep</code> file</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>load h-BN.phonon {3 3 2} PACKED
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>load &quot;h-BN.phonon&quot; {3 3 1} PACKED
 </code></pre></div>
-<p>Note that while you can read in the <code>.phonon</code> file from Jmol's File menu, you need the additional opitions of the command line to  display additional periodic repeats.
-You can then use the <code>Tools-Vibrate</code> menu to turn on mode animation, and navigate the modes.  Can you see from the mode eigenvectors which modes are IR-active and  which are Raman active? Do you agree with the IR and Raman activity printed in the <code>.castep</code> file?</p>
+<p>Note that while you can read in the <code>.phonon</code> file from Jmol's File menu, you need the additional options of the command line to  display additional periodic repeats.
+You can then use the <code>Tools-&gt;Vibrate</code> menu to turn on mode animation, and navigate the modes.  Can you see from the mode eigenvectors which modes are IR-active and  which are Raman active? Do you agree with the IR and Raman activity printed in the <code>.castep</code> file?</p>
 </li>
 </ol>
 <h3 id="generation-of-ir-spectrum">Generation of IR spectrum</h3>
-<p>The easiest way to generate a simple model IR spectrum is to use Castep’s <code>dos.pl</code> tool.  To run this in the most effective way and automatically display a plot, you   will need to be running an X windows server on the PC.  In that case the command</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dos.pl -ir -xg h-BN.phonon
+<p>The easiest way to generate a simple model IR spectrum is to use Castep’s <code>dos.pl</code> tool.  To run this on the apptainer in the most effective way and automatically display a plot, the command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>castep-serial dos.pl -ir -xg -np h-BN.phonon | xmgrace -
 </code></pre></div>
 <p>will generate a plot script and use the <code>xmgrace</code> plotting program to display it.  You can create a <code>gnuplot</code> script instead of <code>xmgrace</code> by changing the <code>-xg</code> flag to <code>-gp</code>.  Alternatively you can generate a GNUPLOT script without plotting by</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dos.pl -ir -gp -np h-BN.phonon &gt; h-BN-phonon.plt
 </code></pre></div>
-<p>You can then copy the <code>h-BN-phonon.plt</code> back to the PC and read this into GNUPLOT.</p>
+<p>.</p>
 <h3 id="generation-of-raman-spectrum">Generation of Raman spectrum</h3>
 <p>The calculation of a raman intensities is fairly expensive compared to infrared matrix elements and it is therefore not turned on by default however the <code>.param</code> file turned this on:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>CALCULATE_RAMAN : TRUE
@@ -2989,7 +3000,7 @@ You can then use the <code>Tools-Vibrate</code> menu to turn on mode animation, 
 <p>You can use the <code>-raman</code> flag of <code>dos.pl</code> to generate and plot a Raman spectrum.</p>
 <h2 id="b-molecular-modes-in-benzene">B. Molecular modes in benzene</h2>
 <p>The next part of this practical is to compute the modes and spectrum of a molecule and compare the result with a calculation of a molecular crystal.  Our example is  <a href="../benzene-mol.pdb">benzene</a></p>
-<p>First run the isolated molecule calculation.  Using the supplied PDB format file and using the <code>pdb2cell</code> utility, generate a <code>.cell</code> file for a single molecule calculation.  There are a few other considerations to take into account for an isolated molecule calculation.</p>
+<p>First run the isolated molecule calculation.  Using the supplied PDB format file and using the <code>pdb2cell</code> utility<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, generate a <code>.cell</code> file for a single molecule calculation.  There are a few other considerations to take into account for an isolated molecule calculation.</p>
 <ol>
 <li>
 <p>The size of the simulation cell governs the interactions between periodic copies of the molecule and should be large enough that these are negligible.</p>
@@ -3056,11 +3067,19 @@ Also use norm-conserving pseudopotentials.</p>
 <p>You can run CASTEP on just 1-4 processors for this
 You can try this several times with different fine q-point grids.
 This will produce a  <code>.castep</code> and <code>.phonon</code> file as before.   You may analyse the .phonon file and generate a DOS using the <code>dos.pl</code> script</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>dos.pl -xg NaH-dos.phonon
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>castep-serial dos.pl -xg -np NaH-dos.phonon | xmgrace -
 </code></pre></div>
 (again, an X server running on the PC will be needed for grace to display; MobaXterm should have this enabled by default) .</p>
 </li>
 </ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>installed in the castep-serial apptainer.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
