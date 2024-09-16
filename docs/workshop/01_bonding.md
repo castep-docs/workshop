@@ -55,7 +55,7 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 	$ nano Si2.param
 	```
 
-4. It is useful to view the structure before submitting your calculation using CASTEP. Copy the `Si2.cell` to your local machine using the sftp window (left) in mobaXterm.
+4. It is useful to view the structure before submitting your calculation using CASTEP. You Jmol and Vesta are installed on the VM and can both be used to visualise the `Si2.cell` file.
 
 5. Cell Structure Visualisation
 	* ### Jmol
@@ -89,9 +89,7 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 
 	* Find the section of the file which monitors the SCF loop and the approach to convergence. How many SCF iterations did it need?
 
-7. Copy the output files `Si2.castep` and `Si2.den_fmt` to the local machine using `sftp`.
-
-8. Visualisation of the charge density
+7. Visualisation of the charge density
 	* ### Jmol
 	Jmol can also be used to view the isodensity map, open the `.castep` file by dragging and dropping the `Si2.castep` file into the Jmol window. 
 
@@ -102,8 +100,9 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 		$ isosurface rho cutoff 14 "Si2.den_fmt" lattice { 2 2 2 }
 		```
 		
-		Note: you can use the `cd` command within Jmol to navigate to the folder with your `.castep` files.
-Jmol uses forward slash for paths to files on windows and linux based machines.
+	Note: you can use the `cd` command within Jmol to navigate to the folder with your `.castep` files.
+
+	Jmol uses forward slash for paths to files on windows and linux based machines.
 This `Si2.den_fmt` file is a formatted file produced by CASTEP that contains the value of the electron density on a grid of points.  This isosurface command in Jmol plots an isodensity surface over your atomic positions.
 
 	* ### Vesta
@@ -112,10 +111,12 @@ This `Si2.den_fmt` file is a formatted file produced by CASTEP that contains the
 		```
 		cp Si2.den_fmt Si2.charg_frm
 		```
+  
 	Now edit the file `Si2.charg_frm` with a text editor to remove the first 11 lines. The file should now begin with `1 1 1` and a number. You can now open `Si2.charg_frm` with Vesta. Note that Vesta needs both the `.cell` and `.charge_frm` files to make a plot. If you are working on a remote machine you will need to copy both of these back to your local machine to view with Vesta. You can find a walkthrough video of this process [here](https://youtu.be/_c2Hk4jxmm4).
 
 		![Silicon Charge Density](../img/silicon_charge_density.png)
-		An alternative way to plot charge densities (and much more besides) is [c2x](https://www.c2x.org.uk).
+  
+	An alternative way to plot charge densities (and much more besides) is [c2x](https://www.c2x.org.uk).
 
 	### Answer the following questions:
 	1. Can you explain what you see as you vary the isosurface value?
@@ -125,15 +126,15 @@ This `Si2.den_fmt` file is a formatted file produced by CASTEP that contains the
 
 9. Repeat steps 1-8 using input files for sodium chloride and aluminium.
 
-```
-/course_materials/Al.tgz
-/course_materials/NaCl.tgz
-```
-
-### Think about the following questions:
-
-* Note what similarities and differences you find compared to silicon? 
-* Does this help explain the difference in bond chemistry between silicon, sodium chloride and aluminium?
-* Does this help explain why there are many reasonable classical potential functions for NaCl to be found
-  in the simulation literature, but that finding good potentials for silicon is a very tough challenge?
-* What about aluminium, can you find good potentials for aluminium?
+	```
+	/course_materials/Al.tgz
+	/course_materials/NaCl.tgz
+	```
+	
+	### Think about the following questions:
+	
+	* Note what similarities and differences you find compared to silicon? 
+	* Does this help explain the difference in bond chemistry between silicon, sodium chloride and aluminium?
+	* Does this help explain why there are many reasonable classical potential functions for NaCl to be found
+	  in the simulation literature, but that finding good potentials for silicon is a very tough challenge?
+	* What about aluminium, can you find good potentials for aluminium?
