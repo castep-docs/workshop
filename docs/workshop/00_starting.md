@@ -34,27 +34,31 @@ To enable copying and pasting between your laptop and the VM, hover your mouse a
 
 Click the applications button in the bottom left and select software -> CASTEP. This will launch a terminal with shortcuts for running CASTEP. 
 
+!!! note
+    You will have to run this additional command to load aliases to run CASTEP and its tools on the VM:
+
+    ```$ source /course_materials/vm_aliases.sh```
+
 ### Accessing the CASTEP help system
 
 To search the castep help system for keywords containing castep:
 
-`castep-serial castep.serial -s lattice`
+`castep.serial -s lattice`
 
 To view detailed information on a particular keyword:
 
-`castep-serial castep.serial -h lattice_abc`
+`castep.serial -h lattice_abc`
 
 ### Running CASTEP
 
 To run castep in serial with Si2 as the seedname, type
 
-`castep-serial castep.serial Si2`
+```$ castep.serial Si2```
 
 To run castep in parallel using 16 core (the maximum for these virutal machines) with same Si2 seedname, type
 
-`castep-mpi mpirun -n 16 castep.mpi Si2`
+```$ mpirun -n 16 castep.mpi Si2```
 
-Note that the `castep-serial` and `castep-mpi` parts that the start of the above lines are particular to these virtual machines for the tutorial. Running castep on your own machines would typically involve either `castep.serial Si2` for the serial version or `mpirun -n 4 castep.mpi Si2` for the parallel version.
 
 ## Tutorial files
 
@@ -83,15 +87,15 @@ Then copy in the corresponding tutorial file:
 * `cp -r alice bob` - copy recursively `alice` to `bob`. You need this if you want to copy whole folders.
 * `cp ../myfile ./`  - copy the file `myfile` in the folder below to the current folder
 * `cp ~/myfile ./`   - copy the file `myfile` in your home folder to the current folder
-* `castep-mpi mpirun -np 8 castep.mpi diamond`  - submits a castep job with `diamond.cell` and `diamond.param` as inputs onto 8 cores with a time limit of 1 hour
+* ` mpirun -np 8 castep.mpi diamond`  - submits a castep job with `diamond.cell` and `diamond.param` as inputs onto 8 cores with a time limit of 1 hour
 
 ### c2x
 
 This is a handy free program written by Michael Rutter (TCM group Cambridge). It can convert
 `castep.cell` and `castep.check` files into various formats eg `.cell`, `.pdb`. (and many other things!)
 
-* `castep-serial c2x -h`  - list all the options
-* `castep-serial c2x --pdbn castep.cell castep.pdb`
-* `castep-serial c2x --pdbn castep.check castep.pdb`
-* `castep-serial c2x --cell castep.check new.cell`
+* `c2x -h`  - list all the options
+* `c2x --pdbn castep.cell castep.pdb`
+* `c2x --pdbn castep.check castep.pdb`
+* `c2x --cell castep.check new.cell`
  (useful at the end of geometry optimisation)
