@@ -46,7 +46,7 @@ task : bandstructure
 The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:
 
 ```
-%BLOCK BS_KPOINT_PATH
+%BLOCK spectral_kpoint_path
 
     0.0000  0.00000 0.00000  ! G
     0.0000  0.00000 0.50000  ! A
@@ -56,7 +56,7 @@ The .cell file requires a path through the Brillouin Zone along which you want t
     0.0000  0.50000 0.00000  ! M
     0.0000  0.50000 0.50000  ! L
    -0.3333  0.66667 0.50000  ! H
-%ENDBLOCK BS_KPOINT_PATH 
+%ENDBLOCK spectral_kpoint_path 
 ```
 Run CASTEP using:
 
@@ -66,7 +66,7 @@ $ castep-mpi mpirun -np 16 castep.mpi graphite
 Once the CASTEP calculation has finished a `graphite.bands` file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.
 
 ```
-$ castep-serial dispersion.pl -xg -bs -symmetry hexagonal graphite.bands
+$ castep-serial dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
 ```
 The `-xg` option tells dispersion.pl that you are using grace to plot the band structure, the `-bs` option tells the script that you want to plot using CASTEP output files, the `-symmetry hexagonal` option labels the high symmetry points on the bands structure plot.
 
@@ -105,7 +105,7 @@ Run the iron computation using CASTEP and plot the band structure for iron using
 
 ## Iron's Density of States
 
-To plot the density of states of iron, we need to run CASTEP again, instead of computing the band structure along a high symmetry line, we compute it on a grid.  To your Fe.cell file, remove the bs_kpoint_path block and replace it with:
+To plot the density of states of iron, we need to run CASTEP again, instead of computing the band structure along a high symmetry line, we compute it on a grid.  To your Fe.cell file, remove the spectral_kpoint_path block and replace it with:
 
 ```
 BS_KPOINT_MP_GRID 12 12 12
