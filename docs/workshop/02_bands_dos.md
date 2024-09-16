@@ -41,8 +41,8 @@ Move into the graphite directory, look at the CASTEP .cell and .param files and 
 
 To the .param file the task (which lets CASTEP know what you want it to do) needs to be changed to:
 ```
-task            spectral
-spectral_task   bandstructure
+task     :       spectral
+spectral_task :  bandstructure
 ```
 
 The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:
@@ -116,7 +116,7 @@ SPECTRAL_KPOINT_MP_GRID 12 12 12
 Run CASTEP using these new input files then use the dos.pl plotting script
 
 ```
-castep-mpi dos.pl -xg -bs -w 0.2 Fe.bands
+castep-serial dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
 ```
 
 Can you relate the features in the DOS to those in the Bandstructure?
