@@ -6,15 +6,15 @@
 In this tutorial we will model the bond length of a H2 molecule. This will give you the opportunity to get used to 
 geometry optimisations and gain familiarity 
 
-Remember you can use `castep --help` to assist you with finding the appropriate input parameters.
+Remember you can use `castep.serial --help` to assist you with finding the appropriate input parameters.
 
-0. Create a new file, `H2.cell` using your favourite text editor, e.g.
+1. Create a new file, `H2.cell` using your favourite text editor, e.g.
 
 	```
 	nano H2.cell
 	```
 	
-1. Start by creating a lattice block in your cell file.
+2. Start by creating a lattice block in your cell file.
 
 	```
 	%block lattice_abc
@@ -41,7 +41,7 @@ Remember you can use `castep --help` to assist you with finding the appropriate 
 	
 	A: You may wish to test this by changing the size of the box.
 	
-2. Add atoms into our cell. This can be done either relative to the lattice vectors using
+3. Add atoms into our cell. This can be done either relative to the lattice vectors using
 
 	```
 	%block positions_frac
@@ -60,7 +60,7 @@ Remember you can use `castep --help` to assist you with finding the appropriate 
 	
 	Q: If you are varying the size of your unit cell for tests, which one will be more convenient?
 
-3. Add final components to unit cell
+4. Add final components to unit cell
  
 	```
 	fix_all_cell: true
@@ -70,7 +70,7 @@ Remember you can use `castep --help` to assist you with finding the appropriate 
 	
 	Q: Why do we want to fix the lattice parameters rather than letting them relax?
 
-4. Now close `H2.cell` and create a `H2.param` file.
+5. Now close `H2.cell` and create a `H2.param` file.
 
 	In `H2.param` add
 	
@@ -88,7 +88,7 @@ Remember you can use `castep --help` to assist you with finding the appropriate 
 
 	You can now use `mpirun` (or your submission script!) to submit your geometry optimisation!
 
-5. Results Analysis
+6. Results Analysis
 
 	* Scroll down through the file. Check to see how the forces and bond-length varies over iterations.
 	* For advanced bash users, try `grep "F|max" H2.castep` to extract this from the file.
@@ -132,7 +132,8 @@ elec_energy_tol: 0.1
   
 This overwrites the default of `0.00001 ev` and will make the SCF convergence very fast. What does this do to the geometry optimisation?
   
-**NOTE:** This is not something you want to do in practice! Hopefully working through this example will demonstrate why.
+!!! note
+	**NOTE:** This is not something you want to do in practice! Hopefully working through this example will demonstrate why.
 
 
 ## Exercise 2

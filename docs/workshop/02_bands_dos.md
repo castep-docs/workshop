@@ -21,7 +21,7 @@ In addition to CASTEP and the suite of tools it comes with you will need:
 * [Grace](http://plasma-gate.weizmann.ac.il/Grace/)  - A 2D plotting program.
 * [Perl](http://www.perl.org) - a scripting language.
 
-These are available on the Arcus cluster.
+These are available on the virtual machines.
 
 ## Example files:
 Copy the input files to your home directory
@@ -63,12 +63,12 @@ The .cell file requires a path through the Brillouin Zone along which you want t
 Run CASTEP using:
 
 ```
-$ castep-mpi mpirun -np 16 castep.mpi graphite 
+$ mpirun -np 16 castep.mpi graphite 
 ```
 Once the CASTEP calculation has finished a `graphite.bands` file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.
 
 ```
-$ castep-serial dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
+$ dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
 ```
 The `-xg` option tells dispersion.pl that you are using grace to plot the band structure, the `-bs` option tells the script that you want to plot using CASTEP output files, the `-symmetry hexagonal` option labels the high symmetry points on the bands structure plot.
 
@@ -77,7 +77,7 @@ The program `orbitals2bands` overwrites your `Si.bands` file, so it's best to co
 
 ```
 $ cp graphite.bands graphite.bands.orig 
-$ castep-serial orbitals2bands graphite
+$ orbitals2bands graphite
 ```
 
 
@@ -116,7 +116,7 @@ SPECTRAL_KPOINT_MP_GRID 12 12 12
 Run CASTEP using these new input files then use the dos.pl plotting script
 
 ```
-castep-serial dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
+dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
 ```
 
 Can you relate the features in the DOS to those in the Bandstructure?
