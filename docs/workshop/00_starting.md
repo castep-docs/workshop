@@ -17,11 +17,18 @@ You should recieve an email with a link that you can use to connect to the STFC 
 
 Select New Workspace and then select CASTEP TRAINING WORKSHOP 2024 and click create workspace. This will generate you a virtual desktop on the STFC cloud service with access to CASTEP.
 
-## Connecting to the virual desktop
+## Connecting to and using the virual desktop
 
 Mouse over the workspace and you should be presented with buttons to launch the workspace in either a new tab or new window.  
 
-This should open a new window and load a virtual desktop within the browser. This is a linux desktop with CASTEP and several visualisations available. 
+This should open a new window and load a virtual desktop within the browser. This is a linux desktop with CASTEP and several other useful tools available. 
+
+### Uploading and downloading files from your laptop
+To upload or download any files from your laptop to the VM, navigate to <https://training.analysis.stfc.ac.uk/data/>, click on Data (left hand menu) and then select Home - that's your home directory where you can upload files to.   
+
+### Copying and pasting from your laptop
+
+To enable copying and pasting between your laptop and the VM, hover your mouse at the top of the virtual desktop and click on Copy & Paste to enable this.  
 
 ## Loading CASTEP
 
@@ -49,7 +56,7 @@ To run castep in parallel using 16 core (the maximum for these virutal machines)
 
 Note that the `castep-serial` and `castep-mpi` parts that the start of the above lines are particular to these virtual machines for the tutorial. Running castep on your own machines would typically involve either `castep.serial Si2` for the serial version or `mpirun -n 4 castep.mpi Si2` for the parallel version.
 
-## Tuorial files
+## Tutorial files
 
 The files needed for these tutorials can be found by navigating from Applications -> Data -> Course Materials (that will open up a file browser in the right place). They can also be accessed via the command line from this location: `/course_materials/`. Copy the files to somewhere in your home directory before trying to run CASTEP (you can't run CASTEP in the `/course_materials` directory. You can do that either using the graphical file browser or using the command line. For example:
 
@@ -73,9 +80,9 @@ Then copy in the corresponding tutorial file:
 * `ls -l`  - list files - but give more details than plain `ls`
 * `exit`  - to close the terminal when you are finished
 * `cp fred/* jim/`  - copy all the files in the folder `fred` into the folder `jim`
+* `cp -r alice bob` - copy recursively `alice` to `bob`. You need this if you want to copy whole folders.
 * `cp ../myfile ./`  - copy the file `myfile` in the folder below to the current folder
 * `cp ~/myfile ./`   - copy the file `myfile` in your home folder to the current folder
-* `qstat`  - look at the list of jobs running and queued on the cluster
 * `castep-mpi mpirun -np 8 castep.mpi diamond`  - submits a castep job with `diamond.cell` and `diamond.param` as inputs onto 8 cores with a time limit of 1 hour
 
 ### c2x
