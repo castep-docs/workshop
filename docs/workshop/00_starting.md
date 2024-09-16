@@ -49,6 +49,19 @@ To run castep in parallel using 16 core (the maximum for these virutal machines)
 
 Note that the `castep-serial` and `castep-mpi` parts that the start of the above lines are particular to these virtual machines for the tutorial. Running castep on your own machines would typically involve either `castep.serial Si2` for the serial version or `mpirun -n 4 castep.mpi Si2` for the parallel version.
 
+## Tuorial files
+
+The files needed for these tutorials can be found by navigating from Applications -> Data -> Course Materials (that will open up a file browser in the right place). They can also be accessed via the command line from this location: `/course_materials/`. Copy the files to somewhere in your home directory before trying to run CASTEP (you can't run CASTEP in the `/course_materials` directory. You can do that either using the graphical file browser or using the command line. For example:
+
+Make a folder called Si2 in your home directory:
+
+`mkdir ~/Si2`
+
+Then copy in the corresponding tutorial file:
+
+`cp /course_materials/Si2.tar.gz ~/Si2/`
+
+
 ## Summary of useful commands
 
 * `mv`   - rename (or move) a file eg. `mv oldfile newfile`
