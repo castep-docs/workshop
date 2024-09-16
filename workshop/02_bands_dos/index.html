@@ -2985,7 +2985,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>task : bandstructure
 </code></pre></div>
 The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%BLOCK BS_KPOINT_PATH
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%BLOCK spectral_kpoint_path
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    0.0000  0.00000 0.00000  ! G
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    0.0000  0.00000 0.50000  ! A
@@ -2995,13 +2995,13 @@ The .cell file requires a path through the Brillouin Zone along which you want t
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    0.0000  0.50000 0.00000  ! M
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    0.0000  0.50000 0.50000  ! L
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>   -0.3333  0.66667 0.50000  ! H
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>%ENDBLOCK BS_KPOINT_PATH 
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>%ENDBLOCK spectral_kpoint_path 
 </code></pre></div>
 Run CASTEP using:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ castep-mpi mpirun -np 16 castep.mpi graphite 
 </code></pre></div>
 Once the CASTEP calculation has finished a <code>graphite.bands</code> file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ castep-serial dispersion.pl -xg -bs -symmetry hexagonal graphite.bands
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ castep-serial dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
 </code></pre></div>
 The <code>-xg</code> option tells dispersion.pl that you are using grace to plot the band structure, the <code>-bs</code> option tells the script that you want to plot using CASTEP output files, the <code>-symmetry hexagonal</code> option labels the high symmetry points on the bands structure plot.</p>
 <p>When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The <code>orbitals2bands</code> tool can be used to alter the <code>Si.bands</code> file represent the orbitals that contribute to the bands.  This tool can be run in the same directory that you ran CASTEP in.
@@ -3026,7 +3026,7 @@ The program <code>orbitals2bands</code> overwrites your <code>Si.bands</code> fi
 The path through the Brillouin Zone is found in the <code>Fe.cell</code> file.</p>
 <p>Run the iron computation using CASTEP and plot the band structure for iron using <code>dispersion.pl</code>.  You might find the <code>-mono</code> option to <code>dispersion.pl</code> to be useful - it colours the bands by spin channel.</p>
 <h2 id="irons-density-of-states">Iron's Density of States</h2>
-<p>To plot the density of states of iron, we need to run CASTEP again, instead of computing the band structure along a high symmetry line, we compute it on a grid.  To your Fe.cell file, remove the bs_kpoint_path block and replace it with:</p>
+<p>To plot the density of states of iron, we need to run CASTEP again, instead of computing the band structure along a high symmetry line, we compute it on a grid.  To your Fe.cell file, remove the spectral_kpoint_path block and replace it with:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BS_KPOINT_MP_GRID 12 12 12
 </code></pre></div>
 <p>Run CASTEP using these new input files then use the dos.pl plotting script</p>
