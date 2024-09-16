@@ -2982,8 +2982,8 @@
 <h2 id="example-1-graphite">Example 1 - Graphite.</h2>
 <p>Move into the graphite directory, look at the CASTEP .cell and .param files and notice the differences from the previous single point energy runs.</p>
 <p>To the .param file the task (which lets CASTEP know what you want it to do) needs to be changed to:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>task            spectral
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>spectral_task   bandstructure
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>task     :       spectral
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>spectral_task :  bandstructure
 </code></pre></div></p>
 <p>The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>%BLOCK spectral_kpoint_path
@@ -3031,7 +3031,7 @@ The path through the Brillouin Zone is found in the <code>Fe.cell</code> file.</
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>SPECTRAL_KPOINT_MP_GRID 12 12 12
 </code></pre></div>
 <p>Run CASTEP using these new input files then use the dos.pl plotting script</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>castep-mpi dos.pl -xg -bs -w 0.2 Fe.bands
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>castep-serial dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
 </code></pre></div>
 <p>Can you relate the features in the DOS to those in the Bandstructure?</p>
 <p>You might find the <code>-mirror</code> option useful. The <code>-w</code> option sets the Gaussian broadening in eV. Try smaller (0.05) and larger (0.5) values - explain what you see.</p>
