@@ -17,7 +17,7 @@ You should recieve an email with a link that you can use to connect to the STFC 
 
 Select New Workspace and then select CASTEP TRAINING WORKSHOP 2024 and click create workspace. This will generate you a virtual desktop on the STFC cloud service with access to CASTEP.
 
-## Connecting to and using the virual desktop
+## Connecting to and using the virtual desktop
 
 Mouse over the workspace and you should be presented with buttons to launch the workspace in either a new tab or new window.  
 
