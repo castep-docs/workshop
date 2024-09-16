@@ -3024,7 +3024,7 @@ The <code>Si_00.usp</code> file is a pseudopotential file, you do not need to un
 </code></pre></div>
 </li>
 <li>
-<p>It is useful to view the structure before submitting your calculation using CASTEP. Copy the <code>Si2.cell</code> to your local machine using the sftp window (left) in mobaXterm.</p>
+<p>It is useful to view the structure before submitting your calculation using CASTEP. You Jmol and Vesta are installed on the VM and can both be used to visualise the <code>Si2.cell</code> file.</p>
 </li>
 <li>
 <p>Cell Structure Visualisation</p>
@@ -3060,9 +3060,6 @@ Setting <code>x(max)</code>, <code>y(max)</code>, and <code>z(max)</code> to 2 w
 </ul>
 </li>
 <li>
-<p>Copy the output files <code>Si2.castep</code> and <code>Si2.den_fmt</code> to the local machine using <code>sftp</code>.</p>
-</li>
-<li>
 <p>Visualisation of the charge density</p>
 <ul>
 <li>
@@ -3071,20 +3068,22 @@ Jmol can also be used to view the isodensity map, open the <code>.castep</code> 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ load &quot;&quot; { 2 2 2 }
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ isosurface rho cutoff 14 &quot;Si2.den_fmt&quot; lattice { 2 2 2 }
 </code></pre></div>
-<p>Note: you can use the <code>cd</code> command within Jmol to navigate to the folder with your <code>.castep</code> files.
-Jmol uses forward slash for paths to files on windows and linux based machines.
-This <code>Si2.den_fmt</code> file is a formatted file produced by CASTEP that contains the value of the electron density on a grid of points.  This isosurface command in Jmol plots an isodensity surface over your atomic positions.</p>
-</li>
-<li>
-<h3 id="vesta_1">Vesta</h3>
-<p>You will see a file called <code>Si2.den_fmt</code> which contains the charge density in a formatted (i.e. a human readable, ASCII file). We need to change this file into a format Vesta can read. Copy it to a file called <code>Si2.charg_frm</code></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cp Si2.den_fmt Si2.charg_frm
-</code></pre></div>
-    Now edit the file <code>Si2.charg_frm</code> with a text editor to remove the first 11 lines. The file should now begin with <code>1 1 1</code> and a number. You can now open <code>Si2.charg_frm</code> with Vesta. Note that Vesta needs both the <code>.cell</code> and <code>.charge_frm</code> files to make a plot. If you are working on a remote machine you will need to copy both of these back to your local machine to view with Vesta. You can find a walkthrough video of this process <a href="https://youtu.be/_c2Hk4jxmm4">here</a>.</p>
-<p><img alt="Silicon Charge Density" src="../../img/silicon_charge_density.png" />
-An alternative way to plot charge densities (and much more besides) is <a href="https://www.c2x.org.uk">c2x</a>.</p>
 </li>
 </ul>
+<p>Note: you can use the <code>cd</code> command within Jmol to navigate to the folder with your <code>.castep</code> files.</p>
+<p>Jmol uses forward slash for paths to files on windows and linux based machines.
+This <code>Si2.den_fmt</code> file is a formatted file produced by CASTEP that contains the value of the electron density on a grid of points.  This isosurface command in Jmol plots an isodensity surface over your atomic positions.</p>
+<ul>
+<li>
+<h3 id="vesta_1">Vesta</h3>
+You will see a file called <code>Si2.den_fmt</code> which contains the charge density in a formatted (i.e. a human readable, ASCII file). We need to change this file into a format Vesta can read. Copy it to a file called <code>Si2.charg_frm</code><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cp Si2.den_fmt Si2.charg_frm
+</code></pre></div>
+</li>
+</ul>
+<p>Now edit the file <code>Si2.charg_frm</code> with a text editor to remove the first 11 lines. The file should now begin with <code>1 1 1</code> and a number. You can now open <code>Si2.charg_frm</code> with Vesta. Note that Vesta needs both the <code>.cell</code> and <code>.charge_frm</code> files to make a plot. If you are working on a remote machine you will need to copy both of these back to your local machine to view with Vesta. You can find a walkthrough video of this process <a href="https://youtu.be/_c2Hk4jxmm4">here</a>.</p>
+<div class="highlight"><pre><span></span><code>![Silicon Charge Density](../img/silicon_charge_density.png)
+</code></pre></div>
+<p>An alternative way to plot charge densities (and much more besides) is <a href="https://www.c2x.org.uk">c2x</a>.</p>
 <h3 id="answer-the-following-questions">Answer the following questions:</h3>
 <ol>
 <li>Can you explain what you see as you vary the isosurface value?</li>
@@ -3095,8 +3094,6 @@ An alternative way to plot charge densities (and much more besides) is <a href="
 </li>
 <li>
 <p>Repeat steps 1-8 using input files for sodium chloride and aluminium.</p>
-</li>
-</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/course_materials/Al.tgz
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/course_materials/NaCl.tgz
 </code></pre></div>
@@ -3108,6 +3105,8 @@ An alternative way to plot charge densities (and much more besides) is <a href="
   in the simulation literature, but that finding good potentials for silicon is a very tough challenge?</li>
 <li>What about aluminium, can you find good potentials for aluminium?</li>
 </ul>
+</li>
+</ol>
 
               
             </article>
