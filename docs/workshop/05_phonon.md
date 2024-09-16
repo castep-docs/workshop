@@ -1,8 +1,19 @@
 # Phonons and Spectroscopy Tutorial
 
-The aims of this tutorial session is to introduce you to running larger-scale CASTEP jobs on supercomputer clusters, editing of input files for and setup of CASTEP     jobs, and analysis of the results using standalone tools.  To achieve results without waiting too long for jobs to complete the initial runs will be small ones, but    the aim by the end of this afternoon should be to set up larger and more significant runs.   Today's session will entirely comprise insulators or semiconductors.
-You may need to consult the CASTEP phonon users guide, which may be accessed [here](http://www.tcm.phy.cam.ac.uk/castep/Phonons_Guide/Castep_Phonons.html)
-The practical will be conducted using the arc service. Make a directory called (e.g.) `Phonons` and copy the files [h-BN.cell](h-BN.cell) and [h-BN.param](h-BN.param) into the new folder.
+The aims of this tutorial session is to introduce you to running
+CASTEP phonon jobs on, editing of input files for and setup of CASTEP
+jobs, and analysis of the results using standalone tools.  To achieve
+results without waiting too long for jobs to complete the initial runs
+will be small ones, but the aim by the end of this afternoon should be
+to set up larger and more significant runs.  Today's session will
+entirely comprise insulators or semiconductors.  You should read the
+introduction of the Phonons section in the CASTEP documentation site
+([direct
+link](https://castep-docs.github.io/castep-docs/documentation/Phonons/Castep_Phonons/Introduction/)).
+The practical will be conducted using the STFC IDAAS service. Make a
+directory called (e.g.) `Phonons` and copy the files
+[h-BN.cell](h-BN.cell) and [h-BN.param](h-BN.param) from the shared
+courseware directory into the new folder.
 
 ## A. $\Gamma$-Point phonon in h-BN
 
@@ -36,7 +47,7 @@ BN is one of a family of Nitride semiconductors, which occurs in cubic zincblend
 	Have a look in the `.param` file, look up the meaning of any keywords you don’t know (you can use `castep.serial -h <keyword>`). Test your configuration using
 	
 	```
-	castep.serial –dryrun h-BN
+	castepp-serial castep.serial –dryrun h-BN
 	```
 
 	This tells CASTEP to read the intput files and summaries the calculation in the `.castep` file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).
@@ -45,14 +56,14 @@ BN is one of a family of Nitride semiconductors, which occurs in cubic zincblend
 Once you have in place the `<seed>.cell` and `<seed>.param` files you are ready to submit the CASTEP job.  This is done using our general script:
 
 	```
-	mpirun -n 4 castep.mpi  h-BN
+	castep-mpi mpirun -n 16 castep.mpi  h-BN
 	```
 
-	which requests a 16-core parallel run. Use the `qstat` command to monitor the progress of your calculation. When it has finished, you can examine the output file `h-BN.castep` and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file `h-BN.phonon` which contains the frequencies and also the eigenvectors which we will analyse.
+	which requests a 16-core parallel run. When it has finished, you can examine the output file `h-BN.castep` and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file `h-BN.phonon` which contains the frequencies and also the eigenvectors which we will analyse.
 
 2. Analysis of h-BN phonon output.
 
-	We will use Castep’s tools to visualise the modes using the free Jmol visualiser. Use secure file transfer to copy the `.phonon` file back to the PC where Jmol is installed.  Start Jmol and bring up a console window from the right-mouse menu. To use   the full power of the command-line and find the files it is most convenient to set Jmol's current directory to the location of your working directory containing your   output files. (It is possible and simpler to drag and drop the `.phonon` file onto Jmol window, but you need the power of the command line to display additional periodic repeats.)
+	We will use Castep’s tools to visualise the modes using the free Jmol visualiser. Use secure file transfer to copy the `.phonon` file back to the PC where Jmol is installed.  Start Jmol (from the Applications->Software menu) and bring up a console window from the right-mouse menu. To use   the full power of the command-line and find the files it is most convenient to set Jmol's current directory to the location of your working directory containing your   output files. (It is possible and simpler to drag and drop the `.phonon` file onto Jmol window, but you need the power of the command line to display additional periodic repeats.)
 	
 	```
 	cd
@@ -63,18 +74,18 @@ Once you have in place the `<seed>.cell` and `<seed>.param` files you are ready 
 	Then type the Jmol command to load your `.castep` file
 	
 	```
-	load h-BN.phonon {3 3 2} PACKED
+	load "h-BN.phonon" {3 3 1} PACKED
 	```
 
-	Note that while you can read in the `.phonon` file from Jmol's File menu, you need the additional opitions of the command line to  display additional periodic repeats.
-	You can then use the `Tools-Vibrate` menu to turn on mode animation, and navigate the modes.  Can you see from the mode eigenvectors which modes are IR-active and  which are Raman active? Do you agree with the IR and Raman activity printed in the `.castep` file?
+	Note that while you can read in the `.phonon` file from Jmol's File menu, you need the additional options of the command line to  display additional periodic repeats.
+	You can then use the `Tools->Vibrate` menu to turn on mode animation, and navigate the modes.  Can you see from the mode eigenvectors which modes are IR-active and  which are Raman active? Do you agree with the IR and Raman activity printed in the `.castep` file?
 
 ### Generation of IR spectrum
 
-The easiest way to generate a simple model IR spectrum is to use Castep’s `dos.pl` tool.  To run this in the most effective way and automatically display a plot, you   will need to be running an X windows server on the PC.  In that case the command
+The easiest way to generate a simple model IR spectrum is to use Castep’s `dos.pl` tool.  To run this on the apptainer in the most effective way and automatically display a plot, the command
 	
 ```
-dos.pl -ir -xg h-BN.phonon
+castep-serial dos.pl -ir -xg -np h-BN.phonon | xmgrace -
 ```
 
 will generate a plot script and use the `xmgrace` plotting program to display it.  You can create a `gnuplot` script instead of `xmgrace` by changing the `-xg` flag to `-gp`.  Alternatively you can generate a GNUPLOT script without plotting by
@@ -83,7 +94,7 @@ will generate a plot script and use the `xmgrace` plotting program to display it
 dos.pl -ir -gp -np h-BN.phonon > h-BN-phonon.plt
 ```
 
-You can then copy the `h-BN-phonon.plt` back to the PC and read this into GNUPLOT.
+.
 
 ### Generation of Raman spectrum
 
@@ -100,7 +111,7 @@ You can use the `-raman` flag of `dos.pl` to generate and plot a Raman spectrum.
 
 The next part of this practical is to compute the modes and spectrum of a molecule and compare the result with a calculation of a molecular crystal.  Our example is  [benzene](benzene-mol.pdb)
 
-First run the isolated molecule calculation.  Using the supplied PDB format file and using the `pdb2cell` utility, generate a `.cell` file for a single molecule calculation.  There are a few other considerations to take into account for an isolated molecule calculation.
+First run the isolated molecule calculation.  Using the supplied PDB format file and using the `pdb2cell` utility[^1], generate a `.cell` file for a single molecule calculation.  There are a few other considerations to take into account for an isolated molecule calculation.
 
 1. The size of the simulation cell governs the interactions between periodic copies of the molecule and should be large enough that these are negligible.
 
@@ -123,6 +134,8 @@ Benzene Phase III: The next stage is to compute the $\Gamma$ point phonon modes 
 Once these calculations have completed you should generate a phonon DOS and IR spectra as in the previous practical and compare the molecule with the molecular crystal. You can also use Jmol to identify the modes.
 
 Are all your frequencies positive?  If not, can you suggest why not?
+
+[^1]: installed in the castep-serial apptainer.
 
 ## C. Phonon dispersion using interpolation in NaH
 
@@ -185,6 +198,6 @@ You can try this several times with different fine q-point grids.
 	This will produce a  `.castep` and `.phonon` file as before.   You may analyse the .phonon file and generate a DOS using the `dos.pl` script
 
 	```
-	dos.pl -xg NaH-dos.phonon
+	castep-serial dos.pl -xg -np NaH-dos.phonon | xmgrace -
 	```
 	(again, an X server running on the PC will be needed for grace to display; MobaXterm should have this enabled by default) .
