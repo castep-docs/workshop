@@ -56,7 +56,7 @@ BN is one of a family of Nitride semiconductors, which occurs in cubic zincblend
 Once you have in place the `<seed>.cell` and `<seed>.param` files you are ready to submit the CASTEP job.  This is done using our general script:
 
 	```
-	castep-mpi mpirun -n 16 castep.mpi  h-BN
+	mpirun -n 16 castep.mpi  h-BN
 	```
 
 	which requests a 16-core parallel run. When it has finished, you can examine the output file `h-BN.castep` and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file `h-BN.phonon` which contains the frequencies and also the eigenvectors which we will analyse.
@@ -85,7 +85,7 @@ Once you have in place the `<seed>.cell` and `<seed>.param` files you are ready 
 The easiest way to generate a simple model IR spectrum is to use Castep’s `dos.pl` tool.  To run this on the apptainer in the most effective way and automatically display a plot, the command
 	
 ```
-castep-serial dos.pl -ir -xg -np h-BN.phonon | xmgrace -
+dos.pl -ir -xg -np h-BN.phonon | xmgrace -
 ```
 
 will generate a plot script and use the `xmgrace` plotting program to display it.  You can create a `gnuplot` script instead of `xmgrace` by changing the `-xg` flag to `-gp`.  Alternatively you can generate a GNUPLOT script without plotting by
@@ -198,6 +198,6 @@ You can try this several times with different fine q-point grids.
 	This will produce a  `.castep` and `.phonon` file as before.   You may analyse the .phonon file and generate a DOS using the `dos.pl` script
 
 	```
-	castep-serial dos.pl -xg -np NaH-dos.phonon | xmgrace -
+	dos.pl -xg -np NaH-dos.phonon | xmgrace -
 	```
 	(again, an X server running on the PC will be needed for grace to display; MobaXterm should have this enabled by default) .

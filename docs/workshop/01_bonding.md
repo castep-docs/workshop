@@ -17,19 +17,19 @@ If you want more information about a particular CASTEP keyword, or you want to f
 * There is information on this website: [www.castep.org](http://www.castep.org).
 * CASTEP has an in built help option to assist with using particular keywords.  Information on using CASTEP can be seen by using:
 
-	`$ castep-serial castep.serial --help`
+	`$ castep.serial --help`
 
 	To get more information on a particular input file keyword (e.g. `kpoint_mp_grid`) use:
 	
-	`$ castep-serial castep.serial --help kpoints_mp_grid`
+	`$ castep.serial --help kpoints_mp_grid`
 
 	If you don't know the keyword you need to use, then you can search on a particular keyword. This returns a list of keywords that you might be interested in, e.g. to look at all keywords which contain a reference to symmetry.
 
-	`$ castep-serial castep.serial --search symmetry`
+	`$ castep.serial --search symmetry`
 
 	Finally, to list all keywords, use:
 
-	`$ castep-serial castep.serial --search all`
+	`$ castep.serial --search all`
 	
 	Note that the long-form arguments `--help` and `--search` can optionally be replaced with `-h` and `-s`, respectively.
 
@@ -83,7 +83,7 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 
 6. Now run CASTEP using the 2-atom input files.
 
-	`$ castep-serial castep.serial Si2`
+	`$ castep.serial Si2`
 	
 	This should only take a few seconds and produce a readable output file `Si2.castep`. Examine this file and try to understand the meaning of the various parts. In particular check the section following the header which lists all of the input parameters, both explicit and default. Note what default values of the major parameters CASTEP chose where you did not specify them explicitly. (There will be some whose meaning has not been explained. Don't worry about these.) 
 
@@ -116,15 +116,20 @@ This `Si2.den_fmt` file is a formatted file produced by CASTEP that contains the
 
 	![Silicon Charge Density](../img/silicon_charge_density.png)
   
-	An alternative way to plot charge densities (and much more besides) is [c2x](https://www.c2x.org.uk).
+	An alternative way to plot charge densities (and much more besides) is [c2x](https://www.c2x.org.uk). You can use c2x to convert the `.den_fmt` file to a `.xsf` file which can be read by Vesta:
+	
+		```
+		$ c2x -c Si2.den_fmt Si2.xsf
+		```
+
 
 	### Answer the following questions:
 	1. Can you explain what you see as you vary the isosurface value?
-	1. Can you see any features which might be characteristic of a covalently-bonded crystal.
-	1. Do you notice anything strange about the electron density close to the Si nucleus? 
-	1. Can you explain this as a consequence of the particular kind of electronic structure calculation you have just performed?
+	2. Can you see any features which might be characteristic of a covalently-bonded crystal.
+	3. Do you notice anything strange about the electron density close to the Si nucleus? 
+	4. Can you explain this as a consequence of the particular kind of electronic structure calculation you have just performed?
 
-9. Repeat steps 1-8 using input files for sodium chloride and aluminium.
+1. Repeat steps 1-8 using input files for sodium chloride and aluminium.
 
 	```
 	/course_materials/Al.tgz
