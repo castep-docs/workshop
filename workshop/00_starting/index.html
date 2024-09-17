@@ -3064,17 +3064,21 @@
 <p>To enable copying and pasting between your laptop and the VM, hover your mouse at the top of the virtual desktop and click on Copy &amp; Paste to enable this.  </p>
 <h2 id="loading-castep">Loading CASTEP</h2>
 <p>Click the applications button in the bottom left and select software -&gt; CASTEP. This will launch a terminal with shortcuts for running CASTEP. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will have to run this additional command to load aliases to run CASTEP and its tools on the VM:</p>
+<p><code>$ source /course_materials/vm_aliases.sh</code></p>
+</div>
 <h3 id="accessing-the-castep-help-system">Accessing the CASTEP help system</h3>
 <p>To search the castep help system for keywords containing castep:</p>
-<p><code>castep-serial castep.serial -s lattice</code></p>
+<p><code>castep.serial -s lattice</code></p>
 <p>To view detailed information on a particular keyword:</p>
-<p><code>castep-serial castep.serial -h lattice_abc</code></p>
+<p><code>castep.serial -h lattice_abc</code></p>
 <h3 id="running-castep">Running CASTEP</h3>
 <p>To run castep in serial with Si2 as the seedname, type</p>
-<p><code>castep-serial castep.serial Si2</code></p>
+<p><code>$ castep.serial Si2</code></p>
 <p>To run castep in parallel using 16 core (the maximum for these virutal machines) with same Si2 seedname, type</p>
-<p><code>castep-mpi mpirun -n 16 castep.mpi Si2</code></p>
-<p>Note that the <code>castep-serial</code> and <code>castep-mpi</code> parts that the start of the above lines are particular to these virtual machines for the tutorial. Running castep on your own machines would typically involve either <code>castep.serial Si2</code> for the serial version or <code>mpirun -n 4 castep.mpi Si2</code> for the parallel version.</p>
+<p><code>$ mpirun -n 16 castep.mpi Si2</code></p>
 <h2 id="tutorial-files">Tutorial files</h2>
 <p>The files needed for these tutorials can be found by navigating from Applications -&gt; Data -&gt; Course Materials (that will open up a file browser in the right place). They can also be accessed via the command line from this location: <code>/course_materials/</code>. Copy the files to somewhere in your home directory before trying to run CASTEP (you can't run CASTEP in the <code>/course_materials</code> directory. You can do that either using the graphical file browser or using the command line. For example:</p>
 <p>Make a folder called Si2 in your home directory:</p>
@@ -3095,16 +3099,16 @@
 <li><code>cp -r alice bob</code> - copy recursively <code>alice</code> to <code>bob</code>. You need this if you want to copy whole folders.</li>
 <li><code>cp ../myfile ./</code>  - copy the file <code>myfile</code> in the folder below to the current folder</li>
 <li><code>cp ~/myfile ./</code>   - copy the file <code>myfile</code> in your home folder to the current folder</li>
-<li><code>castep-mpi mpirun -np 8 castep.mpi diamond</code>  - submits a castep job with <code>diamond.cell</code> and <code>diamond.param</code> as inputs onto 8 cores with a time limit of 1 hour</li>
+<li><code>mpirun -np 8 castep.mpi diamond</code>  - submits a castep job with <code>diamond.cell</code> and <code>diamond.param</code> as inputs onto 8 cores with a time limit of 1 hour</li>
 </ul>
 <h3 id="c2x">c2x</h3>
 <p>This is a handy free program written by Michael Rutter (TCM group Cambridge). It can convert
 <code>castep.cell</code> and <code>castep.check</code> files into various formats eg <code>.cell</code>, <code>.pdb</code>. (and many other things!)</p>
 <ul>
-<li><code>castep-serial c2x -h</code>  - list all the options</li>
-<li><code>castep-serial c2x --pdbn castep.cell castep.pdb</code></li>
-<li><code>castep-serial c2x --pdbn castep.check castep.pdb</code></li>
-<li><code>castep-serial c2x --cell castep.check new.cell</code>
+<li><code>c2x -h</code>  - list all the options</li>
+<li><code>c2x --pdbn castep.cell castep.pdb</code></li>
+<li><code>c2x --pdbn castep.check castep.pdb</code></li>
+<li><code>c2x --cell castep.check new.cell</code>
  (useful at the end of geometry optimisation)</li>
 </ul>
 

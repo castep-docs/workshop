@@ -2956,7 +2956,7 @@
 <h2 id="exercise-1-dihydrogen-dimer">Exercise 1 - Dihydrogen dimer</h2>
 <p>In this tutorial we will model the bond length of a H2 molecule. This will give you the opportunity to get used to 
 geometry optimisations and gain familiarity </p>
-<p>Remember you can use <code>castep --help</code> to assist you with finding the appropriate input parameters.</p>
+<p>Remember you can use <code>castep.serial --help</code> to assist you with finding the appropriate input parameters.</p>
 <ol>
 <li>
 <p>Create a new file, <code>H2.cell</code> using your favourite text editor, e.g.</p>
@@ -3050,7 +3050,10 @@ Q: Why do we only want to use a single k-point?</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>elec_energy_tol: 0.1
 </code></pre></div>
 <p>This overwrites the default of <code>0.00001 ev</code> and will make the SCF convergence very fast. What does this do to the geometry optimisation?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><strong>NOTE:</strong> This is not something you want to do in practice! Hopefully working through this example will demonstrate why.</p>
+</div>
 <h2 id="exercise-2">Exercise 2</h2>
 <p>Run a geometry optimisation on silicon.</p>
 <p>You can use a silicon input file from one of the previous tutorials as a starting point for your input files.</p>

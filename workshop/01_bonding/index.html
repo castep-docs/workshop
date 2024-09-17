@@ -2993,13 +2993,13 @@
 <li>There is information on this website: <a href="http://www.castep.org">www.castep.org</a>.</li>
 <li>
 <p>CASTEP has an in built help option to assist with using particular keywords.  Information on using CASTEP can be seen by using:</p>
-<p><code>$ castep-serial castep.serial --help</code></p>
+<p><code>$ castep.serial --help</code></p>
 <p>To get more information on a particular input file keyword (e.g. <code>kpoint_mp_grid</code>) use:</p>
-<p><code>$ castep-serial castep.serial --help kpoints_mp_grid</code></p>
+<p><code>$ castep.serial --help kpoints_mp_grid</code></p>
 <p>If you don't know the keyword you need to use, then you can search on a particular keyword. This returns a list of keywords that you might be interested in, e.g. to look at all keywords which contain a reference to symmetry.</p>
-<p><code>$ castep-serial castep.serial --search symmetry</code></p>
+<p><code>$ castep.serial --search symmetry</code></p>
 <p>Finally, to list all keywords, use:</p>
-<p><code>$ castep-serial castep.serial --search all</code></p>
+<p><code>$ castep.serial --search all</code></p>
 <p>Note that the long-form arguments <code>--help</code> and <code>--search</code> can optionally be replaced with <code>-h</code> and <code>-s</code>, respectively.</p>
 </li>
 </ul>
@@ -3053,7 +3053,7 @@ Setting <code>x(max)</code>, <code>y(max)</code>, and <code>z(max)</code> to 2 w
 </li>
 <li>
 <p>Now run CASTEP using the 2-atom input files.</p>
-<p><code>$ castep-serial castep.serial Si2</code></p>
+<p><code>$ castep.serial Si2</code></p>
 <p>This should only take a few seconds and produce a readable output file <code>Si2.castep</code>. Examine this file and try to understand the meaning of the various parts. In particular check the section following the header which lists all of the input parameters, both explicit and default. Note what default values of the major parameters CASTEP chose where you did not specify them explicitly. (There will be some whose meaning has not been explained. Don't worry about these.) </p>
 <ul>
 <li>Find the section of the file which monitors the SCF loop and the approach to convergence. How many SCF iterations did it need?</li>
@@ -3082,7 +3082,11 @@ You will see a file called <code>Si2.den_fmt</code> which contains the charge de
 </ul>
 <p>Now edit the file <code>Si2.charg_frm</code> with a text editor to remove the first 11 lines. The file should now begin with <code>1 1 1</code> and a number. You can now open <code>Si2.charg_frm</code> with Vesta. Note that Vesta needs both the <code>.cell</code> and <code>.charge_frm</code> files to make a plot. If you are working on a remote machine you will need to copy both of these back to your local machine to view with Vesta. You can find a walkthrough video of this process <a href="https://youtu.be/_c2Hk4jxmm4">here</a>.</p>
 <p><img alt="Silicon Charge Density" src="../../img/silicon_charge_density.png" /></p>
-<p>An alternative way to plot charge densities (and much more besides) is <a href="https://www.c2x.org.uk">c2x</a>.</p>
+<p>An alternative way to plot charge densities (and much more besides) is <a href="https://www.c2x.org.uk">c2x</a>. You can use c2x to convert the <code>.den_fmt</code> file to a <code>.xsf</code> file which can be read by Vesta:</p>
+<div class="highlight"><pre><span></span><code>```
+$ c2x -c Si2.den_fmt Si2.xsf
+```
+</code></pre></div>
 <h3 id="answer-the-following-questions">Answer the following questions:</h3>
 <ol>
 <li>Can you explain what you see as you vary the isosurface value?</li>
@@ -3093,8 +3097,8 @@ You will see a file called <code>Si2.den_fmt</code> which contains the charge de
 </li>
 <li>
 <p>Repeat steps 1-8 using input files for sodium chloride and aluminium.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/course_materials/Al.tgz
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/course_materials/NaCl.tgz
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/course_materials/Al.tgz
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/course_materials/NaCl.tgz
 </code></pre></div>
 <h3 id="think-about-the-following-questions">Think about the following questions:</h3>
 <ul>

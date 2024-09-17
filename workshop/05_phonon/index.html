@@ -2966,7 +2966,7 @@ and one to specify a gamma-point phonon wavevector</p>
 <p>This tells CASTEP to read the intput files and summaries the calculation in the <code>.castep</code> file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).</p>
 <p>Check to see if any <code>.err</code> files are produced and fix issues, if any. If / when no errors are returned, congratulations.  You have set up the input files, and you can delete the dryrun .castep file.
 Once you have in place the <code>&lt;seed&gt;.cell</code> and <code>&lt;seed&gt;.param</code> files you are ready to submit the CASTEP job.  This is done using our general script:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>castep-mpi mpirun -n 16 castep.mpi  h-BN
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mpirun -n 16 castep.mpi  h-BN
 </code></pre></div>
 <p>which requests a 16-core parallel run. When it has finished, you can examine the output file <code>h-BN.castep</code> and find the frequencies.  What you see is explained further in the Phonons user guide linked above. There is also a machine-readable file <code>h-BN.phonon</code> which contains the frequencies and also the eigenvectors which we will analyse.</p>
 </li>
@@ -2986,7 +2986,7 @@ You can then use the <code>Tools-&gt;Vibrate</code> menu to turn on mode animati
 </ol>
 <h3 id="generation-of-ir-spectrum">Generation of IR spectrum</h3>
 <p>The easiest way to generate a simple model IR spectrum is to use Castep’s <code>dos.pl</code> tool.  To run this on the apptainer in the most effective way and automatically display a plot, the command</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>castep-serial dos.pl -ir -xg -np h-BN.phonon | xmgrace -
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>dos.pl -ir -xg -np h-BN.phonon | xmgrace -
 </code></pre></div>
 <p>will generate a plot script and use the <code>xmgrace</code> plotting program to display it.  You can create a <code>gnuplot</code> script instead of <code>xmgrace</code> by changing the <code>-xg</code> flag to <code>-gp</code>.  Alternatively you can generate a GNUPLOT script without plotting by</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dos.pl -ir -gp -np h-BN.phonon &gt; h-BN-phonon.plt
@@ -3067,7 +3067,7 @@ Also use norm-conserving pseudopotentials.</p>
 <p>You can run CASTEP on just 1-4 processors for this
 You can try this several times with different fine q-point grids.
 This will produce a  <code>.castep</code> and <code>.phonon</code> file as before.   You may analyse the .phonon file and generate a DOS using the <code>dos.pl</code> script</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>castep-serial dos.pl -xg -np NaH-dos.phonon | xmgrace -
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>dos.pl -xg -np NaH-dos.phonon | xmgrace -
 </code></pre></div>
 (again, an X server running on the PC will be needed for grace to display; MobaXterm should have this enabled by default) .</p>
 </li>
