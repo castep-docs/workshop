@@ -43,7 +43,7 @@ O 5.746254 5.812705 5.6871
 
 *ethanol.param* <a name ="ethanol.param"></a>
 ```
-xcfunctional    = PBE
+xc_functional   = PBE
 fix_occupancy   = true
 opt_strategy    = speed
 task            = magres
@@ -164,7 +164,7 @@ symmetry_generate
 ```
 comment         = nmr testing
 iprint          = 1
-xcfunctional = LDA
+xc_functional = LDA
 task : magres
 fix_occupancy = true
 opt_strategy : speed
