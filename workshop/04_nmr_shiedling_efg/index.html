@@ -2639,13 +2639,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-ethanol-ch3ch2oh" class="md-nav__link">
-    Example 1 - Ethanol CH3CH2OH
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#example-2-diamond" class="md-nav__link">
     Example 2 - Diamond
   </a>
@@ -2662,12 +2655,26 @@
     Part 2
   </a>
   
-    <nav class="md-nav" aria-label="Part 2">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alanine" class="md-nav__link">
+    Alanine
+  </a>
+  
+    <nav class="md-nav" aria-label="Alanine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-3-alanine-a-simple-amino-acid" class="md-nav__link">
-    Example 3 - Alanine, a simple amino acid
+  <a href="#examining-input-and-output" class="md-nav__link">
+    Examining input and output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysing-and-comparing-to-experiment" class="md-nav__link">
+    Analysing and comparing to experiment
   </a>
   
 </li>
@@ -2675,6 +2682,13 @@
           <li class="md-nav__item">
   <a href="#example-4-silicates-quartz-and-cristoballite" class="md-nav__link">
     Example 4 - Silicates Quartz and Cristoballite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-and-output-files" class="md-nav__link">
+    Input and output files
   </a>
   
 </li>
@@ -2879,13 +2893,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-ethanol-ch3ch2oh" class="md-nav__link">
-    Example 1 - Ethanol CH3CH2OH
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#example-2-diamond" class="md-nav__link">
     Example 2 - Diamond
   </a>
@@ -2902,12 +2909,26 @@
     Part 2
   </a>
   
-    <nav class="md-nav" aria-label="Part 2">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alanine" class="md-nav__link">
+    Alanine
+  </a>
+  
+    <nav class="md-nav" aria-label="Alanine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-3-alanine-a-simple-amino-acid" class="md-nav__link">
-    Example 3 - Alanine, a simple amino acid
+  <a href="#examining-input-and-output" class="md-nav__link">
+    Examining input and output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysing-and-comparing-to-experiment" class="md-nav__link">
+    Analysing and comparing to experiment
   </a>
   
 </li>
@@ -2915,6 +2936,13 @@
           <li class="md-nav__item">
   <a href="#example-4-silicates-quartz-and-cristoballite" class="md-nav__link">
     Example 4 - Silicates Quartz and Cristoballite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-and-output-files" class="md-nav__link">
+    Input and output files
   </a>
   
 </li>
@@ -2941,54 +2969,91 @@
 <h1 id="4-nmr-shielding-and-efg">4 NMR shielding and EFG</h1>
 <h2 id="part-1">Part 1</h2>
 <p>We start running castep calculations by looking at two small systems, and examining the issue of "convergence".</p>
-<p>Start by copying the input files into your home directory i.e.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget http://www.tcm.phy.cam.ac.uk/castep/oxford/workshop_nmr_intro.tgz
-</code></pre></div>
- unpack it</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tar -zxvf workshop_nmr_intro.tgz
-</code></pre></div>
-<h3 id="example-1-ethanol-ch3ch2oh">Example 1 - Ethanol CH<sub>3</sub>CH<sub>2</sub>OH</h3>
-<p><img alt="Fig1. Proton spectrum of ethanol" src="../../img/nmr_tut1.png" width="width" /></p>
-<figure fig1>
-  <figcaption>Fig1. Proton spectrum of ethanol</figcaption>
+<p><img alt="Fig1. Proton spectrum of ethanol" src="../../img/nmr_tut1.png" width="50%" /></p>
+<figure style="display: inline-block;">
+  <figcaption style="text-align: left;">Fig1. Proton spectrum of ethanol</figcaption>
 </figure>
 
-<p>The discovery that one could actually see chemical shifts in hydrogen spectra was made in 1951 at Stanford University by Packard, Arnold, Dharmatti (shown in Fig 1). We will try to reproduce this result.</p>
-<p>FILES:   </p>
-<ul>
-<li>ethanol.cell</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>%BLOCK LATTICE_ABC
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>6 6 6
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>90 90 90
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>%ENDBLOCK LATTICE_ABC
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>%BLOCK POSITIONS_ABS
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>H 3.980599 4.178342 3.295079
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>H 5.033394 3.43043 4.504759
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>H 5.71907 4.552257 3.315353
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>H 3.720235 5.329505 5.509909
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>H 4.412171 6.433572 4.317001
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>H 5.911611 5.032284 6.242202
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>C 4.84694 4.350631 3.941136
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>C 4.603025 5.518738 4.882532
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>O 5.746254 5.812705 5.6871
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>%ENDBLOCK POSITIONS_ABS
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>%BLOCK KPOINTS_LIST
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>0.25 0.25 0.25 1.0
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>%ENDBLOCK KPOINTS_LIST
+<p>The discovery that one could actually see chemical shifts in hydrogen
+spectra was made in 1951 at Stanford University by Packard, Arnold,
+Dharmatti (shown in Fig1.). In this tutorial, we will try to reproduce
+this result.</p>
+<p><em>ethanol.cell</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%BLOCK LATTICE_ABC
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>6 6 6
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>90 90 90
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>%ENDBLOCK LATTICE_ABC
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>%BLOCK POSITIONS_ABS
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>H 3.980599 4.178342 3.295079
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>H 5.033394 3.43043 4.504759
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>H 5.71907 4.552257 3.315353
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>H 3.720235 5.329505 5.509909
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>H 4.412171 6.433572 4.317001
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>H 5.911611 5.032284 6.242202
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>C 4.84694 4.350631 3.941136
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>C 4.603025 5.518738 4.882532
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>O 5.746254 5.812705 5.6871
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>%ENDBLOCK POSITIONS_ABS
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>%BLOCK KPOINTS_LIST
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>0.25 0.25 0.25 1.0
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>%ENDBLOCK KPOINTS_LIST
+</code></pre></div></p>
+<p><em>ethanol.param</em> <a name ="ethanol.param"></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>xcfunctional    = PBE
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>fix_occupancy   = true
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>opt_strategy    = speed
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>task            = magres
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>cutoff_energy   = 300 eV
+</code></pre></div></p>
+<p>Look at the <a href="../../documentation/Input_Files/cell_file.md">cell</a> and <a href="../../documentation/Input_Files/param_file.md">param</a> files. Note that the only special part of the <code>ethanol.param</code> file is</p>
+<p><code>task = magres</code></p>
+<p>Run a standard castep calculation for ethanol. Look at the <code>ethanol.castep</code> output file. Towards the end, you should be able to find the isotropic chemical shielding, anisotropy, and asymmetry in a table like this:
+<a name="ethanol_result"></a>
+ <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>====================================================================
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>|                      Chemical Shielding Tensor                   |
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>|------------------------------------------------------------------|
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>|     Nucleus                            Shielding tensor          |
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>|  Species            Ion            Iso(ppm)   Aniso(ppm)  Asym   |
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>|    H                1               29.45       8.84      0.14   |
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>|    H                2               30.10       8.07      0.20   |
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>|    H                3               29.94       7.12      0.06   |
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>|    H                4               26.83       8.02      0.95   |
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>|    H                5               27.24      -7.07      0.90   |
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>|    H                6               31.93      13.99      0.46   |
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>|    C                1              157.27      33.77      0.70   |
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>|    C                2              110.73      69.91      0.42   |
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>|    O                1              268.63     -50.78      0.96   |
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>====================================================================
 </code></pre></div>
-<ul>
-<li>ethanol.param
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>xcfunctional = PBE
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>fix_occupancy = true
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>opt_strate.g.y : speed
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>task        = magres
+ Here we are only interested in the isotropic values for the hydrogen atoms</p>
+<p>You may also find this information (as well as extra detail) in the file <code>ethanol.magres</code>, which contains tables such as
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>============
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Atom: H        1
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>============
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>H        1 Coordinates      3.981    4.178    3.295   A
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>cut_off_energy  = 20 ry
-</code></pre></div></li>
-</ul>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>TOTAL Shielding Tensor
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>              30.1276      1.2172      3.7366
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>               1.9301     27.4802      2.4707
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>               4.0710      2.2023     30.7511
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>H        1 Eigenvalue  sigma_xx      26.1030 (ppm)
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>H        1 Eigenvector sigma_xx       0.3550      0.6810     -0.6405
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>H        1 Eigenvalue  sigma_yy      26.9119 (ppm)
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>H        1 Eigenvector sigma_yy       0.6932     -0.6514     -0.3085
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>H        1 Eigenvalue  sigma_zz      35.3439 (ppm)
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>H        1 Eigenvector sigma_zz       0.6273      0.3345      0.7033
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>H        1 Isotropic:       29.4529 (ppm)
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>H        1 Anisotropy:       8.8365 (ppm)
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>H        1 Asymmetry:        0.1373
+</code></pre></div>
+for each atom. You can see here that it also gives the same information - the isotropic value for atom 1 is the same. You may note that the isotropic value is the average of the diagonal values in the total shielding tensor.</p>
+<p>You might wish to open the <code>ethanol.magres</code> with
+<a href="https://www.ccpnc.ac.uk/magresview/magresview/magres_view.html?JS">MagresView</a>.</p>
 <p>OBJECTIVES:</p>
 <ul>
 <li>Examine the convergence of the chemical shieldings with planewave cutoff</li>
@@ -2997,19 +3062,9 @@
 <p>INSTRUCTIONS:</p>
 <ul>
 <li>
-<p>Look at the cell and param file. Note that the only special keyword is <code>task = magres</code></p>
-</li>
-<li>
-<p>Run castep. <code>mpirun -np 16 castep.mpi ethanol</code> Look at the output file. At the end the isotropic chemical shielding, anisotropy, and asymmetry are reported (here we are only interested in the isotropic value.)</p>
-</li>
-<li>
-<p>This information, plus the full tensors is also given in the file ethanol.magres</p>
-</li>
-<li>
-<p>You might wish to transfer the *.magres file back to your desktop to visualise with <a href="https://www.ccpnc.ac.uk/magresview/magresview/magres_view.html?JS">MagresView</a>.</p>
-</li>
-<li>
-<p>Examine the effect of increasing the cutoff energy (say 20-50 Ryd in steps of 10 Ryd). It always helps to plot a graph of the convergence (e.g. with gnuplot or xmgrace on the cluster - or with excel on the pc)</p>
+<p>Examine the effect of increasing the cutoff energy (say 200-1000 eV
+  in steps of 100 eV). It always helps to plot a graph of the
+  convergence (e.g. with gnuplot, xmgrace, excel)</p>
 </li>
 <li>
 <p>Find the "converged" hydrogen (or proton in NMR language) shieldings. We will compare them to experiment. The three methyl (CH<sub>3</sub>) protons undergo fast exchange; they "rotate" faster than the nuclear magnetic moment processes. The magnetic moment will therefore "see" an average chemical shielding. The same is true of the CH<sub>2</sub> protons.</p>
@@ -3058,7 +3113,7 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>task : magres
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>fix_occupancy = true
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>opt_strategy : speed
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>cut_off_energy  =  30 Ry
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>cut_off_energy  =  500 eV
 </code></pre></div>
 <p>OBJECTIVES:</p>
 <p>Examine the convergence of the chemical shielding as the sampling of the electronic Brillouin zone (BZ) is increased.</p>
@@ -3086,37 +3141,41 @@ also important element in organic and biological molecules since it is often int
 field gradient at the nucleus.</p>
 <p>Because the isotopic abundance of <sup>17</sup>O is very low (0.037%) and the NMR linewidths due to the electric field gradient relatively large, only limited Solid State NMR data is
 available. This is particularly true for organic materials. First principles calculations of <sup>17</sup>O NMR parameters have played a vital role in assigning experimental spectra, and developing empirical rules between NMR  parameters and local atomic structure.</p>
-<h3 id="example-3-alanine-a-simple-amino-acid">Example 3 - Alanine, a simple amino acid</h3>
-<p>FILES:</p>
-<ul>
-<li>alanine.cell</li>
-<li>alanine.param</li>
-<li>alanine.pdb</li>
-</ul>
-<p>OBJECTIVES:</p>
-<ul>
-<li>Compute the chemical shift and Electric field gradient for alanine</li>
-<li>Assign the <sup>17</sup> NMR spectrum</li>
-</ul>
-<p><img alt="Fig3. Proton spectrum of ethanol" src="../../img/nmr_tut3.png" width="width" /></p>
-<figure fig3>
-  <figcaption>Fig3. Solid-State O17 NMR spectrum of L-alanine. (b) is from MAS (magicangle- spinning) (c) is from DOR (double-orientation rotation)</figcaption>
+<h2 id="alanine">Alanine</h2>
+<h3 id="examining-input-and-output">Examining input and output</h3>
+<p>We will use the cell file</p>
+<p><a href="../../tutorials/NMR/alanine/alanine.cell">alanine.cell</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don't worry about how long/complex it is - it is no different from any other <a href="../../documentation/Input_Files/cell_file.md">cell file</a> - it just simply defines a large cell</p>
+</div>
+<p>and param file <code>alanine.param</code></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>fix_occupancy = true
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>opt_strategy : speed
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>task        = magres
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>magres_task = nmr
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>cut_off_energy = 600 eV
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>xc_functional : PBE
+</code></pre></div>
+Note that the only difference to the previous param files is the line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>magres_task = nmr
+</code></pre></div>
+<p>This leads to EFG calculations also being performed.</p>
+<p>You may also want to view the file</p>
+<p><a href="../../tutorials/NMR/alanine/alanine.pdb">alanine.pdb</a></p>
+<p>in Vesta or another software - this allows better examination of features like hydrogen bonding. This is the original file downloaded from the <a href="https://www.ccdc.cam.ac.uk/">Cambridge Crystallographic Database</a> (and was used to obtain the <code>alanine.cell</code> file). The cell structure was obtained experimentally by neutron diffraction.</p>
+<p>We will now run castep. The <code>alanine.castep</code> output file should
+contain the both the shielding information and two further columns  - <span class="arithmatex"><span class="MathJax_Preview">C_Q</span><script type="math/tex">C_Q</script></span> and <span class="arithmatex"><span class="MathJax_Preview">Eta</span><script type="math/tex">Eta</script></span> - these are both there because an EFG calculation was now performed.</p>
+<p>This result is not fully converged (we will not be testing this in this tutorial, but feel free to check), but the relative shift between some of the sites is converged (again you may verify that if inclined).</p>
+<h3 id="analysing-and-comparing-to-experiment">Analysing and comparing to experiment</h3>
+<p>We will now compare these results with experiment. The figure below is an experimental <sup>17</sup>O NMR spectrum of L-alanine. It shows 2 peaks, which are very broad due to the quadripolar coupling, and overlap.</p>
+<p><img alt="Solid-State O17 NMR spectrum of L-alanine&quot;" src="../../img/nmr_tut3.png" width="40%" /></p>
+<figure style="display: inline-block;">
+  <figcaption style="text-align: left;">Fig3. Solid-State <sup><small>17</small></sup>O NMR spectrum of L-alanine. (b) is from MAS (magicangle- spinning) (c) is from DOR (double-orientation rotation)</figcaption>
 </figure>
-
-<p>INSTRUCTIONS:</p>
+<p>The experimental parameters are given in Table 1 below.</p>
 <ul>
-<li>
-<p>Look at the cell and param files. The geometry for alanine was obtained by neutron diffraction and was downloaded from the Cambridge Crystallographic database. View the original pdb file note the hydrogen bonding</p>
-</li>
-<li>
-<p>Run the example - the calculation is not fully converged. However, the relative shift between the two sites is fairly converged.</p>
-</li>
-<li>
-<p>The experimental <sup>17</sup>O NMR spectrum shows two peaks (Fig 3 (b)) - they are very broad due to the quadrupolar coupling, and overlap. The experimental parameters are given in Table 1.</p>
-</li>
-<li>
-<p>Assign the two resonances A and B. Do all three computed parameters support this assignment?</p>
-</li>
+<li>Assign the two resonances A and B. Do all three computed parameters support this assignment?</li>
 </ul>
 <table>
 <thead>
@@ -3149,14 +3208,21 @@ available. This is particularly true for organic materials. First principles cal
 </tbody>
 </table>
 <h3 id="example-4-silicates-quartz-and-cristoballite">Example 4 - Silicates Quartz and Cristoballite</h3>
-<p>FILES:</p>
-<ul>
-<li>quartz.cell</li>
-<li>quartz.param</li>
-<li>crist.cell</li>
-<li>crist.param</li>
-</ul>
-<p>OBJECTIVES:</p>
+<h3 id="input-and-output-files">Input and output files</h3>
+<p>For quartz we will use the cell file</p>
+<p><a href="../../tutorials/NMR/silicates/quartz.cell">quartz.cell</a></p>
+<p>And the param file <code>quartz.param</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cut_off_energy  = 600 eV
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>xc_functional : PBE
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>fix_occupancy = true
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>opt_strategy : speed
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>task        = magres
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>magres_task = nmr
+</code></pre></div>
+<p>The param file is identical to the alanine one above.</p>
+<p>For cristoballite we will use the cell file</p>
+<p><a href="../../tutorials/NMR/silicates/crist.cell">crist.cell</a></p>
+<p>And exactly the same param file as above (just named <code>crist.param</code> instead)</p>
 <ul>
 <li>Compute the chemical shift and Electric field gradient for two silicates.</li>
 <li>Assign the <sup>17</sup>O NMR spectrum</li>
