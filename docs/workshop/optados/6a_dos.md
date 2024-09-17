@@ -22,7 +22,7 @@ The tarball for the tutorial files for all of the optados tutorials are here: [o
 	Perform an optados calculation.
  
 	```
-	$ optados.mpi Si2
+	$ optados Si2
 	```
 	
 	This generates 3 files:
