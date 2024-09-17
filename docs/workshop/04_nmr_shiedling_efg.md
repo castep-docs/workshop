@@ -4,32 +4,21 @@
 
 We start running castep calculations by looking at two small systems, and examining the issue of "convergence".
 
-Start by copying the input files into your home directory i.e.
-
- ```
- wget http://www.tcm.phy.cam.ac.uk/castep/oxford/workshop_nmr_intro.tgz
- ```
- unpack it
- 
- ```
- tar -zxvf workshop_nmr_intro.tgz
- ```
-
-###Example 1 - Ethanol CH<sub>3</sub>CH<sub>2</sub>OH
-
-![Fig1. Proton spectrum of ethanol](../img/nmr_tut1.png){width ="300"}
-<figure fig1>
-  <figcaption>Fig1. Proton spectrum of ethanol</figcaption>
+![Fig1. Proton spectrum of ethanol](../img/nmr_tut1.png){width="50%"}
+<figure style="display: inline-block;">
+  <figcaption style="text-align: left;">Fig1. Proton spectrum of ethanol</figcaption>
 </figure>
 
+The discovery that one could actually see chemical shifts in hydrogen
+spectra was made in 1951 at Stanford University by Packard, Arnold,
+Dharmatti (shown in Fig1.). In this tutorial, we will try to reproduce
+this result.
 
-The discovery that one could actually see chemical shifts in hydrogen spectra was made in 1951 at Stanford University by Packard, Arnold, Dharmatti (shown in Fig 1). We will try to reproduce this result.
 
-FILES:   
 
-* ethanol.cell
-
+*ethanol.cell*
 ```
+
 %BLOCK LATTICE_ABC
 6 6 6
 90 90 90
@@ -52,16 +41,70 @@ O 5.746254 5.812705 5.6871
 %ENDBLOCK KPOINTS_LIST
 ```
 
-* ethanol.param
+*ethanol.param* <a name ="ethanol.param"></a>
 ```
-xcfunctional = PBE
-fix_occupancy = true
-opt_strate.g.y : speed
-task        = magres
-
-cut_off_energy  = 20 ry
+xcfunctional    = PBE
+fix_occupancy   = true
+opt_strategy    = speed
+task            = magres
+cutoff_energy   = 300 eV
 ```
 
+Look at the [cell](../../documentation/Input_Files/cell_file.md) and [param](../../documentation/Input_Files/param_file.md) files. Note that the only special part of the `ethanol.param` file is
+
+`task = magres`
+
+Run a standard castep calculation for ethanol. Look at the `ethanol.castep` output file. Towards the end, you should be able to find the isotropic chemical shielding, anisotropy, and asymmetry in a table like this:
+<a name="ethanol_result"></a>
+ ```
+ ====================================================================
+ |                      Chemical Shielding Tensor                   |
+ |------------------------------------------------------------------|
+ |     Nucleus                            Shielding tensor          |
+ |  Species            Ion            Iso(ppm)   Aniso(ppm)  Asym   |
+ |    H                1               29.45       8.84      0.14   |
+ |    H                2               30.10       8.07      0.20   |
+ |    H                3               29.94       7.12      0.06   |
+ |    H                4               26.83       8.02      0.95   |
+ |    H                5               27.24      -7.07      0.90   |
+ |    H                6               31.93      13.99      0.46   |
+ |    C                1              157.27      33.77      0.70   |
+ |    C                2              110.73      69.91      0.42   |
+ |    O                1              268.63     -50.78      0.96   |
+ ====================================================================
+
+ ```
+ Here we are only interested in the isotropic values for the hydrogen atoms
+
+
+You may also find this information (as well as extra detail) in the file `ethanol.magres`, which contains tables such as
+```
+============
+Atom: H        1
+============
+H        1 Coordinates      3.981    4.178    3.295   A
+
+TOTAL Shielding Tensor
+
+              30.1276      1.2172      3.7366
+               1.9301     27.4802      2.4707
+               4.0710      2.2023     30.7511
+
+H        1 Eigenvalue  sigma_xx      26.1030 (ppm)
+H        1 Eigenvector sigma_xx       0.3550      0.6810     -0.6405
+H        1 Eigenvalue  sigma_yy      26.9119 (ppm)
+H        1 Eigenvector sigma_yy       0.6932     -0.6514     -0.3085
+H        1 Eigenvalue  sigma_zz      35.3439 (ppm)
+H        1 Eigenvector sigma_zz       0.6273      0.3345      0.7033
+
+H        1 Isotropic:       29.4529 (ppm)
+H        1 Anisotropy:       8.8365 (ppm)
+H        1 Asymmetry:        0.1373
+```
+for each atom. You can see here that it also gives the same information - the isotropic value for atom 1 is the same. You may note that the isotropic value is the average of the diagonal values in the total shielding tensor.
+
+You might wish to open the `ethanol.magres` with
+[MagresView](https://www.ccpnc.ac.uk/magresview/magresview/magres_view.html?JS).
 
 
 OBJECTIVES:
@@ -71,15 +114,9 @@ OBJECTIVES:
 
 INSTRUCTIONS:
 
-* Look at the cell and param file. Note that the only special keyword is `task = magres`
-
-* Run castep. `mpirun -np 16 castep.mpi ethanol` Look at the output file. At the end the isotropic chemical shielding, anisotropy, and asymmetry are reported (here we are only interested in the isotropic value.)
-
-* This information, plus the full tensors is also given in the file ethanol.magres
-
-* You might wish to transfer the *.magres file back to your desktop to visualise with [MagresView](https://www.ccpnc.ac.uk/magresview/magresview/magres_view.html?JS).
-
-* Examine the effect of increasing the cutoff energy (say 20-50 Ryd in steps of 10 Ryd). It always helps to plot a graph of the convergence (e.g. with gnuplot or xmgrace on the cluster - or with excel on the pc)
+* Examine the effect of increasing the cutoff energy (say 200-1000 eV
+  in steps of 100 eV). It always helps to plot a graph of the
+  convergence (e.g. with gnuplot, xmgrace, excel)
 
 * Find the "converged" hydrogen (or proton in NMR language) shieldings. We will compare them to experiment. The three methyl (CH<sub>3</sub>) protons undergo fast exchange; they "rotate" faster than the nuclear magnetic moment processes. The magnetic moment will therefore "see" an average chemical shielding. The same is true of the CH<sub>2</sub> protons.
 
@@ -131,7 +168,7 @@ xcfunctional = LDA
 task : magres
 fix_occupancy = true
 opt_strategy : speed
-cut_off_energy  =  30 Ry
+cut_off_energy  =  500 eV
 ```
 
 OBJECTIVES:
@@ -162,6 +199,7 @@ We now look at some more realistic examples.
 
 **Oxygen-17**
 
+
 Oxygen is a component of many geological materials. Oxygen is
 also important element in organic and biological molecules since it is often intimately involved in hydrogen bonding. Solid State ^17^O NMR should be a uniquely valuable probe as the chemical shift range of ^17^O covers almost 1000 ppm in organic molecules. Furthermore ^17^O has spin I = 5/2 and hence a net quadrupole moment. As a consequence of this the solid state NMR spectrum is strongly affected by the electric
 field gradient at the nucleus.
@@ -170,32 +208,58 @@ Because the isotopic abundance of ^17^O is very low (0.037%) and the NMR linewid
 available. This is particularly true for organic materials. First principles calculations of ^17^O NMR parameters have played a vital role in assigning experimental spectra, and developing empirical rules between NMR  parameters and local atomic structure.
 
 
-###Example 3 - Alanine, a simple amino acid
 
-FILES:
+## Alanine
 
-* alanine.cell
-* alanine.param
-* alanine.pdb
+### Examining input and output
+We will use the cell file
 
-OBJECTIVES:
+[alanine.cell](../../tutorials/NMR/alanine/alanine.cell)
 
-* Compute the chemical shift and Electric field gradient for alanine
-* Assign the ^17^ NMR spectrum
+!!! Note
+    Don't worry about how long/complex it is - it is no different from any other [cell file](../../documentation/Input_Files/cell_file.md) - it just simply defines a large cell
 
-![Fig3. Proton spectrum of ethanol](../img/nmr_tut3.png){width ="300"}
-<figure fig3>
-  <figcaption>Fig3. Solid-State O17 NMR spectrum of L-alanine. (b) is from MAS (magicangle- spinning) (c) is from DOR (double-orientation rotation)</figcaption>
+and param file `alanine.param`
+
+```
+fix_occupancy = true
+opt_strategy : speed
+task        = magres
+magres_task = nmr
+cut_off_energy = 600 eV
+xc_functional : PBE
+```
+Note that the only difference to the previous param files is the line
+
+```
+magres_task = nmr
+```
+
+This leads to EFG calculations also being performed.
+
+
+You may also want to view the file
+
+[alanine.pdb](../../tutorials/NMR/alanine/alanine.pdb)
+
+
+in Vesta or another software - this allows better examination of features like hydrogen bonding. This is the original file downloaded from the [Cambridge Crystallographic Database](https://www.ccdc.cam.ac.uk/) (and was used to obtain the `alanine.cell` file). The cell structure was obtained experimentally by neutron diffraction.
+
+We will now run castep. The `alanine.castep` output file should
+contain the both the shielding information and two further columns  - $C_Q$ and $Eta$ - these are both there because an EFG calculation was now performed.
+
+This result is not fully converged (we will not be testing this in this tutorial, but feel free to check), but the relative shift between some of the sites is converged (again you may verify that if inclined).
+
+### Analysing and comparing to experiment
+
+We will now compare these results with experiment. The figure below is an experimental ^17^O NMR spectrum of L-alanine. It shows 2 peaks, which are very broad due to the quadripolar coupling, and overlap.
+
+![Solid-State O17 NMR spectrum of L-alanine"](../img/nmr_tut3.png){width="40%"}
+<figure style="display: inline-block;">
+  <figcaption style="text-align: left;">Fig3. Solid-State <sup><small>17</small></sup>O NMR spectrum of L-alanine. (b) is from MAS (magicangle- spinning) (c) is from DOR (double-orientation rotation)</figcaption>
 </figure>
-
-
-INSTRUCTIONS:
-
-* Look at the cell and param files. The geometry for alanine was obtained by neutron diffraction and was downloaded from the Cambridge Crystallographic database. View the original pdb file note the hydrogen bonding
-
-* Run the example - the calculation is not fully converged. However, the relative shift between the two sites is fairly converged.
-
-* The experimental ^17^O NMR spectrum shows two peaks (Fig 3 (b)) - they are very broad due to the quadrupolar coupling, and overlap. The experimental parameters are given in Table 1.
+ The experimental parameters are given in Table 1 below.
+ 
 
 * Assign the two resonances A and B. Do all three computed parameters support this assignment?
 
@@ -211,16 +275,33 @@ INSTRUCTIONS:
 
 ###Example 4 - Silicates Quartz and Cristoballite
 
-FILES:
 
-* quartz.cell
-* quartz.param
-* crist.cell
-* crist.param
+### Input and output files
+
+For quartz we will use the cell file
+
+[quartz.cell](../../tutorials/NMR/silicates/quartz.cell)
+
+And the param file `quartz.param`
+
+```
+cut_off_energy  = 600 eV
+xc_functional : PBE
+fix_occupancy = true
+opt_strategy : speed
+task        = magres
+magres_task = nmr
+```
+
+The param file is identical to the alanine one above.
+
+For cristoballite we will use the cell file
+
+[crist.cell](../../tutorials/NMR/silicates/crist.cell)
+
+And exactly the same param file as above (just named `crist.param` instead)
 
 
-
-OBJECTIVES:
 
 * Compute the chemical shift and Electric field gradient for two silicates.
 * Assign the ^17^O NMR spectrum
