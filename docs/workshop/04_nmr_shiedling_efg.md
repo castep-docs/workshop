@@ -104,7 +104,7 @@ H        1 Asymmetry:        0.1373
 for each atom. You can see here that it also gives the same information - the isotropic value for atom 1 is the same. You may note that the isotropic value is the average of the diagonal values in the total shielding tensor.
 
 You might wish to open the `ethanol.magres` with
-[MagresView](https://www.ccpnc.ac.uk/magresview/magresview/magres_view.html?JS).
+[MagresView](https://ccp-nc.github.io/magresview-2/).
 
 
 OBJECTIVES:
@@ -209,9 +209,9 @@ available. This is particularly true for organic materials. First principles cal
 
 
 
-## Alanine
+### Alanine
 
-### Examining input and output
+#### Examining input and output
 We will use the cell file
 
 [alanine.cell](../../tutorials/NMR/alanine/alanine.cell)
@@ -250,7 +250,7 @@ contain the both the shielding information and two further columns  - $C_Q$ and 
 
 This result is not fully converged (we will not be testing this in this tutorial, but feel free to check), but the relative shift between some of the sites is converged (again you may verify that if inclined).
 
-### Analysing and comparing to experiment
+#### Analysing and comparing to experiment
 
 We will now compare these results with experiment. The figure below is an experimental ^17^O NMR spectrum of L-alanine. It shows 2 peaks, which are very broad due to the quadripolar coupling, and overlap.
 
@@ -276,7 +276,7 @@ We will now compare these results with experiment. The figure below is an experi
 ###Example 4 - Silicates Quartz and Cristoballite
 
 
-### Input and output files
+#### Input and output files
 
 For quartz we will use the cell file
 
@@ -317,3 +317,8 @@ INSTRUCTIONS:
 |---|---|---|---|
 |Material A| 37.2 | 5.21 | 0.13 |
 |Material B| 40.8 | 5.19 | 0.19 |
+
+## Further resources
+
+The Collaborative Computational Project for NMR Crystallography (CCP-NC) has a number of [tools](https://www.ccpnc.ac.uk/software) and [resources](https://www.ccpnc.ac.uk/docs) to help with CASTEP. In addtion is the graphical user interface, MagresView mentioned above, the Soprano python library can be a useful way to analyse CASTEP output. There are NMR-specific tutorials here: <https://jkshenton.github.io/soprano/tutorials/05-nmr.html> and a command line interface for commond NMR tasks with .magres files here: <https://jkshenton.github.io/soprano/tutorials/07-soprano-cli.html>. Soprano is installed on the VM (Applications -> Software -> Soprano).
+
