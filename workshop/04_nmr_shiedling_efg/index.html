@@ -2655,9 +2655,10 @@
     Part 2
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Part 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#alanine" class="md-nav__link">
     Alanine
   </a>
@@ -2679,12 +2680,18 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#example-4-silicates-quartz-and-cristoballite" class="md-nav__link">
     Example 4 - Silicates Quartz and Cristoballite
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Example 4 - Silicates Quartz and Cristoballite">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#input-and-output-files" class="md-nav__link">
@@ -2695,6 +2702,18 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-resources" class="md-nav__link">
+    Further resources
+  </a>
   
 </li>
       
@@ -2909,9 +2928,10 @@
     Part 2
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Part 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#alanine" class="md-nav__link">
     Alanine
   </a>
@@ -2933,12 +2953,18 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#example-4-silicates-quartz-and-cristoballite" class="md-nav__link">
     Example 4 - Silicates Quartz and Cristoballite
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Example 4 - Silicates Quartz and Cristoballite">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#input-and-output-files" class="md-nav__link">
@@ -2949,6 +2975,18 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-resources" class="md-nav__link">
+    Further resources
+  </a>
   
 </li>
       
@@ -3053,7 +3091,7 @@ this result.</p>
 </code></pre></div>
 for each atom. You can see here that it also gives the same information - the isotropic value for atom 1 is the same. You may note that the isotropic value is the average of the diagonal values in the total shielding tensor.</p>
 <p>You might wish to open the <code>ethanol.magres</code> with
-<a href="https://www.ccpnc.ac.uk/magresview/magresview/magres_view.html?JS">MagresView</a>.</p>
+<a href="https://ccp-nc.github.io/magresview-2/">MagresView</a>.</p>
 <p>OBJECTIVES:</p>
 <ul>
 <li>Examine the convergence of the chemical shieldings with planewave cutoff</li>
@@ -3141,8 +3179,8 @@ also important element in organic and biological molecules since it is often int
 field gradient at the nucleus.</p>
 <p>Because the isotopic abundance of <sup>17</sup>O is very low (0.037%) and the NMR linewidths due to the electric field gradient relatively large, only limited Solid State NMR data is
 available. This is particularly true for organic materials. First principles calculations of <sup>17</sup>O NMR parameters have played a vital role in assigning experimental spectra, and developing empirical rules between NMR  parameters and local atomic structure.</p>
-<h2 id="alanine">Alanine</h2>
-<h3 id="examining-input-and-output">Examining input and output</h3>
+<h3 id="alanine">Alanine</h3>
+<h4 id="examining-input-and-output">Examining input and output</h4>
 <p>We will use the cell file</p>
 <p><a href="../../tutorials/NMR/alanine/alanine.cell">alanine.cell</a></p>
 <div class="admonition note">
@@ -3167,7 +3205,7 @@ Note that the only difference to the previous param files is the line</p>
 <p>We will now run castep. The <code>alanine.castep</code> output file should
 contain the both the shielding information and two further columns  - <span class="arithmatex"><span class="MathJax_Preview">C_Q</span><script type="math/tex">C_Q</script></span> and <span class="arithmatex"><span class="MathJax_Preview">Eta</span><script type="math/tex">Eta</script></span> - these are both there because an EFG calculation was now performed.</p>
 <p>This result is not fully converged (we will not be testing this in this tutorial, but feel free to check), but the relative shift between some of the sites is converged (again you may verify that if inclined).</p>
-<h3 id="analysing-and-comparing-to-experiment">Analysing and comparing to experiment</h3>
+<h4 id="analysing-and-comparing-to-experiment">Analysing and comparing to experiment</h4>
 <p>We will now compare these results with experiment. The figure below is an experimental <sup>17</sup>O NMR spectrum of L-alanine. It shows 2 peaks, which are very broad due to the quadripolar coupling, and overlap.</p>
 <p><img alt="Solid-State O17 NMR spectrum of L-alanine&quot;" src="../../img/nmr_tut3.png" width="40%" /></p>
 <figure style="display: inline-block;">
@@ -3208,7 +3246,7 @@ contain the both the shielding information and two further columns  - <span clas
 </tbody>
 </table>
 <h3 id="example-4-silicates-quartz-and-cristoballite">Example 4 - Silicates Quartz and Cristoballite</h3>
-<h3 id="input-and-output-files">Input and output files</h3>
+<h4 id="input-and-output-files">Input and output files</h4>
 <p>For quartz we will use the cell file</p>
 <p><a href="../../tutorials/NMR/silicates/quartz.cell">quartz.cell</a></p>
 <p>And the param file <code>quartz.param</code></p>
@@ -3256,6 +3294,8 @@ contain the both the shielding information and two further columns  - <span clas
 </tr>
 </tbody>
 </table>
+<h2 id="further-resources">Further resources</h2>
+<p>The Collaborative Computational Project for NMR Crystallography (CCP-NC) has a number of <a href="https://www.ccpnc.ac.uk/software">tools</a> and <a href="https://www.ccpnc.ac.uk/docs">resources</a> to help with CASTEP. In addtion is the graphical user interface, MagresView mentioned above, the Soprano python library can be a useful way to analyse CASTEP output. There are NMR-specific tutorials here: <a href="https://jkshenton.github.io/soprano/tutorials/05-nmr.html">https://jkshenton.github.io/soprano/tutorials/05-nmr.html</a> and a command line interface for commond NMR tasks with .magres files here: <a href="https://jkshenton.github.io/soprano/tutorials/07-soprano-cli.html">https://jkshenton.github.io/soprano/tutorials/07-soprano-cli.html</a>. Soprano is installed on the VM (Applications -&gt; Software -&gt; Soprano).</p>
 
               
             </article>
