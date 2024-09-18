@@ -60,6 +60,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mgo" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2730,9 +2735,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+           9 Cif2cell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
          9 Cif2cell
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mgo" class="md-nav__link">
+    MgO
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-tweezers" class="md-nav__link">
+    Molecular Tweezers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2777,6 +2818,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mgo" class="md-nav__link">
+    MgO
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-tweezers" class="md-nav__link">
+    Molecular Tweezers
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2791,15 +2854,20 @@
 
   <h1> 9 Cif2cell</h1>
 
-<p>We will use cif to cell to generate cell files from cif files. Cif files can be obtained from the ICSD (inorganic crystals) or the CSD (molecular crystals).</p>
-<p>'''MgO'''
-Examine the <a href="http://www.castep.org/files/MgO.cif">file</a>. Look at the crystal structure with jmol or magresview (drag and drop the file onto the magresview window). You will see a cubic face-centre cubic cell. How many atoms in the cell?</p>
-<p>Use cif2cell to convert this cif file to a cell file.
+<p>We will use cif to cell to generate cell files from cif files. Cif files can be obtained from the <a href="https://www.psds.ac.uk/">ICSD</a> (inorganic crystals) or the <a href="https://www.ccdc.cam.ac.uk/structures/">CSD</a> (molecular crystals).</p>
+<h2 id="mgo">MgO</h2>
+<p>Examine the <a href="http://www.castep.org/files/MgO.cif">file</a>. Look at the crystal structure with jmol or <a href="https://ccp-nc.github.io/magresview-2/">magresview</a> (drag and drop the file onto the magresview window). You will see a cubic face-centre cubic cell. How many atoms in the cell?</p>
+<p>Use cif2cell to convert this cif file to a cell file.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cif2cell MgO.cif --program=castep -o MgO.cell
 </code></pre></div>
-Look at the cell file. How many atoms in the cell? View this will jmol or magresview. Do you understand what cif2cell has done?</p>
-<p>'''Molecular Tweezers'''
-Examine the <a href="http://www.castep.org/files/GUQHUV.cif">file</a></p>
+<p>Look at the cell file. How many atoms in the cell? View this will jmol or magresview. Do you understand what cif2cell has done?</p>
+<p>To obtain the conventional unit cell, use the --no-reduce option when running <code>cif2cell</code>. Note that <code>cif2cell</code> assumes that values such as 0.333333 mean ⅓, and silently corrects the decimal so it corresponds to the machine-precision representation of the fraction, e.g. 0.33333333333, which may not be correct. </p>
+<p>Using the <code>--export-cif-labels</code> option ensures that any site labels in the .cif file are used in the .cell file and thereby also in the .castep and .magres files. This is extremely useful for keeping track of equivalent/special sites. For example, you might do:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cif2cell --export-cif-labels &lt;seedname&gt;.cif -p castep -o &lt;seedname&gt;.cell
+</code></pre></div>
+<p>A note that some versions of cif2cell use the tag <code>ID</code> in the generated .cell file, which is not recognised by CASTEP. In this case, the tag should be changed to <code>LABEL</code>. </p>
+<h2 id="molecular-tweezers">Molecular Tweezers</h2>
+<p>Examine the <a href="http://www.castep.org/files/GUQHUV.cif">file</a></p>
 
               
             </article>
