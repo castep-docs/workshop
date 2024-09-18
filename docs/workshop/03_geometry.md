@@ -105,7 +105,7 @@ You may wish to split these between groups and discuss the results
 So far you've used the local density approximation (LDA) for the exchange-correlation functional in this exercise. Repeat your calculation with the `PBE` exchange-correlation functional (a popular GGA):
 
 * ``xc_functional : PBE``
-* You may also want to consider a hybrid functional such as `HSE06` or the meta-GGA `RSCAN`
+* You may also want to consider a hybrid functional such as `HSE06` (though if you do this you will want to [use norm-conserving pseudopotentials](../documentation/Pseudopotentials/overview.md)) or the meta-GGA `RSCAN`
 
 #### B. More Precise Structural Optimisations
 
