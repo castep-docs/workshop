@@ -3034,7 +3034,7 @@ Q: Why do we only want to use a single k-point?</p>
 <p>So far you've used the local density approximation (LDA) for the exchange-correlation functional in this exercise. Repeat your calculation with the <code>PBE</code> exchange-correlation functional (a popular GGA):</p>
 <ul>
 <li><code>xc_functional : PBE</code></li>
-<li>You may also want to consider a hybrid functional such as <code>HSE06</code> or the meta-GGA <code>RSCAN</code></li>
+<li>You may also want to consider a hybrid functional such as <code>HSE06</code> (though if you do this you will want to <a href="../../documentation/Pseudopotentials/overview/">use norm-conserving pseudopotentials</a>) or the meta-GGA <code>RSCAN</code></li>
 </ul>
 <h4 id="b-more-precise-structural-optimisations">B. More Precise Structural Optimisations</h4>
 <p>You may wish to have more precise structure for certain  calculations such as <code>NMR</code> or <code>Phonons</code>. These may be controlled in the <code>.param</code> file with</p>
