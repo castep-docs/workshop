@@ -2962,8 +2962,7 @@
 <p>The aim of this tutorial is to enable you to compute band structures using CASTEP and introduce you to a few of the tools which allow you to visualise the band structure and density of electronic states computed using CASTEP.  The band structure of metals and semiconductors will be plotted so that you can look at the differences between different types of systems.</p>
 <p>First you will look at the CASTEP input files (.cell and .param) used to produce band structure information. </p>
 <p>Next you will use the perl script dispersion.pl which can be used to take CASTEP output and plot band structure diagrams.</p>
-<!-- Then you will use orbitals2bands. A tool which provides more information about the orbitals that contribute to different bands in your band structure diagram. -->
-
+<p>Then you will use orbitals2bands. A tool which provides more information about the orbitals that contribute to different bands in your band structure diagram.</p>
 <p>Finally you will look at the band structure of iron, to show how magnetic systems can be studied using CASTEP, you will also plot the density of states of iron using dos.pl.</p>
 <h2 id="you-will-need">You will need:</h2>
 <p>In addition to CASTEP and the suite of tools it comes with you will need:</p>
@@ -3006,14 +3005,11 @@ Once the CASTEP calculation has finished a <code>graphite.bands</code> file will
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
 </code></pre></div>
 The <code>-xg</code> option tells dispersion.pl that you are using grace to plot the band structure, the <code>-bs</code> option tells the script that you want to plot using CASTEP output files, the <code>-symmetry hexagonal</code> option labels the high symmetry points on the bands structure plot.</p>
-<!-- When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The `orbitals2bands` tool can be used to alter the `Si.bands` file represent the orbitals that contribute to the bands.  This tool can be run in the same directory that you ran CASTEP in.
-The program `orbitals2bands` overwrites your `Si.bands` file, so it's best to copy it to another file to preserve it
-
+<p>When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The <code>orbitals2bands</code> tool can be used to alter the <code>Si.bands</code> file represent the orbitals that contribute to the bands.  This tool can be run in the same directory that you ran CASTEP in.
+The program <code>orbitals2bands</code> overwrites your <code>Si.bands</code> file, so it's best to copy it to another file to preserve it</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ cp graphite.bands graphite.bands.orig 
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ orbitals2bands graphite
 </code></pre></div>
--->
-
 <h2 id="example-2-silicon-and-aluminium">Example 2 - Silicon and Aluminium.</h2>
 <p>Very similar to example 1, but this time comparing a semiconductor and a metal, both with FCC crystal structures.</p>
 <p>Go into the silicon and aluminium directories and compute the band structures as above.</p>
