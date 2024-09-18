@@ -1,4 +1,4 @@
-We will use cif to cell to generate cell files from cif files. Cif files can be obtained from the ICSD (inorganic crystals) or the CSD (molecular crystals).
+We will use cif to cell to generate cell files from cif files. Cif files can be obtained from the [ICSD](https://www.psds.ac.uk/) (inorganic crystals) or the [CSD](https://www.ccdc.cam.ac.uk/structures/) (molecular crystals).
 
 ## MgO
 
