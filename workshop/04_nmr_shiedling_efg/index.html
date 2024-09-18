@@ -3123,35 +3123,39 @@ for each atom. You can see here that it also gives the same information - the is
 <ul>
 <li>Fig. 2 shows a modern high-resolution 1H spectrum for liquid ethanol. Note that the peaks are split due to J-coupling - the interaction of the 1H magnetic moments - but let's ignore that for now. The three peaks are roughly at 1.2ppm, 3.7ppm and 5ppm. You should find that your computed values agree for two sites. Do you know why the other site has such a large disagreement with experiment?</li>
 </ul>
+<p>You can also use the soprano command-line tool to process NMR data from CASTEP. On the VM, go to Applications -&gt; Software -&gt; Soprano to launch a terminal with the correct python environmen loaded. You can then navigate to where your .magres file is and do something like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>soprano nmr ethanol.magres --references H:30.97 --include MS_shift -g CH3,CH2
+</code></pre></div>
+<p>For all the options, do <code>soprano nmr --help</code> or look at the <a href="https://jkshenton.github.io/soprano/cli-cookbook.html">CLI Cookbook</a>. This is particularly useful when dealing with large amounts of NMR data. </p>
 <h3 id="example-2-diamond">Example 2 - Diamond</h3>
 <p>FILES:</p>
 <ul>
 <li>diamond.cell</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>%block LATTICE_CART
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>0 1.7 1.7
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>1.7  0 1.7
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>1.7 1.7 0
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>%endblock LATTICE_CART
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>%block POSITIONS_FRAC
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>C   0.000000   0.000000   0.000000
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>C   0.250000   0.250000   0.250000
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>%endblock POSITIONS_FRAC
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>kpoints_mp_grid  4 4 4
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>symmetry_generate
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>%block LATTICE_CART
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>0 1.7 1.7
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>1.7  0 1.7
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>1.7 1.7 0
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>%endblock LATTICE_CART
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>%block POSITIONS_FRAC
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>C   0.000000   0.000000   0.000000
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>C   0.250000   0.250000   0.250000
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>%endblock POSITIONS_FRAC
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>kpoints_mp_grid  4 4 4
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>symmetry_generate
 </code></pre></div>
 * diamond.param</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>comment         = nmr testing
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>iprint          = 1
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>xc_functional = LDA
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>task : magres
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>fix_occupancy = true
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>opt_strategy : speed
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>cut_off_energy  =  500 eV
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>comment         = nmr testing
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>iprint          = 1
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>xc_functional = LDA
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>task : magres
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>fix_occupancy = true
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>opt_strategy : speed
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>cut_off_energy  =  500 eV
 </code></pre></div>
 <p>OBJECTIVES:</p>
 <p>Examine the convergence of the chemical shielding as the sampling of the electronic Brillouin zone (BZ) is increased.</p>
@@ -3165,9 +3169,9 @@ for each atom. You can see here that it also gives the same information - the is
 </ul>
 <p>The computational cost scales linearly with the number of kpoints (i.e. the number of points in the irreducible Brillouin Zone). For a large unit cell (i.e. a small BZ) it may be possible to get converged results using a single k-point. But which kpoint should we choose?
 For diamond we will look at 3 different k-points (0,0,0), (½,½,½) (¼,¼,¼). Specify the kpoint in the cell file using
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>%BLOCK KPOINTS_LIST
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>0.25 0.25 0.25 1.0
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>%ENDBLOCK KPOINTS_LIST
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>%BLOCK KPOINTS_LIST
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>0.25 0.25 0.25 1.0
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>%ENDBLOCK KPOINTS_LIST
 </code></pre></div>
 Which gives a result closest to the converged answer?
 (as the diamond unit cell is rather small the 1 kpoint answer is not too close to converged. However, the observation holds true for all orthorhombic cells)</p>
@@ -3188,15 +3192,15 @@ available. This is particularly true for organic materials. First principles cal
 <p>Don't worry about how long/complex it is - it is no different from any other <a href="../../documentation/Input_Files/cell_file.md">cell file</a> - it just simply defines a large cell</p>
 </div>
 <p>and param file <code>alanine.param</code></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>fix_occupancy = true
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>opt_strategy : speed
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>task        = magres
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>magres_task = nmr
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>cut_off_energy = 600 eV
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>xc_functional : PBE
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>fix_occupancy = true
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>opt_strategy : speed
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>task        = magres
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>magres_task = nmr
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>cut_off_energy = 600 eV
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>xc_functional : PBE
 </code></pre></div>
 Note that the only difference to the previous param files is the line</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>magres_task = nmr
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>magres_task = nmr
 </code></pre></div>
 <p>This leads to EFG calculations also being performed.</p>
 <p>You may also want to view the file</p>
@@ -3250,12 +3254,12 @@ contain the both the shielding information and two further columns  - <span clas
 <p>For quartz we will use the cell file</p>
 <p><a href="../../tutorials/NMR/silicates/quartz.cell">quartz.cell</a></p>
 <p>And the param file <code>quartz.param</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cut_off_energy  = 600 eV
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>xc_functional : PBE
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>fix_occupancy = true
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>opt_strategy : speed
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>task        = magres
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>magres_task = nmr
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cut_off_energy  = 600 eV
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>xc_functional : PBE
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>fix_occupancy = true
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>opt_strategy : speed
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>task        = magres
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>magres_task = nmr
 </code></pre></div>
 <p>The param file is identical to the alanine one above.</p>
 <p>For cristoballite we will use the cell file</p>
