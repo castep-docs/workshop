@@ -141,6 +141,8 @@ nav:
         - '7d Lowloss': 'workshop/optados/6d_lowloss.md'
       - ' 8 XC':  'workshop/07_xc.md'
       - ' 9 Cif2cell': 'workshop/08_cif2cell.md'
+      - '10 OTF ML with GAP': 'workshop/10_GAP.md'
+      #- '11 Genetic Algorithm': 'workshop/11_GA.md'
 
 theme:
   name: material
