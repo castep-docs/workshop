@@ -3001,7 +3001,7 @@
 
 <p>We will use cif to cell to generate cell files from cif files. Cif files can be obtained from the <a href="https://www.psds.ac.uk/">ICSD</a> (inorganic crystals) or the <a href="https://www.ccdc.cam.ac.uk/structures/">CSD</a> (molecular crystals).</p>
 <h2 id="mgo">MgO</h2>
-<p>Examine the <a href="http://www.castep.org/files/MgO.cif">file</a>. Look at the crystal structure with jmol or <a href="https://ccp-nc.github.io/magresview-2/">magresview</a> (drag and drop the file onto the magresview window). You will see a cubic face-centre cubic cell. How many atoms in the cell?</p>
+<p>Examine the <a href="../MgO.cif">file</a>. Look at the crystal structure with jmol or <a href="https://ccp-nc.github.io/magresview-2/">magresview</a> (drag and drop the file onto the magresview window). You will see a cubic face-centre cubic cell. How many atoms in the cell?</p>
 <p>Use cif2cell to convert this cif file to a cell file.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cif2cell MgO.cif --program=castep -o MgO.cell
 </code></pre></div>
@@ -3012,7 +3012,7 @@
 </code></pre></div>
 <p>A note that some versions of cif2cell use the tag <code>ID</code> in the generated .cell file, which is not recognised by CASTEP. In this case, the tag should be changed to <code>LABEL</code>. </p>
 <h2 id="molecular-tweezers">Molecular Tweezers</h2>
-<p>Examine the <a href="http://www.castep.org/files/GUQHUV.cif">file</a></p>
+<p>Examine the <a href="../GUQHUV.cif">file</a></p>
 
               
             </article>
