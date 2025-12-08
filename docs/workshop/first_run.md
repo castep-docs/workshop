@@ -1,4 +1,4 @@
-CASTEP has two main input files, called [the cell file](basic_cell_file.md) and [the param file](basic_param_file.md). The cell file defines the structure of the material (or molecule) you wish to study, and the param file defines the kind of simulation CASTEP should perform.
+CASTEP has two main input files, called [the cell file](../documentation/Getting_Started/basic_cell_file.md) and [the param file](../documentation/Getting_Started/basic_param_file.md). The cell file defines the structure of the material (or molecule) you wish to study, and the param file defines the kind of simulation CASTEP should perform.
 
 The cell and param files should be named using the same prefix, which CASTEP calls the "seedname", with the extensions `.cell` and `.param`, respectively. For example, for a calculation called `mytest`, you need the input files
 ```
@@ -18,7 +18,7 @@ If CASTEP encounters a serious problem, it will stop and write an error message 
 mytest.0001.err
 mytest.0002.err
 ```
-These files contain useful information about what went wrong, so it is always worth looking at them. See the [Troubleshooting Guide](../Troubleshooting/troubleshooting.md) for details of how to find and fix common problems.
+These files contain useful information about what went wrong, so it is always worth looking at them. See the [Troubleshooting Guide](../documentation/Troubleshooting/troubleshooting.md) for details of how to find and fix common problems.
 
 ## Silicon 
 
