@@ -5,7 +5,7 @@
 
 ### Signing up to the STFC Training Workspace
 
-Open a browser and navigate to the link you have been emailed  - the one that contains training.analysis.stfc.ac.uk.
+Open a browser and navigate to the link you have been emailed  - the one that contains ada.stfc.ac.uk.
 
 This should prompt you for some information and it will then send your account for authorisation. 
 
@@ -15,7 +15,7 @@ Once the account is authorised, you will recieve and email with a link to login.
 
 You should recieve an email with a link that you can use to connect to the STFC system. Save this email as you will use it to login during the training. 
 
-Select New Workspace and then select CASTEP TRAINING WORKSHOP 2024 and click create workspace. This will generate you a virtual desktop on the STFC cloud service with access to CASTEP.
+Select New Workspace and then select CASTEP TRAINING WORKSHOP 2025 and click create workspace. This will generate you a virtual desktop on the STFC cloud service with access to CASTEP.
 
 ## Connecting to and using the virtual desktop
 
@@ -24,7 +24,7 @@ Mouse over the workspace and you should be presented with buttons to launch the 
 This should open a new window and load a virtual desktop within the browser. This is a linux desktop with CASTEP and several other useful tools available. 
 
 ### Uploading and downloading files from your laptop
-To upload or download any files from your laptop to the VM, navigate to <https://training.analysis.stfc.ac.uk/data/>, click on Data (left hand menu) and then select Home - that's your home directory where you can upload files to.   
+To upload or download any files from your laptop to the VM, navigate to <https://ada.stfc.ac.uk/data/>, click on Data (left hand menu) and then select Home - that's your home directory where you can upload files to.   
 
 ### Copying and pasting from your laptop
 
