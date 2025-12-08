@@ -24,9 +24,13 @@ for exe in $serial_executables; do
   prepend_command "castep" "$exe"
 done
 
+# alias for dispersion.pl and dos.pl so that they are called outside of the container
+alias "dispersion.pl"="/course_materials/dispersion.pl"
+alias "dos.pl"="/course_materials/dos.pl"
+
 # an extra alias for the serial version of castep
 alias "castep.serial"="castep castep.mpi"
 
-# For the MPI executables, prepend castep-mpi to mpirun 
+# For the MPI executables, prepend castep-mpi to mpirun
 # and that will anyway ensure that the mpi versions of the executables are used
 alias "mpirun"="castep mpirun"
