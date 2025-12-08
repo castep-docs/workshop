@@ -55,7 +55,7 @@ The `Si_00.usp` file is a pseudopotential file, you do not need to understand it
 	$ nano Si2.param
 	```
 
-4. It is useful to view the structure before submitting your calculation using CASTEP. You Jmol and Vesta are installed on the VM and can both be used to visualise the `Si2.cell` file.
+4. It is useful to view the structure before submitting your calculation using CASTEP. Jmol and Vesta are installed on the VM and can both be used to visualise the `Si2.cell` file.
 
 5. Cell Structure Visualisation
 	* ### Jmol
