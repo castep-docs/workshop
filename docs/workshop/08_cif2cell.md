@@ -2,7 +2,7 @@ We will use cif to cell to generate cell files from cif files. Cif files can be 
 
 ## MgO
 
-Examine the [file](http://www.castep.org/files/MgO.cif). Look at the crystal structure with jmol or [magresview](https://ccp-nc.github.io/magresview-2/) (drag and drop the file onto the magresview window). You will see a cubic face-centre cubic cell. How many atoms in the cell?
+Examine the [file](MgO.cif). Look at the crystal structure with jmol or [magresview](https://ccp-nc.github.io/magresview-2/) (drag and drop the file onto the magresview window). You will see a cubic face-centre cubic cell. How many atoms in the cell?
 
 Use cif2cell to convert this cif file to a cell file.
 
@@ -26,4 +26,4 @@ A note that some versions of cif2cell use the tag `ID` in the generated .cell fi
 
 
 ## Molecular Tweezers
-Examine the [file](http://www.castep.org/files/GUQHUV.cif)
+Examine the [file](GUQHUV.cif)
