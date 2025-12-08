@@ -21,12 +21,12 @@ serial_executables=$(cat "$SCRIPT_DIR/serial_executables.conf")
 
 # Loop over the serial executables and create aliases
 for exe in $serial_executables; do
-  prepend_command "castep-serial" "$exe"
+  prepend_command "castep" "$exe"
 done
 
 # an extra alias for the serial version of castep
-alias "castep"="castep-serial castep.serial"
+alias "castep.serial"="castep castep.mpi"
 
 # For the MPI executables, prepend castep-mpi to mpirun 
 # and that will anyway ensure that the mpi versions of the executables are used
-alias "mpirun"="castep-mpi mpirun"
+alias "mpirun"="castep mpirun"
