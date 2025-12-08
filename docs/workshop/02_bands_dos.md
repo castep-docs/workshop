@@ -72,8 +72,8 @@ $ dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
 ```
 The `-xg` option tells dispersion.pl that you are using grace to plot the band structure, the `-bs` option tells the script that you want to plot using CASTEP output files, the `-symmetry hexagonal` option labels the high symmetry points on the bands structure plot.
 
-When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The `orbitals2bands` tool can be used to alter the `Si.bands` file represent the orbitals that contribute to the bands.  This tool can be run in the same directory that you ran CASTEP in.
-The program `orbitals2bands` overwrites your `Si.bands` file, so it's best to copy it to another file to preserve it
+When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The `orbitals2bands` tool can be used to alter the `graphite.bands` file represent the orbitals that contribute to the bands.  This tool can be run in the same directory that you ran CASTEP in.
+The program `orbitals2bands` overwrites your `graphite.bands` file, so it's best to copy it to another file to preserve it
 
 ```
 $ cp graphite.bands graphite.bands.orig 
