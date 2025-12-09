@@ -68,7 +68,7 @@ $ mpirun -np 16 castep.mpi graphite
 Once the CASTEP calculation has finished a `graphite.bands` file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.
 
 ```
-$ dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
+$ dispersion.pl -xg -bs -symmetry hexagonal graphite.bands
 ```
 The `-xg` option tells dispersion.pl that you are using grace to plot the band structure, the `-bs` option tells the script that you want to plot using CASTEP output files, the `-symmetry hexagonal` option labels the high symmetry points on the bands structure plot.
 
