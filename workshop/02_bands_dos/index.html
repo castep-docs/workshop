@@ -3181,7 +3181,7 @@ The path through the Brillouin Zone is found in the <code>Fe.cell</code> file.</
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>SPECTRAL_KPOINT_MP_GRID 12 12 12
 </code></pre></div>
 <p>Run CASTEP using these new input files then use the dos.pl plotting script</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>dos.pl -xg -w 0.2 Fe.bands
 </code></pre></div>
 <p>Can you relate the features in the DOS to those in the Bandstructure?</p>
 <p>You might find the <code>-mirror</code> option useful. The <code>-w</code> option sets the Gaussian broadening in eV. Try smaller (0.05) and larger (0.5) values - explain what you see.</p>
