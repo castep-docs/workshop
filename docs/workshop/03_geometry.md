@@ -187,3 +187,12 @@ and let all angles relax independently. This is similar to the `%block lattice_a
 For the mathematically minded, this is taking the limit that the interlayer spacing, controlled by the out-of-plane lattice vector, goes to infinity!
   
 Practically, we cannot actually set the lattice parameter to infinity - try varying it and seeing how it converges with distance.
+
+
+## Further Resources
+
+There is a web app here:
+
+[Geometry optimisation visualiser web app](https://jkshenton.github.io/marimo_notebooks/apps/castep_geomopt_summary.html)
+
+which allows you to explore the progress of your geometry optimisation by plotting energies, forces, stresses and displacements with each iteration.
