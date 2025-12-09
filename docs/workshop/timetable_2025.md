@@ -6,7 +6,7 @@ Lunch 1-2pm
 	* 2pm "Introduction to CASTEP" Stewart Clark 
 	* 4-5:30pm Practical session
 * Tuesday
-	* 9am-1030am "Electronic Properties (bands and DOS)" Phil Hasnip
+	* 9am-1030am "Electronic Properties (bands and DOS)" Phil Hasnip [notes pt1](./files/electronic_structure.pdf) [notes pt2](./files/bandstructure.pdf)
 	* 11am-1pm Practical Session
 	* 2-3pm "Geometry Optimisation" Jonathan Yates
 	* 3:30-5:30pm Practical Session 
