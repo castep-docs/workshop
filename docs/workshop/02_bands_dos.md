@@ -125,7 +125,7 @@ SPECTRAL_KPOINT_MP_GRID 12 12 12
 Run CASTEP using these new input files then use the dos.pl plotting script
 
 ```
-dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
+dos.pl -xg -w 0.2 Fe.bands
 ```
 
 Can you relate the features in the DOS to those in the Bandstructure?
