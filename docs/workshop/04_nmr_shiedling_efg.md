@@ -332,3 +332,11 @@ INSTRUCTIONS:
 
 The Collaborative Computational Project for NMR Crystallography (CCP-NC) has a number of [tools](https://www.ccpnc.ac.uk/software) and [resources](https://www.ccpnc.ac.uk/docs) to help with CASTEP. In addtion is the graphical user interface, MagresView mentioned above, the Soprano python library can be a useful way to analyse CASTEP output. There are NMR-specific tutorials here: <https://jkshenton.github.io/soprano/tutorials/05-nmr.html> and a command line interface for commond NMR tasks with .magres files here: <https://jkshenton.github.io/soprano/tutorials/07-soprano-cli.html>. Soprano is installed on the VM (Applications -> Software -> Soprano).
 
+There is also an interactive notebook on the VM under `/shared_materials/magres_analyser.py`. To use this you need to open a terminal on the VM and then run the following two commands:
+
+```
+python3.11 -m pip install uv
+uvx marimo run /shared_materials/magres_analyser.py --sandbox
+```
+
+a browser window should open with the notebook. This notebook will allow you to explore different NMR tensor conventions.
