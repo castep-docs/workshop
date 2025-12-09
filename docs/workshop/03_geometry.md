@@ -93,7 +93,7 @@ Remember you can use `castep.serial --help` to assist you with finding the appro
 	* Scroll down through the file. Check to see how the forces and bond-length varies over iterations.
 	* For advanced bash users, try `grep "F|max" H2.castep` to extract this from the file.
 	* You may also want to visualise the `H2.cell` and (if you told castep to print it) the `H2-out.cell` files as in previous tutorials
-	* Finally, consider watching the optimisation by drag-and-dropping the `H2.geom` file into `Jmol` (VESTA will not animate it)
+	* Finally, consider watching the optimisation by drag-and-dropping the `H2.geom` file into `Jmol` (VESTA will not animate it) (Tools > Animate)
 	* The experimental H2 bond length is about 0.74 Angstroms. How does your result compare? Extension A may give some insight into this! 
 
 ### Extensions
