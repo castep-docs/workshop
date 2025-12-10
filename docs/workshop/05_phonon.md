@@ -47,7 +47,7 @@ BN is one of a family of Nitride semiconductors, which occurs in cubic zincblend
 	Have a look in the `.param` file, look up the meaning of any keywords you don’t know (you can use `castep.serial -h <keyword>`). Test your configuration using
 	
 	```
-	castep.serial –dryrun h-BN
+	castep.serial --dryrun h-BN
 	```
 
 	This tells CASTEP to read the intput files and summaries the calculation in the `.castep` file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).
