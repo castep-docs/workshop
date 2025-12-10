@@ -47,7 +47,7 @@ BN is one of a family of Nitride semiconductors, which occurs in cubic zincblend
 	Have a look in the `.param` file, look up the meaning of any keywords you don’t know (you can use `castep.serial -h <keyword>`). Test your configuration using
 	
 	```
-	castepp-serial castep.serial –dryrun h-BN
+	castep.serial –dryrun h-BN
 	```
 
 	This tells CASTEP to read the intput files and summaries the calculation in the `.castep` file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).
@@ -115,7 +115,7 @@ First run the isolated molecule calculation.  Using the supplied PDB format file
 
 1. The size of the simulation cell governs the interactions between periodic copies of the molecule and should be large enough that these are negligible.
 
-2. The shape of the simulation cell governs the crystallographic point groups allowed in the handling of the symmetry.  It should be chosen to be commensurate (as far as possible) with the molecular point group to maximise the use of symmetry.  In the case of benzene it should obviously be hexagonal, here we use a box 8A by 8A by 4A.
+2. The shape of the simulation cell governs the crystallographic point groups allowed in the handling of the symmetry.  It should be chosen to be commensurate (as far as possible) with the molecular point group to maximise the use of symmetry.  In the case of benzene it should obviously be hexagonal, here we use a box 8Å by 8Å by 4Å.
   
 3. Recall that there is no electronic dispersion for a molecule, so only a single electronic k-point is needed.  The general rule is that all “molecule in a box” calculations  should use the G point only as Castep uses special performance optimisations in this case.
 
@@ -137,7 +137,7 @@ Are all your frequencies positive?  If not, can you suggest why not?
 
 [^1]: installed in the castep-serial apptainer.
 
-## C. Phonon dispersion using interpolation in NaH
+## C.I Phonon dispersion using interpolation in NaH
 
 From $\Gamma$ point only calculations we now explore the whole of the Brillouin zone of phonon wavevectors.  Our example is the rocksalt-structured hydride, NaH which should run quickly enough to return results in a few minutes. Based on previous exercises, lectures and the user manual, you should be able to set up and run a DFPT phonon dispersion calculation and display a well converged set of dispersion curves.
 A starting point for your `.cell` file is:
