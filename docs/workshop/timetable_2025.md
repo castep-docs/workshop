@@ -11,9 +11,9 @@ Lunch 1-2pm
 	* 2-3pm "Geometry Optimisation" Jonathan Yates [notes](./files/oxford_geom.pdf) [Kane Geom Tool](https://jkshenton.github.io/marimo_notebooks/apps/castep_geomopt_summary.html)
 	* 3:30-5:30pm Practical Session 
 * Wednesday
-	* 9am-10:30am "NMR" Jonathan Yates and Kane Shenton
+	* 9am-10:30am "NMR" Jonathan Yates and Kane Shenton [notes](./files/oxford_nmr_2025.pdf)
 	* 11am-1pm Practical Session
-	* 2-3pm "Phonons and Vibrational Spectra" Phil Hasnip
+	* 2-3pm "Phonons and Vibrational Spectra" Phil Hasnip [notes](./files/phonon.pdf)
    	* 3:30-5:30pm Practical Session 
 * Thursday
 	* 9am-9:45am "CASTEP in Parallel" Ben Durham
