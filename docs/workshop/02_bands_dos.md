@@ -43,6 +43,8 @@ To the .param file the task (which lets CASTEP know what you want it to do) need
 ```
 task     :       spectral
 spectral_task :  bandstructure
+
+write_orbitals: true ! this is needed for orbitals2bands but not essential for the bandstructure calculation
 ```
 
 The .cell file requires a path through the Brillouin Zone along which you want the bandstructure to be plotted:
@@ -68,12 +70,19 @@ $ mpirun -np 16 castep.mpi graphite
 Once the CASTEP calculation has finished a `graphite.bands` file will be present in the directory.  A band structure plot can be viewed by using the dispersion.pl tool.
 
 ```
-$ dispersion.pl -np -xg -bs -symmetry hexagonal graphite.bands | xmgrace -
+$ dispersion.pl -xg -bs -symmetry hexagonal graphite.bands
 ```
 The `-xg` option tells dispersion.pl that you are using grace to plot the band structure, the `-bs` option tells the script that you want to plot using CASTEP output files, the `-symmetry hexagonal` option labels the high symmetry points on the bands structure plot.
 
-When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The `orbitals2bands` tool can be used to alter the `graphite.bands` file to represent the orbitals that contribute to the bands.  This tool can be run in the same directory that you ran CASTEP in.
-The program `orbitals2bands` overwrites your `graphite.bands` file, so it's best to copy it to another file to preserve it
+When you view this band structure plot you will notice the bands are coloured from lowest to highest energy. Using information about the wavefunction CASTEP can improve this band structure plot, so bands are coloured due to the orbitals that contribute. The `orbitals2bands` tool can be used to alter the `Si.bands` file represent the orbitals that contribute to the bands. You will need to make sure you've run CASTEP with: 
+
+```
+write_orbitals: True
+```
+
+set in the .param file. This will produce a `graphite.orbitals`. You can then run the `orbitals2bands` tool in the same directory that you ran CASTEP in.
+The program `orbitals2bands` overwrites your existing `.bands` file, so it's best to copy it to another file to preserve it
+
 
 ```
 $ cp graphite.bands graphite.bands.orig 
@@ -116,7 +125,7 @@ SPECTRAL_KPOINT_MP_GRID 12 12 12
 Run CASTEP using these new input files then use the dos.pl plotting script
 
 ```
-dos.pl -xg -np -w 0.2 Fe.bands | xmgrace - 
+dos.pl -xg -w 0.2 Fe.bands
 ```
 
 Can you relate the features in the DOS to those in the Bandstructure?

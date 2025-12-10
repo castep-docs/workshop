@@ -8,7 +8,7 @@ Lunch 1-2pm
 * Tuesday
 	* 9am-1030am "Electronic Properties (bands and DOS)" Phil Hasnip [notes pt1](./files/electronic_structure.pdf) [notes pt2](./files/bandstructure.pdf)
 	* 11am-1pm Practical Session
-	* 2-3pm "Geometry Optimisation" Jonathan Yates
+	* 2-3pm "Geometry Optimisation" Jonathan Yates [notes](./files/oxford_geom.pdf) [Kane Geom Tool](https://jkshenton.github.io/marimo_notebooks/apps/castep_geomopt_summary.html)
 	* 3:30-5:30pm Practical Session 
 * Wednesday
 	* 9am-10:30am "NMR" Jonathan Yates and Kane Shenton
