@@ -2810,8 +2810,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c-phonon-dispersion-using-interpolation-in-nah" class="md-nav__link">
-    C. Phonon dispersion using interpolation in NaH
+  <a href="#ci-phonon-dispersion-using-interpolation-in-nah" class="md-nav__link">
+    C.I Phonon dispersion using interpolation in NaH
   </a>
   
 </li>
@@ -3044,8 +3044,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c-phonon-dispersion-using-interpolation-in-nah" class="md-nav__link">
-    C. Phonon dispersion using interpolation in NaH
+  <a href="#ci-phonon-dispersion-using-interpolation-in-nah" class="md-nav__link">
+    C.I Phonon dispersion using interpolation in NaH
   </a>
   
 </li>
@@ -3106,7 +3106,7 @@ and one to specify a gamma-point phonon wavevector</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>phonon_kpoint_mp_grid 1 1 1
 </code></pre></div>
 <p>Have a look in the <code>.param</code> file, look up the meaning of any keywords you don’t know (you can use <code>castep.serial -h &lt;keyword&gt;</code>). Test your configuration using</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>castepp-serial castep.serial –dryrun h-BN
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>castep.serial –dryrun h-BN
 </code></pre></div>
 <p>This tells CASTEP to read the intput files and summaries the calculation in the <code>.castep</code> file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).</p>
 <p>Check to see if any <code>.err</code> files are produced and fix issues, if any. If / when no errors are returned, congratulations.  You have set up the input files, and you can delete the dryrun .castep file.
@@ -3151,7 +3151,7 @@ You can then use the <code>Tools-&gt;Vibrate</code> menu to turn on mode animati
 <p>The size of the simulation cell governs the interactions between periodic copies of the molecule and should be large enough that these are negligible.</p>
 </li>
 <li>
-<p>The shape of the simulation cell governs the crystallographic point groups allowed in the handling of the symmetry.  It should be chosen to be commensurate (as far as possible) with the molecular point group to maximise the use of symmetry.  In the case of benzene it should obviously be hexagonal, here we use a box 8A by 8A by 4A.</p>
+<p>The shape of the simulation cell governs the crystallographic point groups allowed in the handling of the symmetry.  It should be chosen to be commensurate (as far as possible) with the molecular point group to maximise the use of symmetry.  In the case of benzene it should obviously be hexagonal, here we use a box 8Å by 8Å by 4Å.</p>
 </li>
 <li>
 <p>Recall that there is no electronic dispersion for a molecule, so only a single electronic k-point is needed.  The general rule is that all “molecule in a box” calculations  should use the G point only as Castep uses special performance optimisations in this case.</p>
@@ -3167,7 +3167,7 @@ You can then use the <code>Tools-&gt;Vibrate</code> menu to turn on mode animati
 <p>Benzene Phase III: The next stage is to compute the <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span> point phonon modes of the molecular crystal of benzene in the high pressure polymorph, Phase III. You are supplied with a <code>.pdb</code> file.   You should use a 2x2x2 grid of electronic k-points, as dispersion is non-zero in this molecular crystal. Make sure that symmetry is detected and enabled using <code>symmetry_generate</code> in the <code>.cell</code> file. Also check that the unit cell parameters are fixed to optimise the geometry and NCP pseudopotentials are used. Use the same .param file as for the molecular case to ensure the settings are the same. Similar to the molecular case run a geometry optimisation followed by a phonon calculation.</p>
 <p>Once these calculations have completed you should generate a phonon DOS and IR spectra as in the previous practical and compare the molecule with the molecular crystal. You can also use Jmol to identify the modes.</p>
 <p>Are all your frequencies positive?  If not, can you suggest why not?</p>
-<h2 id="c-phonon-dispersion-using-interpolation-in-nah">C. Phonon dispersion using interpolation in NaH</h2>
+<h2 id="ci-phonon-dispersion-using-interpolation-in-nah">C.I Phonon dispersion using interpolation in NaH</h2>
 <p>From <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span> point only calculations we now explore the whole of the Brillouin zone of phonon wavevectors.  Our example is the rocksalt-structured hydride, NaH which should run quickly enough to return results in a few minutes. Based on previous exercises, lectures and the user manual, you should be able to set up and run a DFPT phonon dispersion calculation and display a well converged set of dispersion curves.
 A starting point for your <code>.cell</code> file is:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>%block lattice_cart
