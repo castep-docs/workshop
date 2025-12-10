@@ -3106,7 +3106,7 @@ and one to specify a gamma-point phonon wavevector</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>phonon_kpoint_mp_grid 1 1 1
 </code></pre></div>
 <p>Have a look in the <code>.param</code> file, look up the meaning of any keywords you don’t know (you can use <code>castep.serial -h &lt;keyword&gt;</code>). Test your configuration using</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>castep.serial –dryrun h-BN
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>castep.serial --dryrun h-BN
 </code></pre></div>
 <p>This tells CASTEP to read the intput files and summaries the calculation in the <code>.castep</code> file, but does not run the electronic structure calculation. It is very useful to check syntax before submitting to a batch queue (and finding out later you’d made a spelling mistake!).</p>
 <p>Check to see if any <code>.err</code> files are produced and fix issues, if any. If / when no errors are returned, congratulations.  You have set up the input files, and you can delete the dryrun .castep file.
