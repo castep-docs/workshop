@@ -19,7 +19,7 @@ Lunch 1-2pm
 	* 9am-9:45am "CASTEP in Parallel" Ben Durham [notes](./files/Parallel_CASTEP___workshop_2025.pdf)
 	* 9:45-10:30 "Exchange and Correlation" Albert Bartok-Partay [notes](./files/XC_251211.pdf)
 	* 11am-1pm Practical Session
-	* 2-3pm "A field guide to Pseudopotentials" Jonathan Yates
+	* 2-3pm "A field guide to Pseudopotentials" Jonathan Yates [notes](./files/oxford_pseudo.pdf)
 	* 3:30-5:30pm Practical Session 
 * Friday
 	* 9am-5pm (note we expect many people will need to leave early for travel). Practical session all day with breaks for coffee and lunch. Discussion topics determined by participant requests.
