@@ -16,8 +16,8 @@ Lunch 1-2pm
 	* 2-3pm "Phonons and Vibrational Spectra" Phil Hasnip [notes](./files/phonon.pdf)
    	* 3:30-5:30pm Practical Session 
 * Thursday
-	* 9am-9:45am "CASTEP in Parallel" Ben Durham
-	* 9:45-10:30 "Exchange and Correlation" Albert Bartok-Partay
+	* 9am-9:45am "CASTEP in Parallel" Ben Durham [notes](./files/Parallel_CASTEP___workshop_2025.pdf)
+	* 9:45-10:30 "Exchange and Correlation" Albert Bartok-Partay [notes](./files/XC_251211.pdf)
 	* 11am-1pm Practical Session
 	* 2-3pm "A field guide to Pseudopotentials" Jonathan Yates
 	* 3:30-5:30pm Practical Session 
